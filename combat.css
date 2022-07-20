@@ -1,0 +1,15 @@
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
+#big{
+  font-size: 50px;
+}
+
+#small{
+  font-size: 10px;
+}
