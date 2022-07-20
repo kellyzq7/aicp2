@@ -15,7 +15,7 @@
     <source src="audio/main_theme.mp3" type="audio/mp3">
   </audio>
 
-<a href="class_select.php">
+<a href="login.php">
 <img id="cul_home" src="img/home_bg.png" alt="Cul Cavboj background)" />
 </a>
 
