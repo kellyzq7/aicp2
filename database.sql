@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS `user` (
   `id` int NOT NULL AUTO_INCREMENT,
   `isAdmin` boolean,
-  `username` text,
+  `email` text,
   `password` text,
   `character_name` varchar(16),
   `class` varchar(16),
