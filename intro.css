@@ -1,0 +1,88 @@
+@font-face {
+  font-family: Brotherland;
+  src: url(brotherland.ttf);
+}
+
+@font-face {
+  font-family: Gin;
+  src: url(carnival.otf);
+}
+
+body{
+  font-family: "Gin";
+  background-image: url("images/sunrise.jpeg");
+  background-size: cover;
+  color: black;
+}
+
+h1{
+  font-family: "Brotherland";
+  font-size: 50px;
+  text-align: center;
+}
+
+#first, #second, #third{
+  margin: 35px auto;
+  border: 5px groove #7d1a1a;
+  padding: 30px 40px;
+  width: 900px;
+  line-height: 2.5em;
+  background-color: rgba(225, 225, 225, 0.5);
+  text-align: center;
+}
+
+#objectives{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto auto auto;
+  text-align: center;
+}
+
+#romance{
+  grid-rows: 1 / 2;
+  grid-columns: 1 / 2;
+  padding: 10px;
+  background-color: rgba(250, 218, 221, 0.5);
+}
+#combat{
+  grid-rows: 1 / 2;
+  grid-columns: 2 / 3;
+  padding: 10px;
+  background-color: rgba(255, 179, 71, 0.3);
+}
+
+#speed{
+  grid-rows: 1 / 2;
+  grid-columns: 3 / 4;
+  padding: 10px;
+  background-color: rgba(152, 251, 152, 0.3);
+}
+
+.center{
+  text-align: center;
+}
+
+input{
+  font-family: "Brotherland";
+  padding: 10px;
+  font-size: 25px;
+  width: 250px;
+  background-color: white;
+  border: 3px groove black;
+}
+
+#squint{
+  width: 350px;
+}
+
+.hp{
+  text-align: center;
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
