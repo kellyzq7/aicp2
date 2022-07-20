@@ -1,0 +1,29 @@
+@font-face {
+  font-family: brotherland;
+  src: url(fonts/Brotherlands.ttf);
+}
+
+body {
+  width:100vw;
+  height:100vh;
+  padding:0;
+  margin:0;
+  background-color:#430804;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+img#cul_home {
+  padding:0;
+  margin:0;
+  height:99.5vh;
+}
+
+a {
+  padding:0;
+  margin:0;
+}
+
+iframe {
+  display:none;
+}

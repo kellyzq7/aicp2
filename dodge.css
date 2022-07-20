@@ -1,0 +1,47 @@
+body.slow {
+  padding:16px;
+  margin:0;
+    background-color:#430804;
+  cursor: url('img/slow_chase_cursor.png'), auto;
+  background-image: url('img/desert_bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+body.fast {
+  padding:16px;
+  margin:0;
+  background-color:#430804;
+  cursor: url('img/fast_chase_cursor.png'), auto;
+  background-image: url('img/desert_bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+iframe {
+  display:none;
+}
+
+.projectile_left_fast {
+  display:block;
+  margin:50px 0px;
+  position:relative;
+  animation: left_to_right 3s 3;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+.projectile_left_slow {
+  display:block;
+  margin:50px 0px;
+  position:relative;
+  animation: left_to_right 3s infinite;
+}
+
+@keyframes left_to_right {
+  animation-delay:2s;
+  0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(90vw);
+    }
+}
