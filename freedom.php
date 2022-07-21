@@ -6,7 +6,7 @@ require_once "sql_config.php";
 if (isset($_SESSION["email"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE user SET `position`=1 WHERE email=:login_email");
+    $sth = $dbh->prepare("UPDATE user SET `position`=22 WHERE email=:login_email");
     $sth->bindValue(':login_email', $_SESSION["email"]);
     $sth->execute();
     }
