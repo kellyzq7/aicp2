@@ -13,7 +13,7 @@
     catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
     }
- ?>
+ ?> 
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
@@ -22,10 +22,11 @@
   </head>
   
   <body>
-    <h1>Welcome to Town 2</h1>
-    <p>walk to person: <a href = "npc3.php">walk</a></p>
+    <h1>Welcome to NPC 4</h1>
+    <p>a hard decision awaits you <a href = "finaldecision2.php">here</a></p>
   
   
   </body>
 </html>
+  
   

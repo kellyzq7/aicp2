@@ -23,7 +23,7 @@
   
   <body>
     <h1>Welcome to Town 1</h1>
-    <p>yum</p>
+    <p>walk to person: <a href = "npc1.php">walk</a></p>
   
   
   </body>
