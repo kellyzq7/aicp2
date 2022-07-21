@@ -6,7 +6,7 @@ require_once "sql_config.php";
 if (isset($_SESSION["email"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE user SET `position`=1 WHERE email=:login_email");
+    $sth = $dbh->prepare("UPDATE user SET `position`=5 WHERE email=:login_email");
     $sth->bindValue(':login_email', $_SESSION["email"]);
     $sth->execute();
     }
@@ -59,12 +59,12 @@ if (isset($_SESSION["email"])) {//check if user is logged in
         if($combatPoints == 2){
           echo "<input id = 'big' type = 'button' value = 'FIGHT!' />";
           echo "<h2 class = 'hide'>Congrats! You won the combat! As a reward, you get 2 combat points!</h2>";
-          echo "<a class = 'hide' href = 'decision_romancevcombat.php'>Onward!</a>";
+          echo "<a class = 'hide' href = 'decision_towns.php'>Onward!</a>";
 
         } else {
           echo "<input id = 'small' type = 'button' value = 'FIGHT!' />";
           echo "<h2 class = 'hide'>Congrats! You won the combat! As a reward, you get 2 combat points!</h2>";
-          echo "<a class = 'hide' href = 'decision_romancevcombat.php'>Onward!</a>";
+          echo "<a class = 'hide' href = 'decision_towns.php'>Onward!</a>";
         }
 
 
