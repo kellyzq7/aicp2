@@ -34,7 +34,7 @@ else {
 <body>
 <form action="intro.php" method="POST">
 <h1 id="char_name_header">Name Your Character: </h1>
-<input type="text" required name="char_name" id="char_name">
+<input type="text" required name="char_name" id="char_name" maxlength="16">
 
 <input type="submit" value="Create Character" />
 </form>
