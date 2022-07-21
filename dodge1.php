@@ -87,6 +87,7 @@ if($user_row["class"] = "charger") {
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
 
+  <a href="town2.php"> Go to Town 2 </a>
   </body>';
 }
 else if ($user_row["celerity"] >= 2) {
@@ -134,6 +135,7 @@ else if ($user_row["celerity"] >= 2) {
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
 
+    <a href="town2.php"> Go to Town 2 </a>
   </body>';
 }
 else {
@@ -186,3 +188,4 @@ else {
 }
 ?>
 </html>
+
