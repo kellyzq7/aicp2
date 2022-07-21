@@ -6,7 +6,7 @@ require_once "sql_config.php";
 if (isset($_SESSION["email"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE user SET `position`=1 WHERE email=:login_email");
+    $sth = $dbh->prepare("UPDATE user SET `position`=6 WHERE email=:login_email");
     $sth->bindValue(':login_email', $_SESSION["email"]);
     $sth->execute();
     }
@@ -29,12 +29,12 @@ if (isset($_SESSION["email"])) {//check if user is logged in
       <div id = "container">
         <div id = "chasetown1">
             <img src = "img/romance.png" alt = "romance" />
-            <a href = "dodge.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 1" /></a>
+            <a href = "yay.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 1" /></a>
         </div>
         
         <div id = "chasetown2">
             <img src = "img/combat.png" alt = "combat" />
-            <a href = "dodge2.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 2" /></a>
+            <a href = "dodge1.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 2" /></a>
         </div>
       </div>
   </body>
