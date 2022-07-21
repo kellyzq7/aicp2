@@ -34,7 +34,7 @@
 
   //Fetch Character location, and echo link redirecting to that page
   try {
-  $_SESSION["email"] = htmlspecialchars($_POST["user_login"];
+  $_SESSION["email"] = htmlspecialchars($_POST["user_login"]);
   $sth_location = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");
   $sth_location->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
   $sth_location->execute();
