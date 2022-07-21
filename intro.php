@@ -50,17 +50,15 @@ else {
         $sth = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");
         $sth->bindValue(':login_email', $_SESSION["email"]);
         $sth->execute();
-        $user_row = $sth.fetch();
+        $user_row = $sth->fetch();
         }
       catch (PDOException $e) {
         echo "<p>Error: {$e->getMessage()}</p>";
                   }
 
-      echo "<h1> Welcome Cul Cavboj " . htmlspecialchars($_POST["char_name"]) . "</h1>"
+      echo "<h1> Welcome Cul Cavboj " . htmlspecialchars($_POST["char_name"]) . "</h1>";
 
-      echo "<h2>We see that you have chosen the" . $user_row["class"] . "class. Excellet choice.
-          You are about to encounter one of the most challenging journeys in the wild west.
-          It will test your physical and emotional capability as a fellow cavboj. Are you ready?</h2>";
+      echo "<h2>We see that you have chosen the " . $user_row["class"] . " class. Excellet choice. You are about to encounter one of the most challenging journeys in the wild west. It will test your physical and emotional capability as a fellow cavboj. Are you ready?</h2>";
 
       ?>
       <br />
@@ -85,9 +83,10 @@ else {
       <h2>Wait! What's that thing far yonder? It looks like it's getting closer...
       Are those bullets??</h2>
       <div class = "center">
-        <a href = "../../../bfeinberg/projects/P2_RPG/dodge.php"><input type = "button" id = "squint" name = "squint" value = "Take a closer look" /></a>
+        <a href = "../../../bfeinberg/projects/P2_RPG/combat.php"><input type = "button" id = "squint" name = "squint" value = "Take a closer look" /></a>
       </div>
     </div>
   </body>
 <html>
+
 
