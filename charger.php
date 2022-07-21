@@ -7,7 +7,7 @@ if (isset($_SESSION["email"])) {//check if user is logged in
 try {
   $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
   $sth = $dbh->prepare("UPDATE user SET `class` = 'charger', `combat`=0, `charisma`= 0, `celerity`=2 WHERE email=:login_email");
-  $sth_password->bindValue(':login_email', $_SESSION["email"]);
+  $sth->bindValue(':login_email', $_SESSION["email"]);
   $sth->execute();
   }
 catch (PDOException $e) {
