@@ -17,12 +17,12 @@
       <div id = "container">
         <div id = "romance">
             <img src = "img/romance.png" alt = "romance" />
-            <a href = ""><input type = "button" id = "ready" name = "ready" value = "Choose" /></a>
+            <a href = "romanceEncounter.php"><input type = "button" id = "ready" name = "ready" value = "Choose" /></a>
         </div>
         
         <div id = "combat">
             <img src = "img/combat.png" alt = "combat" />
-            <a href = "combat.php"><input type = "button" id = "ready" name = "ready" value = "Choose" /></a>
+            <a href = "combat1.php"><input type = "button" id = "ready" name = "ready" value = "Choose" /></a>
         </div>
       </div>
   </body>
