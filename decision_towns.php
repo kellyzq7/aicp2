@@ -10,19 +10,19 @@
   <head>
     <title>Decision: Romance VS Combat</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="decision_romancevcombat.css">
+    <link rel="stylesheet" href="decision_towns.css">
   </head>
   <body>
-    <h1>Decision: Romance or Combat</h1>
+    <h1>Decision: Town 1 or Town 2</h1>
       <div id = "container">
-        <div id = "romance">
+        <div id = "chasetown1">
             <img src = "img/romance.png" alt = "romance" />
-            <a href = ""><input type = "button" id = "ready" name = "ready" value = "Choose" /></a>
+            <a href = "dodge.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 1" /></a>
         </div>
         
-        <div id = "combat">
+        <div id = "chasetown2">
             <img src = "img/combat.png" alt = "combat" />
-            <a href = "combat.php"><input type = "button" id = "ready" name = "ready" value = "Choose" /></a>
+            <a href = "dodge2.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 2" /></a>
         </div>
       </div>
   </body>

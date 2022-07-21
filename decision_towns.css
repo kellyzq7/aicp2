@@ -1,0 +1,19 @@
+h1{
+  text-align: center;
+}
+
+#container{
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr 1fr;
+}
+
+#chasetown1{
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+
+#chasetown2{
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+}
