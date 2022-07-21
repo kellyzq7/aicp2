@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 require_once "sql_config.php";
 
@@ -16,7 +16,7 @@ catch (PDOException $e) {
   if(isset($_POST["char_name"])) { //check if came from character naming page
     try {
       $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-      $sth = $dbh->prepare("UPDATE user SET `character_name` =:char_name, email=:login_email");
+      $sth = $dbh->prepare("UPDATE user SET `character_name` =:char_name WHERE email=:login_email");
       $sth->bindValue(':login_email', $_SESSION["email"]);
       $sth->bindValue(':char_name', htmlspecialchars($_POST["char_name"]));
       $sth->execute();
@@ -29,7 +29,6 @@ catch (PDOException $e) {
 else {
   header('Location: login.php'); //if user isn't signed in send to login
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -45,16 +44,31 @@ else {
   </head>
   <body>
     <div id = "first">
-      <h1>Welcome Cul Cavboj NAME</h1>
-      <h2>We see that you have chosen the **** class. Excellet choice. 
-        You are about to encounter one of the most challenging journeys in the wild west.
-        It will test your physical and emotional capability as a fellow cavboj. Are you ready?</h2>
+      <?php
+      try { //fetch user row to get class
+        $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+        $sth = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");
+        $sth->bindValue(':login_email', $_SESSION["email"]);
+        $sth->execute();
+        $user_row = $sth.fetch();
+        }
+      catch (PDOException $e) {
+        echo "<p>Error: {$e->getMessage()}</p>";
+                  }
+
+      echo "<h1> Welcome Cul Cavboj " . htmlspecialchars($_POST["char_name"]) . "</h1>"
+
+      echo "<h2>We see that you have chosen the" . $user_row["class"] . "class. Excellet choice.
+          You are about to encounter one of the most challenging journeys in the wild west.
+          It will test your physical and emotional capability as a fellow cavboj. Are you ready?</h2>";
+
+      ?>
       <br />
       <div class = "center">
         <input type = "button" id = "ready" name = "ready" value = "Yes" />
       </div>
     </div>
-    
+
     <div id = "second" class = "hide">
       <h2>Great! There are 3 paths that you might find yourself on in this journey.</h2>
       <div id = "objectives">
@@ -66,7 +80,7 @@ else {
         <input type = "button" id = "sweet" name = "ready" value = "Sweet!" />
       </div>
     </div>
-    
+
     <div id = "third" class = "hide">
       <h2>Wait! What's that thing far yonder? It looks like it's getting closer...
       Are those bullets??</h2>
@@ -76,3 +90,4 @@ else {
     </div>
   </body>
 <html>
+
