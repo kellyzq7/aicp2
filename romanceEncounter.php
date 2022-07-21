@@ -36,10 +36,10 @@ try{
         echo "<p>I'm too beautiful to be killed! Don't ya agree?</p>";
       }
       elseif ($charisma==2){
-        echo "<p>If you killed me now, then how would I take you out for dinner tonight?</p>";
+        echo '<p>If you killed me now, then how would I take you out for dinner tonight?</p>';
       }
       else{
-        echo "<p>idk what to write here</p>"
+        echo "<p>idk what to write here</p>";
       }
 }
 
