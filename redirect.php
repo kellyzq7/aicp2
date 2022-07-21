@@ -56,9 +56,7 @@ else {
     echo "<a class='redirect' href='combat.php'> Return to Game </a>";
 }
   else if($user["position"] == 3) {
-    echo "<a class='redirect' href='decision_romancevcombat.php'> Return to Gam catch (PDOException $e) {
-  echo "<p>Error: {$e->getMessage()}</p>";
-            }e </a>";
+    echo "<a class='redirect' href='decision_romancevcombat.php'> Return to Game catch </a>";
   }
   else if($user["position"] == 4) {
     echo "<a class='redirect' href='romanceEncounter.php.'> Return to Game </a>";
@@ -90,14 +88,12 @@ else {
   else if($user["position"] == 13) {
     echo "<a class='redirect' href='town2.php'> Return to Game </a>";
 }
-  else if($user["position"] == 14) {decision1
+  else if($user["position"] == 14) {
     echo "<a class='redirect' href='npc1.php'> Return to Game </a>";
   }
   else if($user["position"] == 15) {
     echo "<a class='redirect' href=npc3.php'> Return to Game </a>";
-} catch (PDOException $e) {
-  echo "<p>Error: {$e->getMessage()}</p>";
-            }
+}
   else if($user["position"] == 16) {
     echo "<a class='redirect' href='npc2.php'> Return to Game </a>";
   }
@@ -120,16 +116,11 @@ else {
     echo "<a class='redirect' href='freedom.php'> Return to Game </a>";
   }
   else { //if invalid location reset location and send to login
-      try {
       $sth_location = $dbh->prepare("UPDATE user SET position = 1 WHERE email=:login_email");
       $sth_location->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
       $sth_location->execute();
       $user = $sth_location->fetch();
       header('Location: login.php');
-  }
-  catch (PDOException $e) {
-  echo "<p>Error: {$e->getMessage()}</p>";
-            }
   }
 }
   catch (PDOException $e) {
