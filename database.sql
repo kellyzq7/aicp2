@@ -3,11 +3,18 @@ CREATE TABLE IF NOT EXISTS `user` (
   `isAdmin` boolean,
   `email` text,
   `password` text,
-  `character_name` varchar(16),
-  `class` varchar(16),
-  `combat` int,
-  `charisma` int,
-  `celerity` int,
-  `position` int,
   PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `character` (
+`id` int NOT NULL AUTO_INCREMENT,
+`character_name` varchar(16),
+`class` varchar(16),
+`combat` int,
+`charisma` int,
+`celerity` int,
+`position` int,
+`user_id` int,
+`activite` boolean,
+ PRIMARY KEY (`id`)
 );
