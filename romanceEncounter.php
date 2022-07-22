@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Romance Encounter</title>
+    <link rel="stylesheet" href="romanceEncounter.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="romanceEncounter.js"></script>
 </head>
 <body>
 
@@ -27,19 +30,25 @@ try{
 //add js classes to hide responses then show later
 // add js to click on options
 
-      if ($charisma<1){
-        echo "<p>I'm too young to die! Please spare me!</p>";
-        // echo "<p>James Jessie: Nice try. That's not gonna stop me.</p>";
-        // echo "<h1>You died!</h1>";
+$charisma = 2;
+
+          // question
+          echo "<p id='fail'>I'm too young to die! Please spare me!</p>";
+          // response
+          echo "<p class='death'>James Jessie: Nice try. That's not gonna stop me.</p>";
+          echo "<h1 class='death'>You died!</h1>";
+
+      if ($charisma > 0){
+          echo "<p id='okay'>I'm too beautiful to be killed! Don't ya agree?</p>";
+          echo "<p id='response1'>James Jessie: Cue epic response 1</p>";
       }
-      elseif ($charisma==1){
-        echo "<p>I'm too beautiful to be killed! Don't ya agree?</p>";
+      if ($charisma > 1){
+        echo "<p id='good'>If you killed me now, then how would I take you out for dinner tonight?</p>";
+        echo "<p id='response2'>James Jessie: Cue epic response 2</p>";
       }
-      elseif ($charisma==2){
-        echo '<p>If you killed me now, then how would I take you out for dinner tonight?</p>';
-      }
-      else{
-        echo "<p>idk what to write here</p>";
+      if ($charisma > 2){
+        echo "<p id='great'>idk what to write here</p>";
+        echo "<p id='response3'>James Jessie: Cue epic response 3</p>";
       }
 }
 

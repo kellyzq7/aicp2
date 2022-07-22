@@ -1,0 +1,60 @@
+@font-face {
+  font-family: Brotherland;
+  src: url(brotherland.ttf);
+}
+
+@font-face {
+  font-family: Gin;
+  src: url(carnival.otf);
+}
+
+body{
+  font-family: "Gin";
+  background-image: url("https://us.123rf.com/450wm/paseven/paseven2007/paseven200700103/152540662-western-landscape-at-orange-sunset-with-a-silhouette-of-a-cowboy-on-horseback-and-indian-wigwams-at-.jpg?ver=6");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
+
+h1{
+  font-family: "Brotherland";
+  font-size: 50px;
+  text-align: center;
+}
+
+input{
+  font-family: "Brotherland";
+  padding: 10px;
+  font-size: 25px;
+  width: 250px;
+  background-color: white;
+  border: 3px groove black;
+}
+
+.death{
+    display: none;
+}
+#fail{
+    display: block;
+    background-color: white;
+    padding: 1%;
+    width: 30%;
+}
+#okay{
+    display: block;
+}
+#good{
+    display: block;
+}
+#great{
+    display: block;
+}
+#response1{
+    display: none;
+}
+#response2{
+    display: none;
+}
+#response3{
+    display: none;
+}
