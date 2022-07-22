@@ -14,8 +14,8 @@
   session_start();
   require_once "sql_config.php";
 
-if (isset($_SESSION["email"])) {//check if user is logged in
   try {
+  if (isset($_POST["user_login"]) && isset($_POST["pass_login"])) {//checks that user came from login
   $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
   $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
   $sth_password->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
@@ -28,14 +28,17 @@ if (isset($_SESSION["email"])) {//check if user is logged in
   else { //if password doesn't match send to sign in
     header('Location: login.php');
   }
-  }
-  catch (PDOException $e) {
-  echo "<p>Error: {$e->getMessage()}</p>";
-            }
 }
+
 else {
     header('Location: login.php'); //if user isn't signed in send to login
 }
+
+}
+catch (PDOException $e) {
+echo "<p>Error: {$e->getMessage()}</p>";
+          }
+
 
 
   //Fetch Character location, and echo link redirecting to that page
