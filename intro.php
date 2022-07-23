@@ -29,12 +29,12 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user
   <head>
     <title>Introduction</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="intro.css">
+    <link rel="stylesheet" href="cssandjs/intro.css">
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
-    <script src = "intro.js"></script>
+    <script src = "cssandjs/intro.js"></script>
   </head>
   <body>
     <div id = "first">
