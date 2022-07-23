@@ -29,9 +29,6 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <script src="romanceEncounter.js"></script>
 </head>
 <body>
-
-</body>
-</html>
 <?php
 
 try{
@@ -48,28 +45,27 @@ try{
 // add js to click on options
 
 //example
-$charisma = 2;
 
-          // question
-          echo "<p id='fail'>I'm too young to die! Please spare me!</p>";
-          // response
-          echo "<p class='death'>James Jessie: Nice try. That's not gonna stop me.</p>";
-          echo "<h1 class='death'>You died!</h1>";
+// question
+echo "<p id='fail'>I'm too young to die! Please spare me!</p>";
+// response
+echo "<p class='death'>James Jessie: Nice try. That's not gonna stop me.</p>";
+echo "<h1 class='death'>You died!</h1>";
 
-      if ($charisma > 0){
-          echo "<p id='okay'>I'm too beautiful to be killed! Don't ya agree?</p>";
-          echo "<p id='response1'>James Jessie: Cue epic response 1</p>";
+if ($charisma > 0){
+    echo "<p id='okay'>I'm too beautiful to be killed! Don't ya agree?</p>";
+    echo "<p id='response1'>James Jessie: Cue epic response 1</p>";
       }
-      if ($charisma > 1){
-        echo "<p id='good'>If you killed me now, then how would I take you out for dinner tonight?</p>";
-        echo "<p id='response2'>James Jessie: Cue epic response 2</p>";
+if ($charisma > 1){
+    echo "<p id='good'>If you killed me now, then how would I take you out for dinner tonight?</p>";
+    echo "<p id='response2'>James Jessie: Cue epic response 2</p>";
       }
-      if ($charisma > 2){
-        echo "<p id='great'>idk what to write here</p>";
-        echo "<p id='response3'>James Jessie: Cue epic response 3</p>";
+if ($charisma > 2){
+    echo "<p id='great'>idk what to write here</p>";
+    echo "<p id='response3'>James Jessie: Cue epic response 3</p>";
       }
 
-      echo "<p>Click<a href = 'decision_towns1.php'>here</a> to move on</p>";
+    echo "<p>Click<a href = 'decision_towns1.php'>here</a> to move on</p>";
 }
 
 catch (PDOException $error){
@@ -78,3 +74,5 @@ catch (PDOException $error){
 }
 
  ?>
+</body>
+</html>
