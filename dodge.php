@@ -3,17 +3,18 @@ session_start();
 require_once "sql_config.php";
 
 //update their the data base with the user's character name and position
-if (isset($_SESSION["email"])) {//check if user is logged in
+if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE user SET `position`=1 WHERE email=:login_email");
-    $sth->bindValue(':login_email', $_SESSION["email"]);
+    $sth = $dbh->prepare("UPDATE player_character SET `position`=1 WHERE id=:player_id");
+    $sth->bindValue('player_id', $_SESSION["player_id"]);
     $sth->execute();
     }
   catch (PDOException $e) {
-    echo "<p>Error: {$e->getMessage()}</p>";          
+    echo "<p>Error: {$e->getMessage()}</p>";
   }
-}else {
+}
+else {
     header('Location: login.php'); //if user isn't signed in send to login
 }
 ?>
@@ -32,9 +33,8 @@ if (isset($_SESSION["email"])) {//check if user is logged in
 
 try {
 $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-$email = $_SESSION["email"];
-$sth = $dbh -> prepare("SELECT * FROM user WHERE email = :email");
-$sth -> bindvalue(":email", $email);
+$sth = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
+$sth->bindValue('player_id', $_SESSION["player_id"]);
 $sth -> execute();
 $user_row = $sth -> fetch();
 }
@@ -188,5 +188,3 @@ else {
 }
 ?>
 </html>
-
-
