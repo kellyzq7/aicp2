@@ -8,7 +8,6 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $sth = $dbh->prepare("UPDATE player_character SET `position`= 2 
       WHERE id =:player_id");
-    $sth->bindValue(':login_email', $_SESSION["email"]);
     $sth->bindValue(':player_id', $_SESSION["player_id"]);
     $sth->execute();
     }
