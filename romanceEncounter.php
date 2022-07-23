@@ -12,7 +12,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     $sth->execute();
     }
   catch (PDOException $e) {
-    echo "<p>Error: {$e->getMessage()}</p>";          
+    echo "<p>Error: {$e->getMessage()}</p>";
   }
 }else {
     header('Location: login.php'); //if user isn't signed in send to login
@@ -68,8 +68,8 @@ $charisma = 2;
         echo "<p id='great'>idk what to write here</p>";
         echo "<p id='response3'>James Jessie: Cue epic response 3</p>";
       }
-      
-      echo "<p>Click<a href = 'decision_towns1.php'>here</a> to move on</p>"
+
+      echo "<p>Click<a href = 'decision_towns1.php'>here</a> to move on</p>";
 }
 
 catch (PDOException $error){
