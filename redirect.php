@@ -92,41 +92,39 @@ echo "<p>Error: {$e->getMessage()}</p>";
     echo "<a class='redirect' href='dodge.php'> Return to Game </a>";
   }
   else if($player["position"] == 11) {
-    echo "<a class='redirect' href='dodge1.php'> Return to Game </a>";
-  }
-  else if($player["position"] == 12) {
     echo "<a class='redirect' href='town1.php'> Return to Game </a>";
   }
-  else if($player["position"] == 13) {
+  else if($player["position"] == 12) {
     echo "<a class='redirect' href='town2.php'> Return to Game </a>";
 }
-  else if($player["position"] == 14) {
+  else if($player["position"] == 13) {
     echo "<a class='redirect' href='npc1.php'> Return to Game </a>";
   }
-  else if($player["position"] == 15) {
+  else if($player["position"] == 14) {
     echo "<a class='redirect' href=npc3.php'> Return to Game </a>";
 }
-  else if($player["position"] == 16) {
+  else if($player["position"] == 15) {
     echo "<a class='redirect' href='npc2.php'> Return to Game </a>";
   }
-  else if($player["position"] == 17) {
+  else if($player["position"] == 16) {
     echo "<a class='redirect' href='npc4.php'> Return to Game </a>";
   }
-  else if($player["position"] == 18) {
+  else if($player["position"] == 17) {
     echo "<a class='redirect' href='finaldecision1.php'> Return to Game </a>";
   }
-  else if($player["position"] == 19) {
+  else if($player["position"] == 18) {
     echo "<a class='redirect' href='finaldecision2.php'> Return to Game </a>";
   }
-  else if($player["position"] == 20) {
+  else if($player["position"] == 19) {
     echo "<a class='redirect' href='love.php'> Return to Game </a>";
   }
-  else if($player["position"] == 21) {
+  else if($player["position"] == 20) {
     echo "<a class='redirect' href='boss.php'> Return to Game </a>";
   }
-  else if($player["position"] == 22) {
+  else if($player["position"] == 21) {
     echo "<a class='redirect' href='freedom.php'> Return to Game </a>";
   }
+  //add redirect link to death/fail_encounter page later
   else { //if invalid location reset location and send to login
       $sth_invalid = $dbh->prepare("UPDATE player_character SET `position` = 0 WHERE `user_id`=:log_user_id AND `isActive` = true");
       $sth_invalid->bindValue(':log_user_id', $user_id);
