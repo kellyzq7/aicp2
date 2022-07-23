@@ -2,12 +2,14 @@
 session_start();
 require_once "sql_config.php";
 
-//update their the data base with the user's character name and position
-if (isset($_SESSION["email"])) {//check if user is logged in
+//check that user is signed in
+if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE user SET `position`=3 WHERE email=:login_email");
+    $sth = $dbh->prepare("UPDATE player_character SET `position`= 3 
+      WHERE id =:player_id");
     $sth->bindValue(':login_email', $_SESSION["email"]);
+    $sth->bindValue(':player_id', $_SESSION["player_id"]);
     $sth->execute();
     }
   catch (PDOException $e) {
@@ -17,6 +19,7 @@ if (isset($_SESSION["email"])) {//check if user is logged in
     header('Location: login.php'); //if user isn't signed in send to login
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
