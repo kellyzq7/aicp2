@@ -2,7 +2,7 @@
 session_start();
 require_once "sql_config.php";
 
-//update their the data base with the character's position
+//update their the data base with the user's character name and position
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -33,10 +33,10 @@ else {
 
 try {
 $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-$sth = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
-$sth->bindValue('player_id', $_SESSION["player_id"]);
-$sth -> execute();
-$user_row = $sth -> fetch();
+$sth2 = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
+$sth2->bindValue('player_id', $_SESSION["player_id"]);
+$sth2 -> execute();
+$user_row = $sth2 -> fetch();
 }
 catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
