@@ -62,7 +62,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user
     </div>
 
     <div id = "second" class = "hide">
-      <h2>Great! There are 3 paths that you might find yourself on in this journey.</h2>
+      <h2>Great! There are three paths that you might find yourself on in this journey.</h2>
       <div id = "objectives">
         <h2 id = "romance">Romance: <br /> show off your charismatic flair to find true love </h2>
         <h2 id = "combat">Combat: <br /> fight your way through rivals to meet your match and prove your worth </h2>
