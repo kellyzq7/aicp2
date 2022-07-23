@@ -7,6 +7,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script></script>
 <style>
+.archived {
+  border: 4px solid black;
+  padding:6px;
+  margin:20px;
+}
 </style>
 </head>
 <body>
@@ -38,8 +43,6 @@ else {
 catch (PDOException $e) {
 echo "<p>Error: {$e->getMessage()}</p>";
           }
-
-
 
   //Fetch Character location, and echo link redirecting to that page
   try {
@@ -124,13 +127,41 @@ echo "<p>Error: {$e->getMessage()}</p>";
   else if($player["position"] == 21) {
     echo "<a class='redirect' href='freedom.php'> Return to Game </a>";
   }
-  //add redirect link to death/fail_encounter page later
+  else if($player["position"] == 22) {
+    echo "<a class='redirect' href='failed_encounter.php'>You died, return to game</a>";
+  }
   else { //if invalid location reset location and send to login
       $sth_invalid = $dbh->prepare("UPDATE player_character SET `position` = 0 WHERE `user_id`=:log_user_id AND `isActive` = true");
       $sth_invalid->bindValue(':log_user_id', $user_id);
       $sth_invalid ->execute();
       header('Location: login.php');
   }
+
+  //query for inactive characters associated with the user, and display their stats
+  $sth_archive= $dbh->prepare("SELECT * FROM player_character
+  JOIN user
+  ON user.id = player_character.user_id
+  WHERE
+  user.id =:log_user_id
+  AND
+  player_character.isActive = FALSE;");
+  $sth_archive->bindValue(':log_user_id', $user_id);
+  $sth_archive->execute();
+  $archived_characters = $sth_archive->fetchall(); //create array of arrays with all inactive characters belonging to user
+
+  foreach ($archived_characters as $character) { //loop through array of arrays and display stats of each archived character
+    echo '<div class="archive">
+    <h4>Previous Character:</h4>
+    <ul>
+    <li>Name:' . $character["character_name"] .'</li>
+    <li>Class:' . $character["class"] .'</li>
+    <li>Celerity Points:' . $character["celerity"] .'</li>
+    <li>Charisma Points:' . $character["charisma"] .'</li>
+    <li>Combat Points:' . $character["combat"] .'</li>
+    </ul>
+    </div>';
+  }
+
 }
   catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
