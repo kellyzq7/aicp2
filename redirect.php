@@ -44,7 +44,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   //Fetch Character location, and echo link redirecting to that page
   try {
   $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
-  $user_id = $login_row["id"] //store the user if of the user to find its associated character(s)
+  $user_id = $login_row["id"]; //store the user if of the user to find its associated character(s)
 
   //then get charcter where user_id = user id, and isActive = true
   $sth_location = $dbh->prepare("SELECT * FROM player_character
