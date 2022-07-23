@@ -1,2 +1,2 @@
 DROP TABLE `user`;
-DROP TABLE `character`;
+DROP TABLE `player_character`;
