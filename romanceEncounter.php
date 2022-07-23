@@ -24,9 +24,9 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
 <head>
     <meta charset="utf-8">
     <title>Romance Encounter</title>
-    <link rel="stylesheet" href="romanceEncounter.css">
+    <link rel="stylesheet" href="cssandjs/romanceEncounter.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="romanceEncounter.js"></script>
+    <script src="cssandjs/romanceEncounter.js"></script>
 </head>
 <body>
 <?php
