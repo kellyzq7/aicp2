@@ -23,7 +23,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <head>
     <title>Decision: Town 1 or Town 2</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="decision_towns.css">
+    <link rel="stylesheet" href="cssandjs/decision_towns.css">
   </head>
   <body>
     <h1>Decision: Town 1 or Town 2</h1>
