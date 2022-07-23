@@ -3,32 +3,26 @@ session_start();
 require_once "sql_config.php";
 
 //update their the data base with the user's character name and position
-if (isset($_SESSION["email"])) {//check if user is logged in
 try {
-  $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-  $sth = $dbh->prepare("UPDATE user SET `position`=1 WHERE email=:login_email");
-  $sth->bindValue(':login_email', $_SESSION["email"]);
-  $sth->execute();
+if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
+    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+    $sth = $dbh->prepare("UPDATE player_character SET `position`=1 WHERE id=:player_id");
+    $sth->bindValue('player_id', $_SESSION["player_id"]);
+    $sth->execute();
   }
-catch (PDOException $e) {
-  echo "<p>Error: {$e->getMessage()}</p>";
-            }
-  if(isset($_POST["char_name"])) { //check if came from character naming page
-    try {
-      $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-      $sth = $dbh->prepare("UPDATE user SET `character_name` =:char_name WHERE email=:login_email");
-      $sth->bindValue(':login_email', $_SESSION["email"]);
+  else {
+    header('Location: login.php'); //if user isn't signed in send to login
+  }
+  if(isset($_POST["char_name"])) { //check if came from character naming page, if so then update database with character name
+      $sth = $dbh->prepare("UPDATE player_character SET `character_name` =:char_name WHERE id=:player_id");
+      $sth->bindValue('player_id', $_SESSION["player_id"]);
       $sth->bindValue(':char_name', htmlspecialchars($_POST["char_name"]));
       $sth->execute();
       }
+    }
     catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
                 }
-  }
-          }
-else {
-  header('Location: login.php'); //if user isn't signed in send to login
-}
 ?>
 <!DOCTYPE html>
 <html lang="en-US">
@@ -47,18 +41,18 @@ else {
       <?php
       try { //fetch user row to get class
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        $sth = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");
-        $sth->bindValue(':login_email', $_SESSION["email"]);
+        $sth = $dbh->prepare("SELECT * FROM player_character WHERE  id=:player_id");
+        $sth->bindValue('player_id', $_SESSION["player_id"]);
         $sth->execute();
-        $user_row = $sth->fetch();
+        $player_row = $sth->fetch();
         }
       catch (PDOException $e) {
         echo "<p>Error: {$e->getMessage()}</p>";
                   }
 
-      echo "<h1> Welcome Cul Cavboj " . htmlspecialchars($_POST["char_name"]) . "</h1>";
+      echo "<h1> Welcome Cul Cavboj " . $player_row["character_name"] . "</h1>";
 
-      echo "<h2>We see that you have chosen the " . $user_row["class"] . " class. Excellet choice. You are about to encounter one of the most challenging journeys in the wild west. It will test your physical and emotional capability as a fellow cavboj. Are you ready?</h2>";
+      echo "<h2>We see that you have chosen the " . $player_row["class"] . " class. Excellet choice. You are about to encounter one of the most challenging journeys in the wild west. It will test your physical and emotional capability as a fellow cavboj. Are you ready?</h2>";
 
       ?>
       <br />
