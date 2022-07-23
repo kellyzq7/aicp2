@@ -20,9 +20,9 @@
   $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
   $sth_password->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
   $sth_password->execute();
-  $hash = $sth_password->fetch();
+  $login_row = $sth_password->fetch();
 
-  if (password_verify(htmlspecialchars($_POST["pass_login"]), $hash['password'])) { //verify password agaisnt hash
+  if (password_verify(htmlspecialchars($_POST["pass_login"]), $login_row['password'])) { //verify password agaisnt hash
       echo "<h1> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
    }
   else { //if password doesn't match send to sign in
@@ -43,12 +43,22 @@ echo "<p>Error: {$e->getMessage()}</p>";
 
   //Fetch Character location, and echo link redirecting to that page
   try {
-  $_SESSION["email"] = htmlspecialchars($_POST["user_login"]);
-  $sth_location = $dbh->prepare("SELECT * FROM player_character WHERE email=:login_email");
-  $sth_location->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
-  $sth_location->execute();
-  $player = $sth_location->fetch();
+  $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
+  $user_id = $login_row["id"] //store the user if of the user to find its associated character(s)
 
+  //then get charcter where user_id = user id, and isActive = true
+  $sth_location = $dbh->prepare("SELECT * FROM player_character
+  JOIN user
+  ON user.id = player_character.user_id
+  WHERE
+  user.id =:log_user_id
+  AND
+  player_character.isActive = true;");
+  $sth_location->bindValue(':log_user_id', $user_id);
+  $sth_location->execute();
+  $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character.
+
+  //based on the player's position echo a link to take them back to where they left off
   if($player["position"] == 0) {
     echo "<a class='redirect' href='class_select.php'> Create New Character </a>";
   }
@@ -119,10 +129,9 @@ echo "<p>Error: {$e->getMessage()}</p>";
     echo "<a class='redirect' href='freedom.php'> Return to Game </a>";
   }
   else { //if invalid location reset location and send to login
-      $sth_location = $dbh->prepare("UPDATE player_character SET position = 0 WHERE email=:login_email");
-      $sth_location->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
-      $sth_location->execute();
-      $user = $sth_location->fetch();
+      $sth_invalid = $dbh->prepare("UPDATE player_character SET `position` = 0 WHERE `user_id`=:log_user_id AND `isActive` = true");
+      $sth_invalid->bindValue(':log_user_id', $user_id);
+      $sth_invalid ->execute();
       header('Location: login.php');
   }
 }
