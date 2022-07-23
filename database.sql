@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`)
 );
 
-CREATE TABLE IF NOT EXISTS `character` (
+CREATE TABLE IF NOT EXISTS `player_character` (
 `id` int NOT NULL AUTO_INCREMENT,
 `character_name` varchar(16),
 `class` varchar(16),
