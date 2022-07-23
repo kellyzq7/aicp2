@@ -24,7 +24,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <head>
     <title>Decision: Romance VS Combat</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="decision_romancevcombat.css">
+    <link rel="stylesheet" href="cssandjs/decision_romancevcombat.css">
   </head>
   <body>
     <h1>Decision: Romance or Combat</h1>
