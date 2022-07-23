@@ -23,7 +23,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <head>
     <title>Decision: FINAL PATH</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="finaldecision1.css">
+    <link rel="stylesheet" href="cssandjs/finaldecision1.css">
   </head>
   <body>
     <h1>Decision: Love Story or Boss Face Off</h1>
