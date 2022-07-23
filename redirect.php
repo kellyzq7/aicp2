@@ -45,7 +45,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   try {
   $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
   $user_id = $login_row["id"]; //store the user if of the user to find its associated character(s)
-
+  $_SESSION["player_id"] = $user_id; //store the player charcter id in session for easy access to update its position on later pages.
   //then get charcter where user_id = user id, and isActive = true
   $sth_location = $dbh->prepare("SELECT * FROM player_character
   JOIN user
@@ -53,7 +53,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   WHERE
   user.id =:log_user_id
   AND
-  player_character.isActive = true;");
+  player_character.isActive = TRUE;");
   $sth_location->bindValue(':log_user_id', $user_id);
   $sth_location->execute();
   $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character.
