@@ -83,10 +83,8 @@ else {
       <h2>Wait! What's that thing far yonder? It looks like it's getting closer...
       Are those bullets??</h2>
       <div class = "center">
-        <a href = "../../../bfeinberg/projects/P2_RPG/combat.php"><input type = "button" id = "squint" name = "squint" value = "Take a closer look" /></a>
+        <a href = "combat.php"><input type = "button" id = "squint" name = "squint" value = "Take a closer look" /></a>
       </div>
     </div>
   </body>
 <html>
-
-
