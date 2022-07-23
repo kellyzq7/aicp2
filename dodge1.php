@@ -2,7 +2,7 @@
 session_start();
 require_once "sql_config.php";
 
-//update their the data base with the user's character name and position
+//update their the data base with the character's position
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
