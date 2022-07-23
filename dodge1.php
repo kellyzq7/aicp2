@@ -3,17 +3,18 @@ session_start();
 require_once "sql_config.php";
 
 //update their the data base with the user's character name and position
-if (isset($_SESSION["email"])) {//check if user is logged in
+if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE user SET `position`=1 WHERE email=:login_email");
-    $sth->bindValue(':login_email', $_SESSION["email"]);
+    $sth = $dbh->prepare("UPDATE player_character SET `position`=9 WHERE id=:player_id");
+    $sth->bindValue('player_id', $_SESSION["player_id"]);
     $sth->execute();
     }
   catch (PDOException $e) {
-    echo "<p>Error: {$e->getMessage()}</p>";          
+    echo "<p>Error: {$e->getMessage()}</p>";
   }
-}else {
+}
+else {
     header('Location: login.php'); //if user isn't signed in send to login
 }
 ?>
@@ -32,9 +33,8 @@ if (isset($_SESSION["email"])) {//check if user is logged in
 
 try {
 $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-$email = $_SESSION["email"];
-$sth = $dbh -> prepare("SELECT * FROM user WHERE email = :email");
-$sth -> bindvalue(":email", $email);
+$sth = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
+$sth->bindValue('player_id', $_SESSION["player_id"]);
 $sth -> execute();
 $user_row = $sth -> fetch();
 }
@@ -86,7 +86,7 @@ if($user_row["class"] = "charger") {
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
 
-  <a href="town2.php"> Go to Town 2 </a>
+  <a href="town1.php"> Onwards to town 1 </a>
   </body>';
 }
 else if ($user_row["celerity"] >= 2) {
@@ -134,7 +134,8 @@ else if ($user_row["celerity"] >= 2) {
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
 
-    <a href="town2.php"> Go to Town 2 </a>
+  <a href="town1.php"> Onwards to town 1 </a>
+
   </body>';
 }
 else {
@@ -182,9 +183,8 @@ else {
   <img class="projectile_bottom_slow bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_bottom_slow bullet staggered" src="img/bullet.png" alt="bullet" />
 
-  <a href="town2.php"> Go to Town 2 </a>
+  <a href="town1.php"> Go to Town 1 </a>
   </body>';
 }
 ?>
 </html>
-
