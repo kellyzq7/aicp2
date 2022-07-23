@@ -15,6 +15,6 @@ CREATE TABLE IF NOT EXISTS `character` (
 `celerity` int,
 `position` int,
 `user_id` int,
-`isActivite` boolean,
+`isActive` boolean,
  PRIMARY KEY (`id`)
 );
