@@ -3,11 +3,11 @@ session_start();
 require_once "sql_config.php";
 
 //update their the data base with the user's character stats and class
-if (isset($_SESSION["email"])) {//check if user is logged in
+if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in and character is created + selected
 try {
   $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-  $sth = $dbh->prepare("UPDATE user SET `class` = 'crasher', `combat`=2, `charisma`= 0, `celerity`= 0 WHERE email=:login_email");
-  $sth->bindValue(':login_email', $_SESSION["email"]);
+  $sth = $dbh->prepare("UPDATE player_character SET `class` = 'crasher', `combat`=2, `charisma`= 0, `celerity`= 0 WHERE id=:player_id"); //updates character with class + stats
+  $sth->bindValue('player_id', $_SESSION["player_id"]);
   $sth->execute();
   }
 catch (PDOException $e) {
