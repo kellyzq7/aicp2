@@ -2,21 +2,21 @@
 session_start();
 require_once "sql_config.php";
 
-//update their the data base with the user's character name and position
-if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
-  try {
-    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE player_character SET `position`=10 WHERE id=:player_id");
-    $sth->bindValue('player_id', $_SESSION["player_id"]);
-    $sth->execute();
-    }
-  catch (PDOException $e) {
-    echo "<p>Error: {$e->getMessage()}</p>";
-  }
-}
-else {
-    header('Location: login.php'); //if user isn't signed in send to login
-}
+// //update their the data base with the user's character name and position
+// if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
+//   try {
+//     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+//     $sth = $dbh->prepare("UPDATE player_character SET `position`=10 WHERE id=:player_id");
+//     $sth->bindValue('player_id', $_SESSION["player_id"]);
+//     $sth->execute();
+//     }
+//   catch (PDOException $e) {
+//     echo "<p>Error: {$e->getMessage()}</p>";
+//   }
+// }
+// else {
+//     header('Location: login.php'); //if user isn't signed in send to login
+// }
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,9 +24,9 @@ else {
 <title>Cul Cavboj</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<link href="cssandjs/dodge.css" rel="stylesheet" type="text/css" />
+<link href="dodge.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="cssandjs/dodge.js"></script>
+<script src="dodge.js"></script>
 </head>
 
 <?php
@@ -50,6 +50,10 @@ if($user_row["class"] = "charger") {
     <source src="audio/main_theme.mp3" type="audio/mp3">
   </audio>
 
+  <div id="flex">
+  <div id="grid">
+
+  <div id="left">
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
@@ -58,7 +62,9 @@ if($user_row["class"] = "charger") {
   <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  </div>
 
+  <div id="top">
   <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
   <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
   <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
@@ -67,7 +73,9 @@ if($user_row["class"] = "charger") {
   <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
   <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
   <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  </div>
 
+  <div id="right">
   <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
   <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
   <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
@@ -76,7 +84,9 @@ if($user_row["class"] = "charger") {
   <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
   <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
   <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  </div>
 
+  <div id="bottom">
   <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
@@ -85,8 +95,11 @@ if($user_row["class"] = "charger") {
   <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <div>
 
-  <a href="town1.php"> Onwards to town 1 </a>
+  </div>
+  <a href="town1.php" class="hidden onward"> Go to Town 1 </a>
+  </div>
   </body>';
 }
 else if ($user_row["celerity"] >= 2) {
@@ -97,7 +110,8 @@ else if ($user_row["celerity"] >= 2) {
   <audio autoplay>
     <source src="audio/main_theme.mp3" type="audio/mp3">
   </audio>
-
+  <div id="flex">
+  <div id="grid">
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
@@ -134,8 +148,9 @@ else if ($user_row["celerity"] >= 2) {
   <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
   <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
 
-  <a href="town1.php"> Onwards to town 1 </a>
-
+  </div>
+  <a href="town1.php" class="hidden onward"> Go to Town 1 </a>
+  </div>
   </body>';
 }
 else {
@@ -147,6 +162,8 @@ else {
     <source src="audio/main_theme.mp3" type="audio/mp3">
   </audio>
 
+  <div id="flex">
+  <div id="grid">
   <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
@@ -183,7 +200,9 @@ else {
   <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
   <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
 
-  <a href="town1.php"> Go to Town 1 </a>
+  </div>
+  <a href="town1.php" class="hidden onward"> Go to Town 1 </a>
+  </div>
   </body>';
 }
 ?>
