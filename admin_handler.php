@@ -39,9 +39,9 @@ require_once "sql_config.php";
     <option value='crasher'>Crasher</option>
     </select>";
     echo "<br />";
-    echo "<p>Increase celerity by: <input type = 'number' name='increaseCelerity' min = '1' max = '3'></p>";
-    echo "<p>Increase charisma by: <input type = 'number' name='increaseCharisma' min = '1' max = '3'></p>";
-    echo "<p>Increase combat by: <input type = 'number' name='increaseCombat' min = '1' max = '3'></p>";
+    echo "<p>Alter celerity by: <input type = 'number' name='increaseCelerity' min = '-3' max = '3'></p>";
+    echo "<p>Alter charisma by: <input type = 'number' name='increaseCharisma' min = '-3' max = '3'></p>";
+    echo "<p>Alter combat by: <input type = 'number' name='increaseCombat' min = '-3' max = '3'></p>";
 
   
     echo "</form>";
