@@ -59,32 +59,32 @@ if($user_row["class"] = "charger") {
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
 
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
 
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
 
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
 
   <a href="town1.php"> Onwards to town 1 </a>
   </body>';
@@ -107,32 +107,32 @@ else if ($user_row["celerity"] >= 2) {
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
 
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
 
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
 
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
 
   <a href="town1.php"> Onwards to town 1 </a>
 
@@ -156,32 +156,32 @@ else {
   <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
 
-  <img class="projectile_top_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
 
-  <img class="projectile_right_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
 
-  <img class="projectile_bottom_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
 
   <a href="town1.php"> Go to Town 1 </a>
   </body>';
