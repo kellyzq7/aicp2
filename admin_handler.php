@@ -34,9 +34,9 @@ require_once "sql_config.php";
     echo "<p>New name: <input type = 'text' name='renameTo' minlength = '1' maxlength = '16' placeholder = 'Enter New Name...' required></p>";
     echo "<label for= 'class'>Change class to:</label>
     <select name='class'>
-    <option value='charger' required>Charger</option>
-    <option value='charmer' required>Charmer</option>
-    <option value='crasher' required>Crasher</option>
+    <option value='Charger' required>Charger</option>
+    <option value='Charmer' required>Charmer</option>
+    <option value='Crasher' required>Crasher</option>
     </select>";
     echo "<br />";
     echo "<p>Alter HP points: -3 to 3, 0 for no change</p>";
