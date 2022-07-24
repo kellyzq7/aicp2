@@ -18,8 +18,8 @@ if (isset($_POST["email"]) && isset($_POST["password"]) == true) { //if coming f
   $sth_id->bindValue(':reg_email', htmlspecialchars($_POST["email"]));
   $sth_id->execute();
   $reg_id = $sth_id->fetch();
-  $sth_char = $dbh->prepare("INSERT INTO player_character (`user_id`, `position`)
-  VALUES (:reg_id, 0);"); //create character associated with account, and set defualt position to 0.
+  $sth_char = $dbh->prepare("INSERT INTO player_character (`user_id`, `position`, `isActive`)
+  VALUES (:reg_id, 0, true);"); //create character associated with account, and set defualt position to 0.
   $sth_char->bindValue(':reg_id', $reg_id);
   $sth_char->execute();
   $new_account = true;
