@@ -59,11 +59,14 @@ echo "<p>Error: {$e->getMessage()}</p>";
   $sth_location->bindValue(':log_user_id', $user_id);
   $sth_location->execute();
   $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
+  $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
+
+
   //if user is admin, display link to admin page
   if($login_row["isAdmin"] == 1){
     echo "<a class='redirect' href='admin_page.php'> Admin Only Page </a><br /><br />";
   }
-  $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
+
   //based on the player's position echo a link to take them back to where they left off
   if($player["position"] == 0) {
     echo "<a class='redirect' href='class_select.php'> Create New Character </a><br /><br />";
