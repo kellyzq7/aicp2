@@ -1,5 +1,37 @@
 <?php
 session_start();
+require_once "sql_config.php";
+
+if (isset($_SESSION["email"])) { // checks player is logged in
+  if ($_SESSION["characer_inactive"] = true) { //if player came from failed encounter and needs a new character, create new character
+    //fetch user id of logged in user
+    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+    $sth = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find row of user where email matches session email
+    $sth->bindValue(':login_email', $_SESSION["email"]);
+    $sth->execute();
+    $user_row = $sth->fetch();
+    $user_id = $user_row["id"]; //store user's id
+
+    //create character associated with user id
+    $sth_create = $dbh->prepare("INSERT INTO player_character (`user_id`, `position`, `isActive`)
+    VALUES (:log_user_id, 0, true);"); //create character associated with account, and set defualt position to 0, and set to active.
+    $sth_create->bindValue(':log_user_id', $user_id);
+    $sth_create->execute();
+
+    //get id of new active character and store it in session
+    $sth_location = $dbh->prepare("SELECT * FROM player_character
+    JOIN user
+    ON user.id = player_character.user_id
+    WHERE
+    user.id =:log_user_id
+    AND
+    player_character.isActive = TRUE;");
+    $sth_location->bindValue(':log_user_id', $user_id);
+    $sth_location->execute();
+    $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
+    $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
+  }
+}
 ?>
 <!doctype html>
 <html lang="en">
