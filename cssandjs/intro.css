@@ -1,6 +1,6 @@
 @font-face {
   font-family: Brotherland;
-  src: url(fonts/Brotherlands.ttf);
+  src: url("../fonts/Brotherlands.ttf");
 }
 
 @font-face {
@@ -10,7 +10,7 @@
 
 body{
   font-family: "Gin";
-  background-image: url("images/sunrise.jpeg");
+  background-image: url("../img/sunrise.jpeg");
   background-size: cover;
   color: black;
 }

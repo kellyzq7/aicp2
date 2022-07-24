@@ -1,11 +1,11 @@
 @font-face {
   font-family: Brotherland;
-  src: url(brotherland.ttf);
+  src: url("../fonts/Brotherlands.ttf");
 }
 
 @font-face {
   font-family: Gin;
-  src: url(carnival.otf);
+  src: url("../fonts/gin.otf");
 }
 
 body{

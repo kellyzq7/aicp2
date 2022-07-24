@@ -1,6 +1,6 @@
 @font-face {
   font-family: brotherland;
-  src: url(fonts/Brotherlands.ttf);
+  src: url("../fonts/Brotherlands.ttf");
 }
 
 body {
