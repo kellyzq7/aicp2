@@ -38,5 +38,17 @@ else {
 
 <input type="submit" value="Create Character" />
 </form>
+<?php
+try {
+  $sth2 = $dbh->prepare("SELECT * FROM player_character JOIN user
+  ON user.id = player_character.user_id WHERE user.email =:email AND player_character.isActive = 1");
+  $sth2->bindValue(':email', $_SESSION["email"]);
+  $sth2->execute();
+  $player = $sth2->fetch(); 
+  $_SESSION["player_id"] = $player["id"];
+}catch(PDOException $e) {
+  echo "<p>Error: {$e->getMessage()}</p>";
+}
+?>
 </body>
 </html>

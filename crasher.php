@@ -3,17 +3,17 @@ session_start();
 require_once "sql_config.php";
 
 //update their the data base with the user's character stats and class
-if (isset($_SESSION["email"])) {//check if user is logged in
-try {
-  $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-  $sth = $dbh->prepare("UPDATE player_character SET `class` = 'crasher', `combat`=2, `charisma`= 0, `celerity`= 0 WHERE id=:player_id"); //updates character with class + stats
-  $sth->bindValue('player_id', $_SESSION["player_id"]);
-  $sth->execute();
+if (isset($_SESSION["email"])) {//check if user is logged in and character is created + selected
+  try {
+    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+    $sth = $dbh->prepare("UPDATE player_character SET `class` = 'crasher', `combat`=2, `charisma`= 0, `celerity`= 0 WHERE id=:player_id"); //updates character with class + stats
+    $sth->bindValue('player_id', $_SESSION["player_id"]);
+    $sth->execute();
   }
-catch (PDOException $e) {
-  echo "<p>Error: {$e->getMessage()}</p>";
-            }
-          }
+  catch (PDOException $e) {
+    echo "<p>Error: {$e->getMessage()}</p>";
+  }
+}
 else {
   header('Location: login.php'); //if user isn't signed in send to login
 }
@@ -38,5 +38,17 @@ else {
 
 <input type="submit" value="Create Character" />
 </form>
+<?php
+try {
+  $sth2 = $dbh->prepare("SELECT * FROM player_character JOIN user
+  ON user.id = player_character.user_id WHERE user.email =:email AND player_character.isActive = 1");
+  $sth2->bindValue(':email', $_SESSION["email"]);
+  $sth2->execute();
+  $player = $sth2->fetch(); 
+  $_SESSION["player_id"] = $player["id"];
+}catch(PDOException $e) {
+  echo "<p>Error: {$e->getMessage()}</p>";
+}
+?>
 </body>
 </html>
