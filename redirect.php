@@ -58,7 +58,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   player_character.isActive = TRUE;");
   $sth_location->bindValue(':log_user_id', $user_id);
   $sth_location->execute();
-  $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character 
+  $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
   //if user is admin, display link to admin page
   if($login_row["isAdmin"] == 1){
     echo "<a class='redirect' href='admin_page.php'> Admin Only Page </a><br /><br />";
@@ -72,7 +72,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
     echo "<a class='redirect' href='intro.php'> Return to Game </a><br /><br />";
   }
   else if($player["position"] == 2) {
-    echo "<a class='redirect' href='combat.php'> Return to Game </a><br /><br />";
+    echo "<a class='redirect' href='dodge.php'> Return to Game </a><br /><br />";
 }
   else if($player["position"] == 3) {
     echo "<a class='redirect' href='decision_romancevcombat.php'> Return to Game catch </a><br /><br />";
@@ -93,10 +93,10 @@ echo "<p>Error: {$e->getMessage()}</p>";
     echo "<a class='redirect' href='yay.php'> Return to Game </a><br /><br />";
   }
   else if($player["position"] == 9) {
-    echo "<a class='redirect' href='dodge1.php'> Return to Game </a><br /><br />";
+    echo "<a class='redirect' href='combat.php'> Return to Game </a><br /><br />";
   }
   else if($player["position"] == 10) {
-    echo "<a class='redirect' href='dodge.php'> Return to Game </a><br /><br />";
+    echo "<a class='redirect' href='dodge1.php'> Return to Game </a><br /><br />";
   }
   else if($player["position"] == 11) {
     echo "<a class='redirect' href='town1.php'> Return to Game </a><br /><br />";
