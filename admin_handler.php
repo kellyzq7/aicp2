@@ -40,10 +40,10 @@ require_once "sql_config.php";
     </select>";
     echo "<br />";
     echo "<p>Alter HP points: -3 to 3, 0 for no change</p>";
-    echo "<p>Alter celerity by: <input type = 'number' name='increaseCelerity' min = '-3' max = '3' required></p>";
-    echo "<p>Alter charisma by: <input type = 'number' name='increaseCharisma' min = '-3' max = '3' required></p>";
-    echo "<p>Alter combat by: <input type = 'number' name='increaseCombat' min = '-3' max = '3' required></p>";
-    echo "<input type = 'submit' name = 'submitEdits' required />";
+    echo "<p>Alter celerity by: <input type = 'number' name='alterCelerity' min = '-3' max = '3' required></p>";
+    echo "<p>Alter charisma by: <input type = 'number' name='alterCharisma' min = '-3' max = '3' required></p>";
+    echo "<p>Alter combat by: <input type = 'number' name='alterCombat' min = '-3' max = '3' required></p>";
+    echo "<input type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
   
     echo "</form>";
 
