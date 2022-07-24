@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "sql_config.php";
+require_once "kelly_credentials.php";
 
 //account register
 $new_account = false;
