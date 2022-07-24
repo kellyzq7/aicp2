@@ -17,7 +17,7 @@
 <body>
   <?php
   session_start();
-  require_once "kelly_credentials.php";
+  require_once "sql_config.php";
 
   try {
   if (isset($_POST["user_login"]) && isset($_POST["pass_login"])) {//checks that user came from login
