@@ -59,7 +59,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   $sth_location->bindValue(':log_user_id', $user_id);
   $sth_location->execute();
   $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character 
-  //if player is admin, display link to admin page
+  //if user is admin, display link to admin page
   if($login_row["isAdmin"] == 1){
     echo "<a class='redirect' href='admin_page.php'> Admin Only Page </a><br /><br />";
   }
