@@ -35,6 +35,19 @@ require_once "sql_config.php";
     $alterCharisma = htmlspecialchars($_POST["alterCharisma"]);
     $alterCombat = htmlspecialchars($_POST["alterCombat"]);
     
+    //backend validating inputs
+    if(isset($newName) && strlen($newName) >= 1 && strlen($newName) <= 16
+    && isset($newClass) && in_array($newClass, $classList)
+    && isset($alterCelerity) && filter_var($alterCelerity, FILTER_VALIDATE_INT) && $alterCelerity >= -3 && $alterCelerity <= 3
+    && isset($alterCharisma) && filter_var($alterCharisma, FILTER_VALIDATE_INT) && $alterCharisma >= -3 && $alterCharisma <= 3
+    && isset($alterCombat) && filter_var($alterCombat, FILTER_VALIDATE_INT) && $alterCombat >= -3 && $alterCombat <= 3){
+      
+      
+      
+    }else{
+      echo "<p>Error: you filled out the form incorrect</p>";
+    }
+    
     
 
   }catch (PDOException $e) {
