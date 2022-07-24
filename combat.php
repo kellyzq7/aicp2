@@ -6,13 +6,13 @@ require_once "sql_config.php";
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE player_character SET `position`= 2 
-      WHERE id =:player_id");
+    $sth = $dbh->prepare("UPDATE player_character SET `position`= 9
+    WHERE id =:player_id");
     $sth->bindValue(':player_id', $_SESSION["player_id"]);
     $sth->execute();
     }
   catch (PDOException $e) {
-    echo "<p>Error: {$e->getMessage()}</p>";          
+    echo "<p>Error: {$e->getMessage()}</p>";
   }
 }else {
     header('Location: login.php'); //if user isn't signed in send to login
@@ -35,7 +35,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     try {
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
-        $sth2 = $dbh -> prepare("SELECT combat FROM player_character 
+        $sth2 = $dbh -> prepare("SELECT combat FROM player_character
           WHERE id = :player_id");
         $sth2 -> bindvalue(":player_id", $_SESSION["player_id"]);
         $sth2 -> execute();
@@ -44,12 +44,12 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
         if($combatPoints == 2){
           echo "<input id = 'big' type = 'button' value = 'FIGHT!' />";
           echo "<h2 class = 'hide'>Congrats! You won the combat! As a reward, you get 2 combat points!</h2>";
-          echo "<a class = 'hide' href = 'decision_romancevcombat.php'>Onward!</a>";
+          echo "<a class = 'hide' href = 'town2.php'>Onward!</a>";
 
         } else {
           echo "<input id = 'small' type = 'button' value = 'FIGHT!' />";
           echo "<h2 class = 'hide'>Congrats! You won the combat! As a reward, you get 2 combat points!</h2>";
-          echo "<a class = 'hide' href = 'decision_romancevcombat.php'>Onward!</a>";
+          echo "<a class = 'hide' href = 'town2'.php'>Onward!</a>";
         }
 
 
@@ -61,4 +61,3 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     ?>
   </body>
 <html>
-
