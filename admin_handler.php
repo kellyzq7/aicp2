@@ -3,9 +3,9 @@ session_start();
 require_once "sql_config.php";
 
 //redirect to login.php if not logged in
-// if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if user is logged in
-//   header('Location: login.php'); //if user isn't signed in send to login
-// }
+if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if user is logged in
+  header('Location: login.php'); //if user isn't signed in send to login
+}
 
 ?>
 <!doctype html>
@@ -25,13 +25,6 @@ require_once "sql_config.php";
     
     //character
     $characterID = htmlspecialchars($_POST["characters"]);
-    // if(isset($characterID)){
-    //   $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    //   $sth = $dbh -> prepare("SELECT * FROM player_character WHERE id =:character_id");
-    //   $sth -> bindValue(":character_id", $characterID);
-    //   $sth -> execute();
-    //   $chosenCharacter = $sth -> fetch();
-    // }
     
     //new name
     $newName = htmlspecialchars($_POST["renameTo"]);
@@ -58,6 +51,7 @@ require_once "sql_config.php";
       $sth2 -> bindValue(":new_name", $newName);
       $sth2 -> bindValue(":character_id", $characterID);
       $sth2 -> execute();
+      echo "<p>New name set successfully</p>";
       
       //set new class
       $sth3 = $dbh -> prepare("UPDATE player_character SET class = :new_class
@@ -65,6 +59,7 @@ require_once "sql_config.php";
       $sth3 -> bindValue(":new_class", $newClass);
       $sth3 -> bindValue(":character_id", $characterID);
       $sth3 -> execute();
+      echo "<p>New class set successfully</p>";
       
       //select chosen character to alter celerity, charisma, and combat
       $sth4 = $dbh -> prepare("SELECT * FROM player_character WHERE id = :character_id");
@@ -83,6 +78,7 @@ require_once "sql_config.php";
       $sth5 -> bindValue(":new_celerity", $newCelerity);
       $sth5 -> bindValue(":character_id", $characterID);
       $sth5 -> execute();
+      echo "<p>Updated celerity points successfully</p>";
       
       //update charisma
       $sth5 = $dbh -> prepare("UPDATE player_character SET charisma = :new_charisma
@@ -90,6 +86,7 @@ require_once "sql_config.php";
       $sth5 -> bindValue(":new_charisma", $newCharisma);
       $sth5 -> bindValue(":character_id", $characterID);
       $sth5 -> execute();
+      echo "<p>Updated charisma points successfully</p>";
       
       //update combat
       $sth5 = $dbh -> prepare("UPDATE player_character SET combat = :new_combat
@@ -97,6 +94,9 @@ require_once "sql_config.php";
       $sth5 -> bindValue(":new_combat", $newCombat);
       $sth5 -> bindValue(":character_id", $characterID);
       $sth5 -> execute();
+      echo "<p>Updated combat points successfully</p>";
+      
+      echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
       
     }else{
       echo "<p>Error: you filled out the form incorrectly! Go <a href = 'admin_handler.php'>back</a> and redo</p>";
