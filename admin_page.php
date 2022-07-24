@@ -39,12 +39,12 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     echo "<p>New name: <input type = 'text' name='renameTo' minlength = '1' maxlength = '16' placeholder = 'Enter New Name...' required></p>";
     echo "<label for= 'class'>Change class to:</label>
     <select name='class'>
-    <option value='Charger' required>Charger</option>
-    <option value='Charmer' required>Charmer</option>
-    <option value='Crasher' required>Crasher</option>
+    <option value='charger' required>Charger</option>
+    <option value='charmer' required>Charmer</option>
+    <option value='crasher' required>Crasher</option>
     </select>";
     echo "<br />";
-    echo "<p>Alter HP points: -3 to 3, 0 for no change</p>";
+    echo "<p>Alter points: -3 to 3, 0 for no change</p>";
     echo "<p>Alter celerity by: <input type = 'number' name='alterCelerity' min = '-3' max = '3' required></p>";
     echo "<p>Alter charisma by: <input type = 'number' name='alterCharisma' min = '-3' max = '3' required></p>";
     echo "<p>Alter combat by: <input type = 'number' name='alterCombat' min = '-3' max = '3' required></p>";
