@@ -3,9 +3,9 @@ session_start();
 require_once "sql_config.php";
 
 //redirect to login.php if not logged in
-// if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if user is logged in
-//   header('Location: login.php'); //if user isn't signed in send to login
-// }
+if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if user is logged in
+  header('Location: login.php'); //if user isn't signed in send to login
+}
 
 ?>
 <!doctype html>
@@ -27,7 +27,7 @@ require_once "sql_config.php";
     $sth -> execute();
     $allCharacters = $sth -> fetchAll();
     echo "<p>Choose a character to edit: </p>";
-    echo "<form action = '.php' method = 'post'>";
+    echo "<form action = 'admin_handler.php' method = 'post'>";
     echo "<select name = 'characters'>";
     foreach($allCharacters as $character){
         echo "<option name = '{$character['character_name']}' value = '{$character['id']}' required>
