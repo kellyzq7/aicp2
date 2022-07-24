@@ -31,13 +31,17 @@ require_once "sql_config.php";
     
     echo "<p>EDIT STATS</p>";
     echo "<form action = 'admin_edits_handler.php method = 'post'>";
-    echo "<p>New name: <input type = 'text' name='renameTo' minlength = '1' maxlength = '16' placeholder = 'Enter New Name...' ></text><br /><br />";
+    echo "<p>New name: <input type = 'text' name='renameTo' minlength = '1' maxlength = '16' placeholder = 'Enter New Name...' ></p>";
     echo "<label for= 'class'>Change class to:</label>
     <select name='class'>
     <option value='charger'>Charger</option>
     <option value='charmer'>Charmer</option>
     <option value='crasher'>Crasher</option>
     </select>";
+    echo "<br />";
+    echo "<p>Increase celerity by: <input type = 'number' name='increaseCelerity' min = '1' max = '3'></p>";
+    echo "<p>Increase charisma by: <input type = 'number' name='increaseCharisma' min = '1' max = '3'></p>";
+    echo "<p>Increase combat by: <input type = 'number' name='increaseCombat' min = '1' max = '3'></p>";
 
   
     echo "</form>";
