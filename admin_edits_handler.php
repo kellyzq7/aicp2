@@ -23,6 +23,16 @@ require_once "sql_config.php";
   
   try {
     
+    //character
+    $characterID = htmlspecialchars($_POST["characters"]);
+    if(isset($characterID)){
+      $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+      $sth = $dbh -> prepare("SELECT * FROM player_character WHERE id =:character_id");
+      $sth -> bindValue(":character_id", $characterID);
+      $sth -> execute();
+      $chosenCharacter = $sth -> fetch();
+    }
+    
     //new name
     $newName = htmlspecialchars($_POST["renameTo"]);
     
@@ -45,7 +55,7 @@ require_once "sql_config.php";
       
       
     }else{
-      echo "<p>Error: you filled out the form incorrect</p>";
+      echo "<p>Error: you filled out the form incorrectly! Go <a href = 'admin_handler.php'>back</a> and redo</p>";
     }
     
     
