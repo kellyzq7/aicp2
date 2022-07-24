@@ -6,7 +6,7 @@ require_once "sql_config.php";
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE player_character SET `position`=9 WHERE id=:player_id");
+    $sth = $dbh->prepare("UPDATE player_character SET `position`=10 WHERE id=:player_id");
     $sth->bindValue('player_id', $_SESSION["player_id"]);
     $sth->execute();
     }
@@ -24,13 +24,12 @@ else {
 <title>Cul Cavboj</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<link href="dodge.css" rel="stylesheet" type="text/css" />
+<link href="cssandjs/dodge.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="dodge.js"></script>
+<script src="cssandjs/dodge.js"></script>
 </head>
 
 <?php
-
 try {
 $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 $sth2 = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
@@ -41,7 +40,7 @@ $user_row = $sth2 -> fetch();
 catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
             }
-if($user_row["class"] = "charger") {
+if($user_row["class"] = "charger" && $user_row["celerity"] <= 4) { //if character is speed class echo easier encounter with dif cursor sprite
   echo '<body class="fast">
 
   <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
@@ -50,141 +49,234 @@ if($user_row["class"] = "charger") {
     <source src="audio/main_theme.mp3" type="audio/mp3">
   </audio>
 
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <div id="flex">
+  <div id="grid">
 
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <div id="left">
+  <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+  </div>
 
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <div id="top">
+  <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+  </div>
 
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <div id="center">
+  <a href="town1.php" class="hidden onward"> Move on to Town 1 </a>
+  <h1 id="warning_text"> Move to the Center </h1>
+  </div>
 
-  <a href="town1.php"> Onwards to town 1 </a>
+  <div id="right">
+  <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+  </div>
+
+  <div id="bottom">
+  <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+  <div>
+
+  </div>
+  </div>
   </body>';
 }
-else if ($user_row["celerity"] >= 2) {
+else if ($user_row["celerity"] >= 2 && $user_row["celerity"] <= 4) {//if character isn't speed class ebut has 2 celerity points echo easier encounter without speedy sprite
   echo '<body class="slow">
 
-  <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
+    <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
 
-  <audio autoplay>
-    <source src="audio/main_theme.mp3" type="audio/mp3">
-  </audio>
+    <audio autoplay>
+      <source src="audio/main_theme.mp3" type="audio/mp3">
+    </audio>
 
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    <div id="flex">
+    <div id="grid">
 
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <div id="left">
+    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    </div>
 
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <div id="top">
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    </div>
 
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <div id="center">
+    <a href="town1.php" class="hidden onward"> Move on to Town 1 </a>
+    <h1 id="warning_text"> Move to the Center </h1>
+    </div>
 
-  <a href="town1.php"> Onwards to town 1 </a>
+    <div id="right">
+    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    </div>
 
-  </body>';
+    <div id="bottom">
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <div>
+
+    </div>
+    </div>
+    </body>';
 }
-else {
+else if ($user_row["celerity"] >= 5) {//if character has 5+ celerity points echo super easy encounter
+  echo '<body class="fast">
+
+    <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
+
+    <audio autoplay>
+      <source src="audio/main_theme.mp3" type="audio/mp3">
+    </audio>
+
+    <div id="flex">
+    <div id="grid">
+
+    <div id="left">
+    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
+    </div>
+
+    <div id="top">
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_top_fast bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    </div>
+
+    <div id="center">
+    <a href="town1.php" class="hidden onward"> Move on to Town 1 </a>
+    <h1 id="warning_text"> Move to the Center </h1>
+    </div>
+
+    <div id="right">
+    <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    </div>
+
+    <div id="bottom">
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden fast projectile_bottom_fast bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <div>
+
+    </div>
+    </div>
+    </body>';
+}
+else {//else echo basically impossible encounter lmao
   echo '<body class="slow">
 
-  <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
+    <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
 
-  <audio autoplay>
-    <source src="audio/main_theme.mp3" type="audio/mp3">
-  </audio>
+    <audio autoplay>
+      <source src="audio/main_theme.mp3" type="audio/mp3">
+    </audio>
 
-  <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-  <img class="projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+    <div id="flex">
+    <div id="grid">
 
-  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
-  <img class="projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <div id="left">
+    <img class="hidden projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
+    <img class="hidden projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+    <img class="hidden projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
+    <img class="hidden projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
+    </div>
 
-  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
-  <img class="projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <div id="top">
+    <img class="hidden projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden projectile_top_slow bullet" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    <img class="hidden projectile_top_slow bullet staggered" src="img/top_bullet.png" alt="bullet" />
+    </div>
 
-  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
-  <img class="projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <div id="center">
+    <a href="town1.php" class="hidden onward"> Move on to Town 1 </a>
+    <h1 id="warning_text"> Move to the Center </h1>
+    </div>
 
-  <a href="town1.php"> Go to Town 1 </a>
-  </body>';
+    <div id="right">
+    <img class="hidden projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    <img class="hidden projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
+    </div>
+
+    <div id="bottom">
+    <img class="hidden projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden projectile_bottom_slow bullet" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <img class="hidden projectile_bottom_slow bullet staggered" src="img/bottom_bullet.png" alt="bullet" />
+    <div>
+
+    </div>
+    </div>
+    </body>';
 }
 ?>
 </html>
