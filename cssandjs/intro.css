@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: Gin;
-  src: url(fonts/gin.otf);
+  src: url("../fonts/gin.otf");
 }
 
 body{
