@@ -40,7 +40,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
         $sth2 -> execute();
 
         echo "<h4>Aw Shucks! You failed this encounter. But that's ok you can always...";
-        echo " " . " " . "<a href = 'redirect.php'><input type = 'button' value = 'create a new character' /></a></h4>";
+        echo " " . " " . "<a href = 'class_select.php'><input type = 'button' value = 'create a new character' /></a></h4>";
 
     } catch (PDOException $e) {
         echo "<p>Error: {$e->getMessage()}</p>";
