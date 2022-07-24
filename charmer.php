@@ -3,7 +3,7 @@ session_start();
 require_once "sql_config.php";
 
 //update their the data base with the user's character stats and class
-if (isset($_SESSION["email"])) {//check if user is logged in and character is created + selected
+if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user is logged in and character is created + selected
 try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $sth = $dbh->prepare("UPDATE player_character SET `class` = 'charmer', `combat`=0, `charisma`= 2, `celerity`= 0 WHERE id=:player_id"); //updates character with class + stats
