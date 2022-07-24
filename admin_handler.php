@@ -31,18 +31,19 @@ require_once "sql_config.php";
     
     echo "<p>EDIT STATS</p>";
     echo "<form action = 'admin_edits_handler.php method = 'post'>";
-    echo "<p>New name: <input type = 'text' name='renameTo' minlength = '1' maxlength = '16' placeholder = 'Enter New Name...' ></p>";
+    echo "<p>New name: <input type = 'text' name='renameTo' minlength = '1' maxlength = '16' placeholder = 'Enter New Name...' required></p>";
     echo "<label for= 'class'>Change class to:</label>
     <select name='class'>
-    <option value='charger'>Charger</option>
-    <option value='charmer'>Charmer</option>
-    <option value='crasher'>Crasher</option>
+    <option value='charger' required>Charger</option>
+    <option value='charmer' required>Charmer</option>
+    <option value='crasher' required>Crasher</option>
     </select>";
     echo "<br />";
-    echo "<p>Alter celerity by: <input type = 'number' name='increaseCelerity' min = '-3' max = '3'></p>";
-    echo "<p>Alter charisma by: <input type = 'number' name='increaseCharisma' min = '-3' max = '3'></p>";
-    echo "<p>Alter combat by: <input type = 'number' name='increaseCombat' min = '-3' max = '3'></p>";
-
+    echo "<p>Alter HP points: -3 to 3, 0 for no change</p>";
+    echo "<p>Alter celerity by: <input type = 'number' name='increaseCelerity' min = '-3' max = '3' required></p>";
+    echo "<p>Alter charisma by: <input type = 'number' name='increaseCharisma' min = '-3' max = '3' required></p>";
+    echo "<p>Alter combat by: <input type = 'number' name='increaseCombat' min = '-3' max = '3' required></p>";
+    echo "<input type = 'submit' name = 'submitEdits' required />";
   
     echo "</form>";
 
