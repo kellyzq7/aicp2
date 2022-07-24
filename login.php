@@ -14,13 +14,13 @@ if (isset($_POST["email"]) && isset($_POST["password"]) == true) { //if coming f
   $sth->bindValue(':reg_email', htmlspecialchars($_POST["email"]));
   $sth->bindValue(':reg_password', password_hash(htmlspecialchars($_POST["password"]), PASSWORD_DEFAULT));
   $sth->execute();
-  $sth_id = $dbh->prepare("SELECT `id` FROM user WHERE `email`=:reg_email"); //gets user row of newly created account
+  $sth_id = $dbh->prepare("SELECT * FROM user WHERE `email`=:reg_email"); //gets user row of newly created account
   $sth_id->bindValue(':reg_email', htmlspecialchars($_POST["email"]));
   $sth_id->execute();
   $reg_id = $sth_id->fetch();
   $sth_char = $dbh->prepare("INSERT INTO player_character (`user_id`, `position`, `isActive`)
-  VALUES (:reg_id, 0, true);"); //create character associated with account, and set defualt position to 0.
-  $sth_char->bindValue(':reg_id', $reg_id);
+  VALUES (:reg_id, 0, true);"); //create character associated with account, and set defualt position to 0, and set to active.
+  $sth_char->bindValue(':reg_id', $reg_id["id"]);
   $sth_char->execute();
   $new_account = true;
   }

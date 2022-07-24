@@ -1,12 +1,15 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
 <title>Cul Cavboj</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<link href="cssandjs/home.css" rel="stylesheet" type="text/css" />
+<link href="home.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="cssandjs/class_select.js"></script>
+<script src="class_select.js"></script>
 <style>
 
 a, .character_class {
