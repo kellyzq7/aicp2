@@ -174,6 +174,6 @@ echo "<p>Error: {$e->getMessage()}</p>";
   echo "<p>Error: {$e->getMessage()}</p>";
 }
   ?>
-  <a href="logout.php"><input type = 'button' name = 'Save and Log Out' /></a>
+  <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
 </body>
 </html>
