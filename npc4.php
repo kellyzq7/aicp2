@@ -50,7 +50,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   </div>
     <h2>A hard decision awaits you <a href = "finaldecision1.php">here.</a></h2>
 
-
+    <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
 
