@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "sql_config.php";
-
+$_SESSION["characer_status"] = "inactive";
 //check that user is signed in
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
