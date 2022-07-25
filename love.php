@@ -29,7 +29,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <h1>And this is where you find trueee love</h1>
     <p>something with charisma points</p>
   
-  
+  <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
   

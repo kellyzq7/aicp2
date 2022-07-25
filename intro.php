@@ -80,5 +80,6 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user
         <a href = "combat.php"><input type = "button" id = "squint" name = "squint" value = "Take a closer look" /></a>
       </div>
     </div>
+    <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 <html>
