@@ -14,6 +14,8 @@ $(".bullet").hover((event) => {
 function moveOn() {
   $(".onward").removeClass("hidden");
   $(".bullet").addClass("hidden");
+  $(".stats").removeClass("hidden");
+  $("#center").append(".stats");
 }
 
 if ($("body").hasClass("fast")) {
