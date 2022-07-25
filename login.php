@@ -89,7 +89,7 @@ if ($new_account == true) {
 <input type="submit" value="Login">
 </form>
 <div id="links">
-<a href="register.php">Don't have an account, register one here</a>
+<a href="register.php">Don't have an account? Register one here</a>
 <a href="logout.php"> Log Out </a>
 <a href="credit.php"> Credit Links </a>
 </div>
