@@ -172,8 +172,8 @@ echo "<p>Error: {$e->getMessage()}</p>";
 }
   catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
-            }
+}
   ?>
-<a href="logout.php"> Log Out </a>
+  <a href="logout.php"><input type = 'button' name = 'Save and Log Out' /></a>
 </body>
 </html>
