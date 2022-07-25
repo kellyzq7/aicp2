@@ -49,7 +49,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
   $user_id = $login_row["id"]; //store the user id of the user to find its associated character(s)
   //then get charcter where user_id = user id, and isActive = true
-  $sth_location = $dbh->prepare("SELECT * FROM player_character
+  $sth_location = $dbh->prepare("SELECT player_character.id AS player_id, * FROM player_character
   JOIN user
   ON user.id = player_character.user_id
   WHERE
@@ -59,7 +59,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   $sth_location->bindValue(':log_user_id', $user_id);
   $sth_location->execute();
   $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
-  $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
+  $_SESSION["player_id"] = $player["player_id"];//store the player charcter id in session for easy access to update its position on later pages.
   $_SESSION["user_id"] = $user_id; //store user id in session
 
   //if user is admin, display link to admin page
