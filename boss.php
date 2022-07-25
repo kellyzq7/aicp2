@@ -29,7 +29,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <h1>Meet your match: The Boss</h1>
     <p>something with combat (and possibly speed) points</p>
   
-  
+    <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
   
