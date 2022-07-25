@@ -40,7 +40,7 @@ $user_row = $sth2 -> fetch();
 catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
             }
-if($user_row["class"] = "charger" && $user_row["celerity"] <= 4) { //if character is speed class echo easier encounter with dif cursor sprite
+if($user_row["class"] == "charger" && $user_row["celerity"] <= 4) { //if character is speed class echo easier encounter with dif cursor sprite
   echo '<body class="fast">
 
   <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
