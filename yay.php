@@ -29,7 +29,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <h1>Yay you paid attention, so you don't have to do the dodge encounter (dodge.php or dodge1.php)</h1>
     <p>you get to go straight to the <a href = "town1.php">town</a></p>
   
-  
+  <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
   

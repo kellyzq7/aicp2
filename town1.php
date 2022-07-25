@@ -29,7 +29,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <h1>Welcome to Town 1</h1>
     <p>walk to person: <a href = "npc1.php">walk</a></p>
   
-  
+  <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
   
