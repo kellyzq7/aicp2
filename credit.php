@@ -56,6 +56,7 @@ p {
 <a href="https://wallpaperaccess.com/cowboy-wild-west"> Cowboy Main Wallpaper </a>
 <a href="https://wall.alphacoders.com/by_sub_category.php?id=207430&name=Cowboy+Wallpapers&lang=German"> Cowboy Silhouette </a>
 <a href="https://steamcommunity.com/market/listings/753/713380-The%20Desert"> Desert Background </a>
+<a href="https://itch.io/game-assets/tag-top-down-shooter"> Desert Town Background </a>
 <a href="https://myloview.com/wall-mural-8bit-cowboy-on-horse-pixel-art-vector-illustration-wild-west-no-BDBC4A9"> Horse Rider Sprite </a>
 <a href="https://dribbble.com/shots/6218037-Cowboy-Attack"> Cowboy Sprite Inspiration </a>
 <a href="https://www.reddit.com/r/PixelArt/comments/dx8oyi/bullet/"> Bullet Sprite</a>
