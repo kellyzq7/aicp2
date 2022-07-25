@@ -15,7 +15,7 @@ function moveOn() {
   $(".onward").removeClass("hidden");
   $(".bullet").addClass("hidden");
   $(".stats").removeClass("hidden");
-  $("#center").append(".stats");
+  $("#center").append($(".stats"));
 }
 
 if ($("body").hasClass("fast")) {
