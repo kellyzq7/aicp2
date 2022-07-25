@@ -174,5 +174,6 @@ echo "<p>Error: {$e->getMessage()}</p>";
   echo "<p>Error: {$e->getMessage()}</p>";
             }
   ?>
+<a href="logout.php"> Log Out </a>
 </body>
 </html>
