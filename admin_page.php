@@ -23,7 +23,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh -> prepare("SELECT * FROM player_character JOIN user ON owner.id = player_character.user_id");
+    $sth = $dbh -> prepare("SELECT * FROM player_character JOIN user ON user.id = player_character.user_id");
     $sth -> execute();
     $allCharacters = $sth -> fetchAll();
     echo "<p>CHOOSE A CHARACTER TO EDIT: </p>";
@@ -31,7 +31,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     echo "<select name = 'characters'>";
     foreach($allCharacters as $character){
         echo "<option name = '{$character['character_name']}' value = '{$character['id']}' required>
-        {$character['character_name']} ({$character['email']})</option>";
+        {$character['character_name']}</option>";
     }
     echo "</select>";
     echo "<br />";  
