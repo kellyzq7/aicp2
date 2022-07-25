@@ -92,8 +92,5 @@ body {
 <img src="img/crasher_class_crop.png" alt="The Crasher Class: A master gunslinger, begins the Game with +2 combat points." id="crasher" class="character_class" />
 </a>
 </div>
-<?php
-var_dump($new_character);
-?>
 </body>
 </html>
