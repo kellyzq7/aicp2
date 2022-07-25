@@ -39,7 +39,33 @@ if (isset($_POST["email"]) && isset($_POST["password"]) == true) { //if coming f
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script></script>
 <style>
+@font-face {
+  font-family: brotherland;
+  src: url("../fonts/Brotherlands.ttf");
+}
+h1 {
+  font-size:64px;
+}
+body {
+  font-family:sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
 
+a {
+  text-align:center;
+  display: block;
+  margin:20px;
+  font-size:36px;
+}
+input {
+  margin-right:20px;
+}
+form, input {
+  font-size:36px;
+}
 </style>
 </head>
 <body>
@@ -62,7 +88,10 @@ if ($new_account == true) {
 
 <input type="submit" value="Login">
 </form>
+<div id="links">
 <a href="register.php">Don't have an account, register one here</a>
 <a href="logout.php"> Log Out </a>
+<a href="credit.php"> Credit Links </a>
+</div>
 </body>
 </html>
