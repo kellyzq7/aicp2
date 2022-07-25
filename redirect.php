@@ -60,7 +60,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   $sth_location->execute();
   $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
   $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
-  $_SESSION["user_id"] = $user_id //store user id in session
+  $_SESSION["user_id"] = $user_id; //store user id in session
 
   //if user is admin, display link to admin page
   if($login_row["isAdmin"] == 1){
