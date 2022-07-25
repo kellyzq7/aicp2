@@ -3,7 +3,7 @@ session_start();
 require_once "sql_config.php";
 
 if (isset($_SESSION["email"])) { // checks player is logged in
-  if ($_SESSION["characer_inactive"] == true) { //if player came from failed encounter and needs a new character, create new character
+  if ($_SESSION["characer_status"] == "inactive") { //if player came from failed encounter and needs a new character, create new character
     //fetch user id of logged in user
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $sth = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find row of user where email matches session email
