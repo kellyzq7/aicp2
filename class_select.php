@@ -2,20 +2,14 @@
 session_start();
 require_once "sql_config.php";
 
-if (isset($_SESSION["email"])) { // checks player is logged in
+if (isset($_SESSION["email"]) && isset($_SESSION["user_id"])) { // checks player is logged in
   if ($_SESSION["characer_status"] == "inactive") { //if player came from failed encounter and needs a new character, create new character
-    //fetch user id of logged in user
-    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find row of user where email matches session email
-    $sth->bindValue(':login_email', $_SESSION["email"]);
-    $sth->execute();
-    $user_row = $sth->fetch();
-    $user_id = $user_row["id"]; //store user's id
 
     //create character associated with user id
-    $sth_create = $dbh->prepare("INSERT INTO player_character (`user_id`, `position`, `isActive`)
-    VALUES (:log_user_id, 0, true);"); //create character associated with account, and set defualt position to 0, and set to active.
-    $sth_create->bindValue(':log_user_id', $user_id);
+    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+    $sth_create = $dbh->prepare("INSERT INTO player_character (user_id, position, isActive)
+    VALUES (:user_id, 0, true);"); //create character associated with account, and set defualt position to 0, and set to active.
+    $sth_create->bindValue(':user_id', $_SESSION["user_id"]);
     $sth_create->execute();
 
     //get id of new active character and store it in session
@@ -23,14 +17,14 @@ if (isset($_SESSION["email"])) { // checks player is logged in
     JOIN user
     ON user.id = player_character.user_id
     WHERE
-    user.id =:log_user_id
+    user.id =:user_id
     AND
-    player_character.isActive = 1;");
-    $sth_location->bindValue(':log_user_id', $user_id);
+    player_character.isActive = true;");
+    $sth_location->bindValue(':user_id', $_SESSION["user_id"]);
     $sth_location->execute();
-    $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
-    unset($_SESSION["player_id"]);//unsets the now inactive character whose id is stored is session
-    $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
+    $new_character = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
+    $_SESSION["player_id"] = $new_character["id"];//store the new player charcter id in session for easy access to update its position on later pages.
+    unset($_SESSION["characer_status"]); //unset this from session, as an active character has now been created
   }
 }
 else {
@@ -98,5 +92,6 @@ body {
 <img src="img/crasher_class_crop.png" alt="The Crasher Class: A master gunslinger, begins the Game with +2 combat points." id="crasher" class="character_class" />
 </a>
 </div>
+
 </body>
 </html>
