@@ -25,10 +25,11 @@ if (isset($_SESSION["email"])) { // checks player is logged in
     WHERE
     user.id =:log_user_id
     AND
-    player_character.isActive = TRUE;");
+    player_character.isActive = 1;");
     $sth_location->bindValue(':log_user_id', $user_id);
     $sth_location->execute();
     $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
+    unset($_SESSION["player_id"]);//unsets the now inactive character whose id is stored is session
     $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
   }
 }
