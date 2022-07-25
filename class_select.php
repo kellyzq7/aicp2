@@ -13,7 +13,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["user_id"])) { // checks player
     $sth_create->execute();
 
     //get id of new active character and store it in session
-    $sth_location = $dbh->prepare("SELECT * FROM player_character
+    $sth_location = $dbh->prepare("SELECT player_character.id as player_id FROM player_character
     JOIN user
     ON user.id = player_character.user_id
     WHERE
@@ -23,7 +23,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["user_id"])) { // checks player
     $sth_location->bindValue(':user_id', $_SESSION["user_id"]);
     $sth_location->execute();
     $new_character = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
-    $_SESSION["player_id"] = $new_character["id"];//store the new player charcter id in session for easy access to update its position on later pages.
+    $_SESSION["player_id"] = $new_character["player_id"];//store the new player charcter id in session for easy access to update its position on later pages.
     unset($_SESSION["characer_status"]); //unset this from session, as an active character has now been created
   }
 }
@@ -92,6 +92,8 @@ body {
 <img src="img/crasher_class_crop.png" alt="The Crasher Class: A master gunslinger, begins the Game with +2 combat points." id="crasher" class="character_class" />
 </a>
 </div>
-
+<?php
+var_dump($new_character);
+?>
 </body>
 </html>
