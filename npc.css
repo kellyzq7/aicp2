@@ -1,0 +1,39 @@
+@font-face {
+  font-family: Brotherland;
+  src: url(brotherland.ttf);
+}
+
+@font-face {
+  font-family: Gin;
+  src: url(carnival.otf);
+}
+
+body{
+  background-image: url("https://media.istockphoto.com/illustrations/old-west-town-illustration-id98345036?k=20&m=98345036&s=612x612&w=0&h=MYTbl9v-zl6AEHIqHxUoHBtw58U9z4xAilXRY855ywc=");
+  background-size: cover;
+}
+
+h1{
+  font-family: "Brotherland";
+  font-size: 50px;
+  text-align: center;
+}
+#convo{
+  width: 60%;
+  margin: auto;
+  border: 5px solid black;
+  background: rgba(143, 118, 84, 0.9);
+  color: black;
+  padding: 1%;
+}
+p{
+  font-family: "Gin";
+}
+h2{
+  margin-left: 38%;
+  background-color: #8f7654;
+  color: black;
+  border: 5px solid black;
+  padding: 1%;
+  width: 20%;
+}
