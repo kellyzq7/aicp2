@@ -33,14 +33,14 @@ else {
 try {
 $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 $sth2 = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
-$sth2->bindValue('player_id', $_SESSION["player_id"]);
+$sth2->bindValue(':player_id', $_SESSION["player_id"]);
 $sth2 -> execute();
-$user_row = $sth2 -> fetch();
+$player_row = $sth2 -> fetch();
 }
 catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
             }
-if($user_row["class"] == "charger" && $user_row["celerity"] <= 4) { //if character is speed class echo easier encounter with dif cursor sprite
+if($player_row["class"] == "charger" && $player_row["celerity"] <= 4) { //if character is speed class echo easier encounter with dif cursor sprite
   echo '<body class="fast">
 
   <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
@@ -53,7 +53,6 @@ if($user_row["class"] == "charger" && $user_row["celerity"] <= 4) { //if charact
   <div id="grid">
 
   <div id="left">
-  <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
   <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
   <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
@@ -78,7 +77,6 @@ if($user_row["class"] == "charger" && $user_row["celerity"] <= 4) { //if charact
   </div>
 
   <div id="right">
-  <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
   <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
   <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
   <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
@@ -101,7 +99,7 @@ if($user_row["class"] == "charger" && $user_row["celerity"] <= 4) { //if charact
   </div>
   </body>';
 }
-else if ($user_row["celerity"] >= 2 && $user_row["celerity"] <= 4) {//if character isn't speed class ebut has 2 celerity points echo easier encounter without speedy sprite
+else if ($player_row["celerity"] >= 2 && $player_row["celerity"] <= 4) {//if character isn't speed class ebut has 2 celerity points echo easier encounter without speedy sprite
   echo '<body class="slow">
 
     <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
@@ -114,7 +112,6 @@ else if ($user_row["celerity"] >= 2 && $user_row["celerity"] <= 4) {//if charact
     <div id="grid">
 
     <div id="left">
-    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
     <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
     <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
     <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
@@ -139,7 +136,6 @@ else if ($user_row["celerity"] >= 2 && $user_row["celerity"] <= 4) {//if charact
     </div>
 
     <div id="right">
-    <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
@@ -162,7 +158,7 @@ else if ($user_row["celerity"] >= 2 && $user_row["celerity"] <= 4) {//if charact
     </div>
     </body>';
 }
-else if ($user_row["celerity"] >= 5) {//if character has 5+ celerity points echo super easy encounter
+else if ($player_row["celerity"] >= 5) {//if character has 5+ celerity points echo super easy encounter
   echo '<body class="fast">
 
     <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
@@ -175,7 +171,6 @@ else if ($user_row["celerity"] >= 5) {//if character has 5+ celerity points echo
     <div id="grid">
 
     <div id="left">
-    <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
     <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
     <img class="hidden fast projectile_left_fast bullet staggered" src="img/bullet.png" alt="bullet" />
     <img class="hidden fast projectile_left_fast bullet" src="img/bullet.png" alt="bullet" />
@@ -197,7 +192,6 @@ else if ($user_row["celerity"] >= 5) {//if character has 5+ celerity points echo
     </div>
 
     <div id="right">
-    <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden fast projectile_right_fast bullet" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden fast projectile_right_fast bullet staggered" src="img/right_bullet.png" alt="bullet" />
@@ -231,7 +225,6 @@ else {//else echo basically impossible encounter lmao
 
     <div id="left">
     <img class="hidden projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
-    <img class="hidden projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
     <img class="hidden projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
     <img class="hidden projectile_left_slow bullet staggered" src="img/bullet.png" alt="bullet" />
     <img class="hidden projectile_left_slow bullet" src="img/bullet.png" alt="bullet" />
@@ -255,7 +248,6 @@ else {//else echo basically impossible encounter lmao
     </div>
 
     <div id="right">
-    <img class="hidden projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden projectile_right_slow bullet staggered" src="img/right_bullet.png" alt="bullet" />
     <img class="hidden projectile_right_slow bullet" src="img/right_bullet.png" alt="bullet" />
@@ -278,5 +270,27 @@ else {//else echo basically impossible encounter lmao
     </div>
     </body>';
 }
+//once encounter has been echoed give player a randomized stat increase
+try{
+$new_celerity = $player_row["celerity"] + rand(0,2);
+$new_combat = $player_row["combat"] + rand(0,2);
+$new_charisma = $player_row["charisma"] + rand(0,2);
+
+//update the data base with the stat increase
+$sth_stat = $dbh -> prepare("UPDATE player_character SET celerity = :new_celerity, combat = :new_combat, charisma = :new_charisma WHERE id=:player_id");
+$sth_stat->bindValue(':player_id', $_SESSION["player_id"]);
+$sth_stat->bindValue(':new_celerity', $new_celerity);
+$sth_stat->bindValue(':new_combat', $new_combat);
+$sth_stat->bindValue(':new_charisma', $new_charisma);
+$sth_stat -> execute();
+$new_stats = $sth_stat -> fetch();
+
+//echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
+echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have " . $new_celerity  . " celerity points, " . $new_combat  . " combat points, and " . $new_charisma  . " charisma points. </p>";
+}
+catch (PDOException $e) {
+  echo "<p>Error: {$e->getMessage()}</p>";
+            }
+
 ?>
 </html>
