@@ -137,6 +137,9 @@ echo "<p>Error: {$e->getMessage()}</p>";
   else if($player["position"] == 22) {
     echo "<a class='redirect' href='failed_encounter.php'>You died, return to game</a><br /><br />";
   }
+  else if($player["position"] == 23) {
+    echo "<a class='redirect' href='end.php'>You completed the game, return to the end</a><br /><br />";
+  }
   else { //if invalid location reset location and send to login
       $sth_invalid = $dbh->prepare("UPDATE player_character SET `position` = 0 WHERE `user_id`=:log_user_id AND `isActive` = true");
       $sth_invalid->bindValue(':log_user_id', $user_id);
