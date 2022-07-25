@@ -3,7 +3,7 @@ session_start();
 require_once "sql_config.php";
 
 if (isset($_SESSION["email"])) { // checks player is logged in
-  if ($_SESSION["characer_inactive"] = true) { //if player came from failed encounter and needs a new character, create new character
+  if ($_SESSION["characer_inactive"] == true) { //if player came from failed encounter and needs a new character, create new character
     //fetch user id of logged in user
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $sth = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find row of user where email matches session email
@@ -31,6 +31,9 @@ if (isset($_SESSION["email"])) { // checks player is logged in
     $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
     $_SESSION["player_id"] = $player["id"];//store the player charcter id in session for easy access to update its position on later pages.
   }
+}
+else {
+    header('Location: login.php'); //if user isn't signed in send to login
 }
 ?>
 <!doctype html>
