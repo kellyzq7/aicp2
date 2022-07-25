@@ -2,7 +2,10 @@
   font-family: brotherland;
   src: url("../fonts/Brotherlands.ttf");
 }
-
+@font-face {
+  font-family: gin;
+  src: url("../fonts/gin.otf");
+}
 body.slow {
   overflow:hidden;
   max-height:1060px;
@@ -33,6 +36,12 @@ iframe {
   width:0;
   height:0;
   position:absolute;
+}
+.stats {
+  font-size:36px;
+  text-align:center;
+  color:#430804;
+  font-family:gin;
 }
 #center {
   grid-row:2/3;
