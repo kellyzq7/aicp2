@@ -49,7 +49,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
   $user_id = $login_row["id"]; //store the user id of the user to find its associated character(s)
   //then get charcter where user_id = user id, and isActive = true
-  $sth_location = $dbh->prepare("SELECT player_character.id AS player_id, * FROM player_character
+  $sth_location = $dbh->prepare("SELECT *, player_character.id AS player_id  FROM player_character
   JOIN user
   ON user.id = player_character.user_id
   WHERE
