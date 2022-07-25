@@ -63,5 +63,6 @@ if ($new_account == true) {
 <input type="submit" value="Login">
 </form>
 <a href="register.php">Don't have an account, register one here</a>
+<a href="logout.php"> Log Out </a>
 </body>
 </html>
