@@ -38,10 +38,10 @@ iframe {
   position:absolute;
 }
 .stats {
-  font-size:36px;
+  font-size:24px;
   text-align:center;
   color:#430804;
-  font-family:gin;
+  font-family:brotherland;
 }
 #center {
   grid-row:2/3;
@@ -49,6 +49,7 @@ iframe {
   display:flex;
   align-items:center;
   justify-content:center;
+  flex-direction:column;
 }
 a.onward {
   color:#430804;
@@ -86,7 +87,7 @@ a.onward {
   grid-column:1/2;
 }
 #left img{
-  width:70%;
+  width:65%;
   display:block;
 }
 
@@ -98,7 +99,7 @@ a.onward {
   grid-column:1/4;
 }
 #top img{
-  height:70%;
+  height:65%;
   display:inline;
 }
 
@@ -111,7 +112,7 @@ a.onward {
   grid-column:3/4;
 }
 #right img{
-  width:70%;
+  width:65%;
   display:block;
 }
 
@@ -123,7 +124,7 @@ a.onward {
   grid-column:1/4;
 }
 #bottom img{
-  height:70%;
+  height:65%;
   display:inline;
 }
 
@@ -222,7 +223,7 @@ a.onward {
   margin:0px;
   position:relative;
   animation: right_to_left 3s 5;
-  animation-delay: 10.5s;
+  animation-delay: 9.5s;
 }
 
 .projectile_right_slow {
@@ -238,7 +239,7 @@ a.onward {
   margin:0px;
   position:relative;
   animation: right_to_left 2.5s 7;
-  animation-delay: 10s;
+  animation-delay: 9s;
 }
 
 @keyframes right_to_left {
@@ -246,7 +247,7 @@ a.onward {
       transform: translate(0);
     }
     100% {
-      transform: translate(-1600px);
+      transform: translate(-1700px);
     }
 }
 
