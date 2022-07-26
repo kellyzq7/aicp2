@@ -10,7 +10,33 @@ session_start();
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script></script>
 <style>
+@font-face {
+  font-family: brotherland;
+  src: url("fonts/Brotherlands.ttf");
+}
+h1 {
+  font-size:64px;
+}
+body {
+  font-family:sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
 
+a {
+  text-align:center;
+  display: block;
+  margin:20px;
+  font-size:36px;
+}
+input {
+  margin-right:20px;
+}
+form, input {
+  font-size:36px;
+}
 </style>
 </head>
 <body>
