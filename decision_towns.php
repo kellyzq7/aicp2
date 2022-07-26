@@ -23,19 +23,19 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <head>
     <title>Decision: Town 1 or Town 2</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="cssandjs/decision_towns.css">
+    <link rel="stylesheet" href="towns.css">
   </head>
   <body>
-    <h1>Decision: Town 1 or Town 2</h1>
+    <h1>Decision: Go to Vaquero Valley or Bronco Basin</h1>
       <div id = "container">
-        <div id = "chasetown1">
-            <img src = "img/romance.png" alt = "romance" />
-            <a href = "dodge.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 1" /></a>
+        <div id = "town1">
+            <img src = "https://storage.googleapis.com/production-hostgator-v1-0-8/148/412148/0mPbwXcy/18cdb98a2a044f2da36bba895d071701" width = 103% alt = "romance" />
+            <a href = "dodge.php"><input type = "button" id = "button1" name = "ready" value = "Vaquero Valley" /></a>
         </div>
-        
-        <div id = "chasetown2">
-            <img src = "img/combat.png" alt = "combat" />
-            <a href = "dodge1.php"><input type = "button" id = "ready" name = "ready" value = "Choose Town 2" /></a>
+
+        <div id = "town2">
+            <img src = "https://wallpaperaccess.com/full/313409.jpg" width = 76% alt = "combat" />
+            <a href = "dodge1.php"><input type = "button" id = "button2" name = "ready" value = "Bronco Basin" /></a>
         </div>
       </div>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
