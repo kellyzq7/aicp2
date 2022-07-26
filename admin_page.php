@@ -31,7 +31,7 @@ require_once "sql_config.php";
     $allCharacters = $sth -> fetchAll();
     echo "<div id = 'character' class = 'show'>";
       echo "<p>CHOOSE A CHARACTER TO EDIT: </p>";
-      echo "<form action = 'admin_edits_handler.php' method = 'post'>";
+      echo "<form action = 'admin_handler.php' method = 'post'>";
       echo "<select name = 'characters'>";
       foreach($allCharacters as $character){
           echo "<option name = '{$character['character_name']}' value = '{$character['id']}' required>
