@@ -50,7 +50,23 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
             echo "<h2 class = 'hide'>Congrats! You won the combat! As a reward, you get 2 combat points!</h2>";
             echo "<a class = 'hide' href = 'decision_towns.php'>Onward!</a>";
           }
-
+          
+          $new_celerity = $player_row["celerity"] + rand(0,2);
+          $new_combat = $player_row["combat"] + rand(0,2);
+          $new_charisma = $player_row["charisma"] + rand(0,2);
+          
+          //update the data base with the stat increase
+          $sth_stat = $dbh -> prepare("UPDATE player_character SET celerity = :new_celerity, combat = :new_combat, charisma = :new_charisma WHERE id=:player_id");
+          $sth_stat->bindValue(':player_id', $_SESSION["player_id"]);
+          $sth_stat->bindValue(':new_celerity', $new_celerity);
+          $sth_stat->bindValue(':new_combat', $new_combat);
+          $sth_stat->bindValue(':new_charisma', $new_charisma);
+          $sth_stat -> execute();
+          $new_stats = $sth_stat -> fetch();
+          
+          //echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
+          echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have " . $new_celerity  . " celerity points, " . $new_combat  . " combat points, and " . $new_charisma  . " charisma points. </p>";
+        
 
       } catch (PDOException $e) {
           echo "<p>Error: {$e->getMessage()}</p>";
