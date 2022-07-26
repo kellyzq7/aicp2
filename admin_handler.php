@@ -113,7 +113,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
       
     }else{
-      echo "<p>Error: you filled out the form incorrectly! Go <a href = 'admin_handler.php'>back</a> and redo</p>";
+      echo "<p>Error: you filled out the form incorrectly! Go <a href = 'admin_page.php'>back</a> and redo</p>";
     }
     
     
