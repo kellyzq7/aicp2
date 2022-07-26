@@ -30,12 +30,12 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
       <div id = "container">
         <div id = "town1">
             <img src = "https://storage.googleapis.com/production-hostgator-v1-0-8/148/412148/0mPbwXcy/18cdb98a2a044f2da36bba895d071701" width = 103% alt = "romance" />
-            <a href = "dodge.php"><input type = "button" id = "button1" name = "ready" value = "Vaquero Valley" /></a>
+            <a href = "dodge1.php"><input type = "button" id = "button1" name = "ready" value = "Vaquero Valley" /></a>
         </div>
 
         <div id = "town2">
             <img src = "https://wallpaperaccess.com/full/313409.jpg" width = 76% alt = "combat" />
-            <a href = "dodge1.php"><input type = "button" id = "button2" name = "ready" value = "Bronco Basin" /></a>
+            <a href = "combat.php"><input type = "button" id = "button2" name = "ready" value = "Bronco Basin" /></a>
         </div>
       </div>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
