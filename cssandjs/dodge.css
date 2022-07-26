@@ -39,6 +39,7 @@ iframe {
 }
 .stats {
   font-size:24px;
+  width: 800px;
   text-align:center;
   color:#430804;
   font-family:brotherland;
