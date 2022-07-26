@@ -59,7 +59,7 @@ else {
     }
     ?>
 
-  <h1 id="warning_text">On your way you encounter some bandits, click to shoot them, some may require multiple shots. Remember speed is key! </h1>
+  <h1 id="warning_text">Finish of the bandits, click to shoot them, some may require multiple shots. Remember speed is key! </h1>
   <h1 id="timer" class="hidden"></h1>
 
   <?php
@@ -82,7 +82,7 @@ else {
   }
 
   ?>
-  <a href="decision_towns" class="hidden onward"> Move on to a crossroads </a>
+  <a href="decision_towns.php" class="hidden onward"> Move on to a crossroads </a>
   <div id="grid">
   <img class="bandit hidden" src="img/bandit.png" id="bandit1" alt="A Bandit Enemey" />
   <img class="bandit hidden" src="img/bandit.png" id="bandit2" alt="A Bandit Enemey" />
