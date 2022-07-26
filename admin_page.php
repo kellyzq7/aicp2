@@ -60,7 +60,17 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     <option value='8' required>8: Good News</option>
     <option value='9' required>9: Combat Encounter 2</option>
     <option value='10' required>10: Dodge Encounter 2</option>
-
+    <option value='11' required>11: Town 1</option>
+    <option value='12' required>12: Town 2</option>
+    <option value='13' required>13: NPC 1</option>
+    <option value='14' required>14: NPC 3</option>
+    <option value='15' required>15: NPC 2</option>
+    <option value='16' required>16: NPC 4</option>
+    <option value='17' required>17: Final Decision (post NPC 2)</option>
+    <option value='18' required>18: Final Decision (post NPC 4)</option>
+    <option value='19' required>19: Romance Ending</option>
+    <option value='20' required>20: Combat Ending</option>
+    <option value='21' required>21: Speed Ending</option>
     </select>";
     echo "<input type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
     echo "</form>";
