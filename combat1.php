@@ -82,7 +82,7 @@ else {
   }
 
   ?>
-  <a href="town2.php" class="hidden onward"> Move on to a crossroads </a>
+  <a href="decision_towns" class="hidden onward"> Move on to a crossroads </a>
   <div id="grid">
   <img class="bandit hidden" src="img/bandit.png" id="bandit1" alt="A Bandit Enemey" />
   <img class="bandit hidden" src="img/bandit.png" id="bandit2" alt="A Bandit Enemey" />
