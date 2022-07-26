@@ -48,6 +48,20 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     echo "<p>Alter celerity by: <input type = 'number' name='alterCelerity' min = '-3' max = '3' required></p>";
     echo "<p>Alter charisma by: <input type = 'number' name='alterCharisma' min = '-3' max = '3' required></p>";
     echo "<p>Alter combat by: <input type = 'number' name='alterCombat' min = '-3' max = '3' required></p>";
+    echo "<label for= 'position'>Change game position to:</label>
+    <select name='position'>
+    <option value='1' required>1: Introduction</option>
+    <option value='2' required>2: Dodge Encounter</option>
+    <option value='3' required>3: Decision: Romance or Combat</option>
+    <option value='4' required>4: Romance Encounter</option>
+    <option value='5' required>5: Combat Encounter</option>
+    <option value='6' required>6: Decision Towns (post romance encounter)</option>
+    <option value='7' required>7: Decision Towns (post combat encounter)</option>
+    <option value='8' required>8: Good News</option>
+    <option value='9' required>9: Combat Encounter 2</option>
+    <option value='10' required>10: Dodge Encounter 2</option>
+
+    </select>";
     echo "<input type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
     echo "</form>";
     
