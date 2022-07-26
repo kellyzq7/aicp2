@@ -40,6 +40,6 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
       </div>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
-<html>
+</html>
   
   
