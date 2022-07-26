@@ -14,9 +14,11 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
 <title>Cul Cavboj</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script></script>
-<style></style>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script src = "cssandjs/admin.js"></script>
 </head>
 <body>
   <?php
