@@ -41,7 +41,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) == true) { //if coming f
 <style>
 @font-face {
   font-family: brotherland;
-  src: url("../fonts/Brotherlands.ttf");
+  src: url("fonts/Brotherlands.ttf");
 }
 h1 {
   font-size:64px;
