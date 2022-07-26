@@ -29,7 +29,7 @@ require_once "sql_config.php";
     $sth = $dbh -> prepare("SELECT * FROM player_character JOIN user ON user.id = player_character.user_id");
     $sth -> execute();
     $allCharacters = $sth -> fetchAll();
-    echo "<div class = 'show'>";
+    echo "<div id = 'character' class = 'show'>";
       echo "<p>CHOOSE A CHARACTER TO EDIT: </p>";
       echo "<form action = 'admin_edits_handler.php' method = 'post'>";
       echo "<select name = 'characters'>";
@@ -40,7 +40,7 @@ require_once "sql_config.php";
       echo "</select>";
       echo "<br /><br /><input id = 'chooseCharacter' type = 'button' value = 'Choose Character' /><br />";
     echo "</div>";
-    echo "<div class = 'hide'>";
+    echo "<div id = 'stats' class = 'hide'>";
       echo "<p>EDIT STATS</p>";
       echo "<p>New name: <input type = 'text' name='renameTo' minlength = '1' maxlength = '16' placeholder = 'Enter New Name...' required></p>";
       echo "<label for= 'class'>Change class to:</label>
@@ -78,11 +78,11 @@ require_once "sql_config.php";
       <option value='20' required>20: Combat Ending</option>
       <option value='21' required>21: Speed Ending</option>
       </select>";
-      echo "<input type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
+      echo "<br /><br /><input type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
     echo "</div>";
     echo "</form>";
     
-    echo "<br /><a href = 'redirect.php'>Back</a>";
+    echo "<br /><br /><a href = 'redirect.php'>Back</a>";
     
 
   }catch (PDOException $e) {
