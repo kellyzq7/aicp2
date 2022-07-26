@@ -103,6 +103,12 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       echo "<p>Updated combat points successfully</p>";
       
       //set new position
+      $sth8 = $dbh -> prepare("UPDATE player_character SET position = :new_pos
+        WHERE id =:character_id");
+      $sth8 -> bindValue(":new_pos", $newPosition);
+      $sth8 -> bindValue(":character_id", $characterID);
+      $sth8 -> execute();
+      echo "<p>Updated combat points successfully</p>";
       
       echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
       
