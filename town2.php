@@ -18,19 +18,28 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     header('Location: login.php'); //if user isn't signed in send to login
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Cul Cavboj</title>
+    <title>Decision: Town 1 or Town 2</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link rel="stylesheet" href="cssandjs/towns.css">
   </head>
-  
   <body>
-    <h1>Welcome to Town 2</h1>
-    <p>walk to person: <a href = "npc3.php">walk</a></p>
-  
-  <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
+    <h1>Decision: Go to Vaquero Valley or Bronco Basin</h1>
+      <div id = "container">
+        <div id = "town1">
+            <img src = "https://storage.googleapis.com/production-hostgator-v1-0-8/148/412148/0mPbwXcy/18cdb98a2a044f2da36bba895d071701" width = 80% alt = "romance" />
+            <a href = "dodge.php"><input type = "button" id = "button1" name = "ready" value = "Vaquero Valley" /></a>
+            <p id='valley'>A once lovely town now living in fear of a cowboy and his gang, where a potential partner also resides.</p>
+        </div>
+
+        <div id = "town2">
+            <img src = "https://wallpaperaccess.com/full/313409.jpg" width = 60% alt = "combat" />
+            <a href = "dodge1.php"><input type = "button" id = "button2" name = "ready" value = "Bronco Basin" /></a>
+            <p id='basin'>A town under a looming threat prepares to hide, while a traveller searches for people to help.</p>
+        </div>
+      </div>
+    <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
-  
