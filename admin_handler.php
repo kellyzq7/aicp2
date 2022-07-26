@@ -32,15 +32,21 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     //new class and the array to check later
     $newClass = htmlspecialchars($_POST["class"]);
     $classList = array("charger", "charmer", "crasher");
-    
+        
     //new hp
     $alterCelerity = htmlspecialchars($_POST["alterCelerity"]);
     $alterCharisma = htmlspecialchars($_POST["alterCharisma"]);
     $alterCombat = htmlspecialchars($_POST["alterCombat"]);
     
+    //change position and array to check later
+    $newPosition = htmlspecialchars($_POST["position"]);
+    $positionList = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
+    "14", "15", "16", "17", "18", "19", "20", "21");
+    
     //backend validating inputs
     if(isset($newName) && strlen($newName) >= 1 && strlen($newName) <= 16
     && isset($newClass) && in_array($newClass, $classList)
+    && isset($newPosition) && in_array($newPosition, $positionList)
     && isset($alterCelerity) && filter_var($alterCelerity, FILTER_VALIDATE_INT) && $alterCelerity >= -3 && $alterCelerity <= 3
     && isset($alterCharisma) && filter_var($alterCharisma, FILTER_VALIDATE_INT) && $alterCharisma >= -3 && $alterCharisma <= 3
     && isset($alterCombat) && filter_var($alterCombat, FILTER_VALIDATE_INT) && $alterCombat >= -3 && $alterCombat <= 3){
@@ -95,6 +101,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       $sth5 -> bindValue(":character_id", $characterID);
       $sth5 -> execute();
       echo "<p>Updated combat points successfully</p>";
+    
       
       echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
       
