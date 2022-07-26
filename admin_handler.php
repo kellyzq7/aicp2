@@ -87,21 +87,22 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       echo "<p>Updated celerity points successfully</p>";
       
       //update charisma
-      $sth5 = $dbh -> prepare("UPDATE player_character SET charisma = :new_charisma
+      $sth6 = $dbh -> prepare("UPDATE player_character SET charisma = :new_charisma
         WHERE id =:character_id");
-      $sth5 -> bindValue(":new_charisma", $newCharisma);
-      $sth5 -> bindValue(":character_id", $characterID);
-      $sth5 -> execute();
+      $sth6 -> bindValue(":new_charisma", $newCharisma);
+      $sth6 -> bindValue(":character_id", $characterID);
+      $sth6 -> execute();
       echo "<p>Updated charisma points successfully</p>";
       
       //update combat
-      $sth5 = $dbh -> prepare("UPDATE player_character SET combat = :new_combat
+      $sth7 = $dbh -> prepare("UPDATE player_character SET combat = :new_combat
         WHERE id =:character_id");
-      $sth5 -> bindValue(":new_combat", $newCombat);
-      $sth5 -> bindValue(":character_id", $characterID);
-      $sth5 -> execute();
+      $sth7 -> bindValue(":new_combat", $newCombat);
+      $sth7 -> bindValue(":character_id", $characterID);
+      $sth7 -> execute();
       echo "<p>Updated combat points successfully</p>";
-    
+      
+      //set new position
       
       echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
       
