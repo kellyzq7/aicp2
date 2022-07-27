@@ -47,6 +47,13 @@ else {
     </style>
   </head>
   <body>
+    
+    <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
+
+    <audio autoplay>
+      <source src="audio/main_theme.mp3" type="audio/mp3">
+    </audio>
+
   <?php
     try {
         //query for the player's combat stats
