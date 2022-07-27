@@ -92,10 +92,10 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     $inactiveCharacters = $sth2 -> fetchAll();
     echo "<p>CHOOSE AN INACTIVE CHARACTER TO DELETE: </p>";
     echo "<form action = 'admin_handler_delete.php' method = 'post'>";
-    echo "<select name = 'characters'>";
+    echo "<select name = 'inactiveCharacters'>";
     foreach($inactiveCharacters as $inactive){
         
-        echo "<option name = '{$inactive['character_name']}' value = '{$inactive'id']}' required>
+        echo "<option name = '{$inactive['character_name']}' value = '{$inactive['id']}' required>;
         {$inactive['character_name']}</option>";
     }
     echo "<input type = 'submit' value = 'Permanately Delete'>";
