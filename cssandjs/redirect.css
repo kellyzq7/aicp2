@@ -14,7 +14,7 @@ body {
   justify-content:center;
   align-items:center;
   flex-direction:column;
-  padding:7vmax;
+  padding:3vmax;
 }
 
 a.redirect {
@@ -22,8 +22,9 @@ a.redirect {
   font-size:4.5vmax;
   color:#D8513D;
   text-decoration:none;
-  padding:0.4vmax;
-  border:0.4vmax solid color:#D8513D;
+  padding:1vmax;
+  padding-bottom:0.5vmax;
+  border:0.4vmax solid #D8513D;
   border-radius:1vmax;
 }
 
@@ -41,12 +42,65 @@ a.redirect:hover {
 }
 
 input {
-  border: 0.2vmax solid #D8513D;
   font-family:Gin;
   font-size:1vmax;
   color:#D8513D;
   text-decoration:none;
   padding:0.2vmax;
-  border:0.2vmax solid color:#D8513D;
+  border:0.2vmax solid #D8513D;
   border-radius:0.4vmax;
+}
+
+#inactive {
+  display:flex;
+  flex-direction:row;
+  justify-content:center;
+  align-items:center;
+}
+
+#previous {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  padding:1vmax;
+  border: 0.4vmax solid #D8513D;
+  border-radius:0.6vmax;
+  margin-bottom:3vmax;
+  margin-top:1vmax;
+}
+
+div.archive {
+  margin-left:1.5vmax;
+  margin-right:1.5vmax;
+  padding:0.5vmax;
+  border: 0.3vmax solid #D8513D;
+  border-radius:0.4vmax;
+}
+
+#previous h3 {
+  margin:1vmax;
+  font-size:2.5vmax;
+  color:#D8513D;
+  font-family:Gin;
+}
+
+div.archive h4 {
+  margin:1vmax;
+  text-transform:capitalize;
+  font-size:1.5vmax;
+  color:#D8513D;
+  font-family:Gin;
+}
+
+div.archive li {
+  font-size:1vmax;
+  color:#D8513D;
+  font-family:Gin;
+}
+
+div.archive b {
+  font-size:1vmax;
+  color:#D8513D;
+  font-family:sans-serif;
 }
