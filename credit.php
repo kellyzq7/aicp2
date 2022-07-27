@@ -58,6 +58,7 @@ p {
 <a href="https://steamcommunity.com/market/listings/753/713380-The%20Desert"> Desert Background </a>
 <a href="https://itch.io/game-assets/tag-top-down-shooter"> Desert Town Background </a>
 <a href="https://imgur.com/t/orange/HG1DrsB"> POV Desert Background </a>
+<a href="https://imagensdefundos.blogspot.com/2021/09/the-best-22-desert-background-pixel-art.html"> POV Desert Background 2 </a>
 <a href="https://www.freepik.com/premium-vector/portrait-man-cowboy-hat-mask-pixel-style-cowboy-robber_18599233.htm"> Bandit Icon/Sprite </a>
 <a href="https://myloview.com/wall-mural-8bit-cowboy-on-horse-pixel-art-vector-illustration-wild-west-no-BDBC4A9"> Horse Rider Sprite </a>
 <a href="https://dribbble.com/shots/6218037-Cowboy-Attack"> Cowboy Sprite Inspiration </a>
