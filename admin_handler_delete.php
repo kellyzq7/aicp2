@@ -32,12 +32,15 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     if(isset($inactiveCharacterID)){
       
       //select chosen character to alter celerity, charisma, and combat
-      $sth = $dbh -> prepare("SELECT * FROM player_character WHERE id = :character_id");
-      $sth -> bindValue(":character_id", $inactiveCharacterID);
+      $sth = $dbh -> prepare("SELECT * FROM player_character WHERE id = :inactive_id");
+      $sth -> bindValue(":inactive_id", $inactiveCharacterID);
       $sth -> execute();
       $chosenCharacter = $sth -> fetch();
       
-      
+      $sth2 = $dbh -> prepare("DELETE FROM player_character WHERE id =:inactive_id");
+      $sth2 -> bindValue(":inactive_id", $inactiveCharacterID);
+      $sth2 -> execute();
+      echo "<p>Chosen inactive player deleted successfully</p>";
       
       $_SESSION["is_admin"] = "true";
       echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
