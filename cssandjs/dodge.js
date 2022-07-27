@@ -19,9 +19,9 @@ function moveOn() {
 }
 
 if ($("body").hasClass("fast")) {
-  let success = setTimeout(moveOn, 28000); //if fast/easy encounter is echoed, it will finish in 28 seconds
+  let success = setTimeout(moveOn, 32000); //if fast/easy encounter is echoed, it will finish in 28 seconds
 }
 else {
-  let success = setTimeout(moveOn, 30000);// else the hard encounter finishes in 30 seconds
+  let success = setTimeout(moveOn, 35000);// else the hard encounter finishes in 30 seconds
 }
 });
