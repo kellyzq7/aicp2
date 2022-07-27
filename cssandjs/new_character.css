@@ -1,0 +1,56 @@
+@font-face {
+  font-family: Brotherland;
+  src: url("../fonts/Brotherlands.ttf");
+}
+
+@font-face {
+  font-family: Gin;
+  src: url("../fonts/gin.otf");
+}
+
+#container {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  height:60vh;
+}
+
+body {
+  background-color:#F5D3B8;
+}
+h4 {
+  margin:1vh;
+  display:block;
+  font-size:4.5vmax;
+  text-align:center;
+  color:#D8513D;
+  font-family:Gin;
+}
+
+h3 {
+  margin:1vh;
+  display:block;
+  font-size:6.5vmax;
+  text-align:center;
+  color:#D8513D;
+  font-family:Gin;
+}
+
+input {
+  margin:1vh;
+  font-size:4.5vmax;
+  text-align:center;
+  color:#D8513D;
+  font-family:Brotherland;
+  border:0.5vmax solid #D8513D;
+  background-color:#F5D3B8;
+  border-radius:1.2vmax;
+  padding:1vmax
+}
+
+input:hover {
+  color:#FD2229;
+  border:0.5vmax solid #FD2229;
+  border-radius:2vmax;
+}
