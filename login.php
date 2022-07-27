@@ -39,38 +39,53 @@ if (isset($_POST["email"]) && isset($_POST["password"]) == true) { //if coming f
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script></script>
 <style>
+
 @font-face {
   font-family: brotherland;
   src: url("fonts/Brotherlands.ttf");
 }
+
+@font-face {
+  font-family: Gin;
+  src: url("fonts/gin.otf");
+}
+
 h1 {
-  font-size:64px;
+  font-family:brotherland;
+  color:#D8513D;
+  font-size:72px;
 }
 body {
-  font-family:sans-serif;
+  font-family:Gin;
   display:flex;
   justify-content:center;
   align-items:center;
   flex-direction:column;
+  background-color:#F5D3B8;
 }
 
 a {
+  font-family:Gin;
+  color:#D8513D;
   text-align:center;
   display: block;
-  margin:20px;
+  margin:30px;
   font-size:36px;
 }
-input {
-  margin-right:20px;
-}
-form, input {
+input, label {
+  font-family:Gin;
+  padding:6px;
+  color:#2A2B2A;
   font-size:36px;
+}
+form {
+  display:flex;
+align-items:center;
+flex-direction:column;
 }
 </style>
 </head>
 <body>
-  <?php
-  ?>
 <h1> Account Login </h1>
 <?php
 
@@ -80,12 +95,16 @@ if ($new_account == true) {
 
 ?>
 <form action="redirect.php" method="POST">
+<div>
 <label for="user_login"> Email: </label>
 <input type="email" name="user_login" id="user_login">
-
+</div>
+<br><br>
+<div>
 <label for="pass_login"> Password: </label>
 <input type="password" name="pass_login" id="pass_login">
-
+</div>
+<br><br>
 <input type="submit" value="Login">
 </form>
 <div id="links">
