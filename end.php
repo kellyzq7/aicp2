@@ -24,6 +24,13 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <title>Cul Cavboj</title>
     <link href="cssandjs/new_character.css" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <style>
+
+    h4 {
+      font-size:5vmax;
+    }
+
+    </style>
   </head>
   <body>
 
