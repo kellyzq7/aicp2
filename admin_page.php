@@ -23,7 +23,8 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
 </head>
 <body>
   <?php
-    
+  //setting session variable is_admin to be true
+  $_SESSION["is_admin"] == "true";
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     $sth = $dbh -> prepare("SELECT * FROM player_character JOIN user ON user.id = player_character.user_id");
