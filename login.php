@@ -69,7 +69,7 @@ a {
   color:#D8513D;
   text-align:center;
   display: block;
-  margin:20px;
+  margin:30px;
   font-size:36px;
 }
 input, label {
