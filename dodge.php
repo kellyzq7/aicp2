@@ -97,7 +97,7 @@ if($player_row["class"] == "charger" && $player_row["celerity"] <= 4) { //if cha
 
   <div id="center">
   <a href="decision_romancevcombat.php" class="hidden onward"> Confront the Attackers </a>
-  <h1 id="warning_text"> Move to the Center </h1>
+  <h1 id="warning_text"> Ambush! Ambush! Move to the Center </h1>
   </div>
 
   <div id="right">
@@ -156,7 +156,7 @@ else if ($player_row["celerity"] >= 2 && $player_row["celerity"] <= 4) {//if cha
 
     <div id="center">
     <a href="decision_romancevcombat.php" class="hidden onward"> Confront the Attackers </a>
-    <h1 id="warning_text"> Move to the Center </h1>
+    <h1 id="warning_text"> Ambush! Move to the Center </h1>
     </div>
 
     <div id="right">
@@ -212,7 +212,7 @@ else if ($player_row["celerity"] >= 5) {//if character has 5+ celerity points ec
 
     <div id="center">
     <a href="decision_romancevcombat.php" class="hidden onward"> Confront the Attackers </a>
-    <h1 id="warning_text"> Move to the Center </h1>
+    <h1 id="warning_text"> Ambush! Move to the Center </h1>
     </div>
 
     <div id="right">
@@ -268,7 +268,7 @@ else {//else echo basically impossible encounter lmao
 
     <div id="center">
     <a href="decision_romancevcombat.php" class="hidden onward"> Confront the Attackers </a>
-    <h1 id="warning_text"> Move to the Center </h1>
+    <h1 id="warning_text"> Ambush! Move to the Center </h1>
     </div>
 
     <div id="right">
