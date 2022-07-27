@@ -63,6 +63,13 @@ p {
 <a href="https://myloview.com/wall-mural-8bit-cowboy-on-horse-pixel-art-vector-illustration-wild-west-no-BDBC4A9"> Horse Rider Sprite </a>
 <a href="https://dribbble.com/shots/6218037-Cowboy-Attack"> Cowboy Sprite Inspiration </a>
 <a href="https://www.reddit.com/r/PixelArt/comments/dx8oyi/bullet/"> Bullet Sprite</a>
+<a href="https://www.scarletmask.com/about">Vaquero Valley Background</a>
+<a href="https://wallpaperaccess.com/wild-west">Bronco Basin Background</a>
+<a href="http://clipart-library.com/cowboy-shooting-cliparts.html">Boss Fight Decision</a>
+<a href="pinterest.com/pin/484137028666789188/">Freedom decision</a>
+<a href="https://www.freepnglogos.com/images/heart-clipart-black-and-white-27655.html">Romance decision</a>
+<a href="https://www.123rf.com/clipart-vector/western_scene.html?sti=nt5impkpl996idnje2|">Decision Background</a>
+<a href="https://myloview.com.br/poster-western-landscape-at-orange-sunset-with-a-silhouette-of-a-cowboy-no-CF0FF1E">Romance Encounter Background</a>
 
 <h2 class="subheading"> Audio & Font Credit </h2>
 <a href="https://www.youtube.com/watch?v=AFa1-kciCb4&ab_channel=jordanharding"> Music/Main Theme</a>
