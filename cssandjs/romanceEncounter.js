@@ -5,11 +5,11 @@ $(document).ready(() => {
     })
 
     $("#okay").click(() => {
-      $("#response1").toggle();
+      $(".response1").toggleClass();
     })
 
     $("#good").click(() => {
-      $("#response2").toggle();
+      $(".response2").toggleClass();
     })
 
     $("#great").click(() => {
