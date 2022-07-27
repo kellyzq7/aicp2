@@ -3,9 +3,9 @@ session_start();
 require_once "sql_config.php";
 
 //redirect to login.php if not logged in
-// if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if user is logged in
-//   header('Location: login.php'); //if user isn't signed in send to login
-// }
+if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if user is logged in
+  header('Location: login.php'); //if user isn't signed in send to login
+}
 
 ?>
 <!doctype html>
