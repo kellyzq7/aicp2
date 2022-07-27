@@ -23,13 +23,14 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <head>
     <title>Cul Cavboj</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <link href="cssandjs/new_character.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
 
-
-  <h4>Aw Shucks! You failed this encounter. But that's ok you can always...<a href = 'class_select.php'><input type = 'button' value = 'create a new character' /></a></h4>
-
+<div id="container">
+  <h3>  Dang Cowboy, You Died! </h3> <h4> But that's ok you can always... </h4> <a href = 'class_select.php'><input type = 'button' value = 'Create a New Cowboy' /></a></h4>
+</div>
 
 
   </body>
-<html>
+</html>
