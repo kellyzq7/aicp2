@@ -37,53 +37,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) == true) { //if coming f
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script></script>
-<style>
-
-@font-face {
-  font-family: brotherland;
-  src: url("fonts/Brotherlands.ttf");
-}
-
-@font-face {
-  font-family: Gin;
-  src: url("fonts/gin.otf");
-}
-
-h1 {
-  font-family:brotherland;
-  color:#D8513D;
-  font-size:72px;
-}
-body {
-  font-family:Gin;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-direction:column;
-  background-color:#F5D3B8;
-}
-
-a {
-  font-family:Gin;
-  color:#D8513D;
-  text-align:center;
-  display: block;
-  margin:30px;
-  font-size:36px;
-}
-input, label {
-  font-family:Gin;
-  padding:6px;
-  color:#2A2B2A;
-  font-size:36px;
-}
-form {
-  display:flex;
-align-items:center;
-flex-direction:column;
-}
-</style>
+<link rel = "stylesheet" href = "cssandjs/login.css">
 </head>
 <body>
 <h1> Account Login </h1>
@@ -109,7 +63,6 @@ if ($new_account == true) {
 </form>
 <div id="links">
 <a href="register.php">Don't have an account? Register one here</a>
-<a href="logout.php"> Log Out </a>
 <a href="credit.php"> Credit Links </a>
 </div>
 </body>
