@@ -7,6 +7,10 @@
   src: url("../fonts/gin.otf");
 }
 
+iframe {
+  display:none;
+}
+
 .hidden {
   display:none;
   width:0;
