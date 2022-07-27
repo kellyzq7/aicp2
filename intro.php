@@ -50,7 +50,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {//check if user
         echo "<p>Error: {$e->getMessage()}</p>";
                   }
 
-      echo "<h1> Welcome Cul Cavboj " . $player_row["character_name"] . "</h1>";
+      echo "<h1> Welcome Cul Cavboj: " . $player_row["character_name"] . "</h1>";
 
       echo "<h2>We see that you have chosen the " . $player_row["class"] . " class. Excellet choice. You are about to encounter one of the most challenging journeys in the wild west. It will test your physical and emotional capability as a fellow cavboj. Are you ready?</h2>";
 
