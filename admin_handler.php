@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once "sql_config.php";
+$dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
 
 //redirect to login.php if not logged in
 if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if user is logged in
@@ -24,7 +26,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
   try {
     
     //character
-    $characterID = htmlspecialchars($_POST["characters"]);
+    $characterID = (int) htmlspecialchars($_POST["characters"]);
     
     //new name
     $newName = htmlspecialchars($_POST["renameTo"]);
@@ -50,7 +52,6 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     && isset($alterCombat) && $alterCombat > -4 && $alterCombat < 4){
       
       //set new name
-      $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
       $sth2 = $dbh -> prepare("UPDATE player_character SET character_name = :new_name
         WHERE id =:character_id");
       $sth2 -> bindValue(":new_name", $newName);
