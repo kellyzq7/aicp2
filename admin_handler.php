@@ -112,6 +112,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       
       $_SESSION["is_admin"] = "true";
       echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
+      echo "<br /><a href = 'admin_page.php'>Back to admin page</a>";
       
     }else{
       echo "<p>Error: you filled out the form incorrectly! Go <a href = 'admin_page.php'>back</a> and redo</p>";
