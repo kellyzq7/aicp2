@@ -18,25 +18,47 @@
   <?php
   session_start();
   require_once "sql_config.php";
+  $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
   try {
     
   if (isset($_POST["user_login"]) && isset($_POST["pass_login"])) {//checks that user came from login
-  $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-  $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
-  $sth_password->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
-  $sth_password->execute();
-  $login_row = $sth_password->fetch();
+    $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
+    $sth_password->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
+    $sth_password->execute();
+    $login_row = $sth_password->fetch();
 
     if (password_verify(htmlspecialchars($_POST["pass_login"]), $login_row['password'])) { //verify password agaisnt hash
         echo "<h1> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
+        //Fetch Character location, and echo link redirecting to that page
+        $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
+        $user_id = $login_row["id"]; //store the user id of the user to find its associated character(s)
+        //then get charcter where user_id = user id, and isActive = true
+        $sth_location = $dbh->prepare("SELECT *, player_character.id AS player_id  FROM player_character
+        JOIN user
+        ON user.id = player_character.user_id
+        WHERE
+        user.id =:log_user_id
+        AND
+        player_character.isActive = TRUE;");
+        $sth_location->bindValue(':log_user_id', $user_id);
+        $sth_location->execute();
+        $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
+        $_SESSION["player_id"] = $player["player_id"];//store the player charcter id in session for easy access to update its position on later pages.
+        $_SESSION["user_id"] = $user_id; //store user id in session
      }
     else { //if password doesn't match send to sign in
       header('Location: login.php');
     }
   }
+  //else if came from admin and all session vars already set 
   elseif($_SESSION["is_admin"] == "true"){
-    echo "<h1> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
+    echo "<h1> Succesfully Logged in as " . $_SESSION["email"] . "</h2>";
+    //then get charcter where user_id = user id, and isActive = true
+    $sth = $dbh->prepare("SELECT * FROM player_character WHERE id = :player_id AND isActive = TRUE");
+    $sth->bindValue(':player_id', $_SESSION["player_id"]);
+    $sth->execute();
+    $player = $sth->fetch(); //select player that admin edited
   }
   else {
       header('Location: login.php'); //if user isn't signed in send to login
@@ -47,26 +69,10 @@ catch (PDOException $e) {
 echo "<p>Error: {$e->getMessage()}</p>";
 }
 
-  //Fetch Character location, and echo link redirecting to that page
-  try {
-  $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
-  $user_id = $login_row["id"]; //store the user id of the user to find its associated character(s)
-  //then get charcter where user_id = user id, and isActive = true
-  $sth_location = $dbh->prepare("SELECT *, player_character.id AS player_id  FROM player_character
-  JOIN user
-  ON user.id = player_character.user_id
-  WHERE
-  user.id =:log_user_id
-  AND
-  player_character.isActive = TRUE;");
-  $sth_location->bindValue(':log_user_id', $user_id);
-  $sth_location->execute();
-  $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
-  $_SESSION["player_id"] = $player["player_id"];//store the player charcter id in session for easy access to update its position on later pages.
-  $_SESSION["user_id"] = $user_id; //store user id in session
-
+  
+try {
   //if user is admin, display link to admin page
-  if($login_row["isAdmin"] == 1){
+  if($login_row["isAdmin"] == 1 || $player["isAdmin"] == 1){
     echo "<a class='redirect' href='admin_page.php'> Admin Only Page </a><br /><br />";
   }
 
@@ -79,7 +85,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   }
   else if($player["position"] == 2) {
     echo "<a class='redirect' href='dodge.php'> Return to Game </a><br /><br />";
-}
+  }
   else if($player["position"] == 3) {
     echo "<a class='redirect' href='decision_romancevcombat.php'> Return to Game catch </a><br /><br />";
   }

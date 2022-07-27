@@ -39,14 +39,12 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     $alterCombat = (int) htmlspecialchars($_POST["alterCombat"]);
     
     //change position and array to check later
-    $newPosition = htmlspecialchars($_POST["position"]);
-    $positionList = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13",
-    "14", "15", "16", "17", "18", "19", "20", "21");
+    $newPosition = (int) htmlspecialchars($_POST["position"]);
 
     //backend validating inputs
     if(isset($newName) && strlen($newName) >= 1 && strlen($newName) <= 16
     && isset($newClass) && in_array($newClass, $classList)
-    && isset($newPosition) && in_array($newPosition, $positionList)
+    && isset($newPosition) && $newPosition >= 1 && $newPosition <= 21
     && isset($alterCelerity) && $alterCelerity > -4 && $alterCelerity < 4
     && isset($alterCharisma) && $alterCharisma > -4 && $alterCharisma < 4
     && isset($alterCombat) && $alterCombat > -4 && $alterCombat < 4){

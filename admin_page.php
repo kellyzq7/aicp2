@@ -52,9 +52,9 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       </select>";
       echo "<br />";
       echo "<p>Alter points: -3 to 3, 0 for no change</p>";
-      echo "<p>Alter celerity by: <input type = 'number' name='alterCelerity' min = '-3' max = '3' required></p>";
-      echo "<p>Alter charisma by: <input type = 'number' name='alterCharisma' min = '-3' max = '3' required></p>";
-      echo "<p>Alter combat by: <input type = 'number' name='alterCombat' min = '-3' max = '3' required></p>";
+      echo "<p>Alter celerity by: <input type = 'number' name='alterCelerity' min = '-3' max = '3' required /></p>";
+      echo "<p>Alter charisma by: <input type = 'number' name='alterCharisma' min = '-3' max = '3' required /></p>";
+      echo "<p>Alter combat by: <input type = 'number' name='alterCombat' min = '-3' max = '3' required /></p>";
       echo "<label for= 'position'>Change game position to:</label>
       <select name='position'>
       <option value='1' required>1: Introduction</option>
