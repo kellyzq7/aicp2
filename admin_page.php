@@ -95,11 +95,12 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     echo "<select name = 'inactiveCharacters'>";
     foreach($inactiveCharacters as $inactive){
         
-        echo "<option name = '{$inactive['character_name']}' value = '{$inactive['id']}' required>;
+        echo "<option name = '{$inactive['character_name']}' value = '{$inactive['id']}' required />
         {$inactive['character_name']}</option>";
     }
-    echo "<input type = 'submit' value = 'Permanately Delete'>";
-    
+    echo "</select>";
+    echo "<br /><br /><input type = 'submit' value = 'Permanately Delete'>";
+    echo "</form>";
     echo "<br /><br /><a href = 'redirect.php'>Back</a>";
     
 
