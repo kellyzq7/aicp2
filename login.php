@@ -117,7 +117,6 @@ if ($new_account == true) {
 </form>
 <div id="links">
 <a href="register.php">Don't have an account? Register one here</a>
-<a href="logout.php"> Log Out </a>
 <a href="credit.php"> Credit Links </a>
 </div>
 </body>
