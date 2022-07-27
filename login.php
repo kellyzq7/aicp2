@@ -73,15 +73,23 @@ a {
   font-size:36px;
 }
 input, label {
-  font-family:Gin;
   padding:6px;
   color:#2A2B2A;
   font-size:36px;
 }
+
+input {
+  font-family:sans-serif;
+}
+
+label {
+  font-family:Gin;
+}
+
 form {
   display:flex;
-align-items:center;
-flex-direction:column;
+  align-items:center;
+  flex-direction:column;
 }
 </style>
 </head>
