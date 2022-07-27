@@ -2,7 +2,7 @@
 session_start();
 require_once "sql_config.php";
 
-//check that user is signed in
+// check that user is signed in
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -59,31 +59,35 @@ else {
     }
     ?>
 
-  <h1 id="warning_text">On your way you encounter some bandits, click to shoot them, some may require multiple shots. Remember speed is key! </h1>
-  <h1 id="timer" class="hidden"></h1>
-
-  <?php
-  //update the data base with the stat increase
-  try {
-      $sth_stat = $dbh -> prepare("UPDATE player_character SET celerity = :new_celerity, combat = :new_combat, charisma = :new_charisma WHERE id=:player_id");
-      $sth_stat->bindValue(':player_id', $_SESSION["player_id"]);
-      $sth_stat->bindValue(':new_celerity', $new_celerity);
-      $sth_stat->bindValue(':new_combat', $new_combat);
-      $sth_stat->bindValue(':new_charisma', $new_charisma);
-      $sth_stat -> execute();
-      $new_stats = $sth_stat -> fetch();
-
-      //echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
-      echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have " . $new_celerity  . " celerity points, " . $new_combat  . " combat points, and " . $new_charisma  . " charisma points. </p>";
-    }
-
- catch (PDOException $e) {
-      echo "<p>Error: {$e->getMessage()}</p>";
-  }
-
-  ?>
-  <a href="town2.php" class="hidden onward"> Move on to Bronco Basin </a>
   <div id="grid">
+
+    <div class="misc">
+      <h1 id="warning_text">On your way you encounter some bandits, click to shoot them, some may require multiple shots. Remember speed is key! </h1>
+      <h1 id="timer" class="hidden"></h1>
+
+      <?php
+      //update the data base with the stat increase
+      try {
+          $sth_stat = $dbh -> prepare("UPDATE player_character SET celerity = :new_celerity, combat = :new_combat, charisma = :new_charisma WHERE id=:player_id");
+          $sth_stat->bindValue(':player_id', $_SESSION["player_id"]);
+          $sth_stat->bindValue(':new_celerity', $new_celerity);
+          $sth_stat->bindValue(':new_combat', $new_combat);
+          $sth_stat->bindValue(':new_charisma', $new_charisma);
+          $sth_stat -> execute();
+          $new_stats = $sth_stat -> fetch();
+
+          //echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
+          echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have " . $new_celerity  . " celerity points, " . $new_combat  . " combat points, and " . $new_charisma  . " charisma points. </p>";
+        }
+
+     catch (PDOException $e) {
+          echo "<p>Error: {$e->getMessage()}</p>";
+      }
+
+      ?>
+      <a href="town2.php" class="hidden onward"> Move on to Bronco Basin </a>
+      </div>
+
   <img class="bandit hidden" src="img/bandit.png" id="bandit1" alt="A Bandit Enemey" />
   <img class="bandit hidden" src="img/bandit.png" id="bandit2" alt="A Bandit Enemey" />
   <img class="bandit hidden" src="img/bandit.png" id="bandit3" alt="A Bandit Enemey" />
