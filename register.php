@@ -43,13 +43,22 @@ a {
   margin:30px;
   font-size:36px;
 }
+
 input, label {
   margin-bottom:1.4vmax;
-  font-family:Gin;
   padding:6px;
   color:#2A2B2A;
   font-size:36px;
 }
+
+input {
+  font-family:sans-serif;
+}
+
+label {
+  font-family:Gin;
+}
+
 form {
 display:flex;
 align-items:center;
