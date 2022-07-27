@@ -29,12 +29,14 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     $sth = $dbh -> prepare("SELECT player_character.id, player_character.character_name FROM player_character JOIN user ON user.id = player_character.user_id
     WHERE isActive = TRUE");
     $sth -> execute();
-    $allCharacters = $sth -> fetchAll();
+    $activeCharacters = $sth -> fetchAll();
+    
+    //choose to edit character stats
     echo "<div id = 'character' class = 'show'>";
       echo "<p>CHOOSE A CHARACTER TO EDIT: </p>";
       echo "<form action = 'admin_handler.php' method = 'post'>";
       echo "<select name = 'characters'>";
-      foreach($allCharacters as $character){
+      foreach($activeCharacters as $character){
           echo "<option name = '{$character['character_name']}' value = '{$character['id']}' required>
           {$character['character_name']}</option>";
       }
@@ -82,6 +84,21 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       echo "<br /><br /><input type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
     echo "</div>";
     echo "</form>";
+    
+    //choose to delete inactive characters
+    $sth2 = $dbh -> prepare("SELECT player_character.id, player_character.character_name FROM player_character JOIN user ON user.id = player_character.user_id
+    WHERE isActive = FALSE");
+    $sth2 -> execute();
+    $inactiveCharacters = $sth2 -> fetchAll();
+    echo "<p>CHOOSE AN INACTIVE CHARACTER TO DELETE: </p>";
+    echo "<form action = 'admin_handler_delete.php' method = 'post'>";
+    echo "<select name = 'characters'>";
+    foreach($inactiveCharacters as $inactive){
+        
+        echo "<option name = '{$inactive['character_name']}' value = '{$inactive'id']}' required>
+        {$inactive['character_name']}</option>";
+    }
+    echo "<input type = 'submit' value = 'Permanately Delete'>";
     
     echo "<br /><br /><a href = 'redirect.php'>Back</a>";
     
