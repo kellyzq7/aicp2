@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-let gracePeriod = setTimeout(encounterBegin, 4000);
+let gracePeriod = setTimeout(encounterBegin, 6000);
 
 function encounterBegin() {
   $("#warning_text").addClass("hidden");
@@ -38,13 +38,13 @@ let timerLength = "undefined"; //set timer length to be redifned based on encoun
 
 //set timer to different link based on diffiuclty of encounter
 if ($("#encounter_check").hasClass("easy")) {
-    timerLength = 27;
+    timerLength = 32;
 }
 else if ($("#encounter_check").hasClass("medium")) {
-    timerLength = 25;
+    timerLength = 30;
 }
 else {
-    timerLength = 23;
+    timerLength = 28;
 }
 
 
@@ -58,10 +58,5 @@ function timer() {
     timerLength--; //subtract 1 from the remaining time (will trigger every second)
   }
 }
-
-
-
-
-
 
   });
