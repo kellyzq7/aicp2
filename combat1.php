@@ -30,6 +30,21 @@ else {
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
     <script src = "cssandjs/combat.js"></script>
+    <style>
+
+    body {
+      overflow:hidden;
+      height:100vh;
+      width:100vw;
+      margin:0;
+      background-color:#D96B32;
+      cursor: url('img/scope_cursor.png'), auto;
+      background-image: url('img/combat_bg.png');
+      background-repeat:no-repeat;
+      background-position:center center;
+    }
+
+    </style>
   </head>
   <body>
   <?php
