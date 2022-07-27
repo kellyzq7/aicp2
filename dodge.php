@@ -27,6 +27,30 @@ else {
 <link href="cssandjs/dodge.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="cssandjs/dodge.js"></script>
+<style>
+body.slow {
+  overflow:hidden;
+  max-height:100vh;
+  max-width:100vw;
+  margin:0;
+  background-color:#C5964D;
+  cursor: url('img/slow_chase_cursor.png'), auto;
+  background-image: url('img/desert_bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+body.fast {
+  overflow:hidden;
+  max-height:100vh;
+  max-width:100vw;
+  margin:0;
+  background-color:#C5964D;
+  cursor: url('img/fast_chase_cursor.png'), auto;
+  background-image: url('img/desert_bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+</style>
 </head>
 
 <?php
