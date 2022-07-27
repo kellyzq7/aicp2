@@ -22,14 +22,16 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
 <html lang="en-US">
   <head>
     <title>Cul Cavboj</title>
+    <link href="cssandjs/new_character.css" rel="stylesheet" type="text/css" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   </head>
   <body>
 
 
-  <h4>Congratulations on completing the Game. If you would like to explor a new path...<a href = 'class_select.php'><input type = 'button' value = 'create a new character' /></a></h4>
-
+    <div id="container">
+      <h3>  Cudos Cowboy, You Won! </h3> <h4> If you want to play again... </h4> <a href = 'class_select.php'><input type = 'button' value = 'Create a New Cowboy' /></a></h4>
+    </div>
 
 
   </body>
-<html>
+</html>
