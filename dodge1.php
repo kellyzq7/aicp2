@@ -24,9 +24,35 @@ else {
 <title>Cul Cavboj</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
-<link href="cssandjs/dodge1.css" rel="stylesheet" type="text/css" />
+<link href="cssandjs/dodge.css" rel="stylesheet" type="text/css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="cssandjs/dodge.js"></script>
+<style>
+
+body.slow {
+  overflow:hidden;
+  max-height:100vh;
+  max-width:100vw;
+  margin:0;
+  background-color:#C5964D;
+  cursor: url('img/slow_chase_cursor.png'), auto;
+  background-image: url('img/dodge2_bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+body.fast {
+  overflow:hidden;
+  max-height:100vh;
+  max-width:100vw;
+  margin:0;
+  background-color:#C5964D;
+  cursor: url('img/fast_chase_cursor.png'), auto;
+  background-image: url('img/dodge2_bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+
+</style>
 </head>
 
 <?php
