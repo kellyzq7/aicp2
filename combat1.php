@@ -36,7 +36,7 @@ else {
     try {
         //query for the player's combat stats
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        $sth2 = $dbh -> prepare("SELECT * FROM player_characterWHERE id = :player_id");
+        $sth2 = $dbh -> prepare("SELECT * FROM player_character WHERE id = :player_id");
         $sth2 -> bindvalue(":player_id", $_SESSION["player_id"]);
         $sth2 -> execute();
         $player = $sth2 -> fetch();
@@ -66,6 +66,12 @@ else {
       <h1 id="timer" class="hidden"></h1>
 
       <?php
+
+      //add random number to buff stats by
+      $new_celerity = $player["celerity"] + rand(0,2);
+      $new_combat = $player["combat"] + rand(0,2);
+      $new_charisma = $player["charisma"] + rand(0,2);
+
       //update the data base with the stat increase
       try {
           $sth_stat = $dbh -> prepare("UPDATE player_character SET celerity = :new_celerity, combat = :new_combat, charisma = :new_charisma WHERE id=:player_id");
