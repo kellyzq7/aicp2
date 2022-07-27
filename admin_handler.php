@@ -109,8 +109,9 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       $sth8 -> bindValue(":new_pos", $newPosition);
       $sth8 -> bindValue(":character_id", $characterID);
       $sth8 -> execute();
-      echo "<p>Updated combat points successfully</p>";
+      echo "<p>Updated new position successfully</p>";
       
+      $_SESSION["is_admin"] = "true";
       echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
       
     }else{

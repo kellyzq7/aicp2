@@ -20,6 +20,7 @@
   require_once "sql_config.php";
 
   try {
+    
   if (isset($_POST["user_login"]) && isset($_POST["pass_login"])) {//checks that user came from login
   $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
   $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
@@ -27,16 +28,19 @@
   $sth_password->execute();
   $login_row = $sth_password->fetch();
 
-  if (password_verify(htmlspecialchars($_POST["pass_login"]), $login_row['password'])) { //verify password agaisnt hash
-      echo "<h1> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
-   }
-  else { //if password doesn't match send to sign in
-    header('Location: login.php');
+    if (password_verify(htmlspecialchars($_POST["pass_login"]), $login_row['password'])) { //verify password agaisnt hash
+        echo "<h1> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
+     }
+    else { //if password doesn't match send to sign in
+      header('Location: login.php');
+    }
   }
-}
-else {
-    header('Location: login.php'); //if user isn't signed in send to login
-}
+  elseif($_SESSION["is_admin"] == "true"){
+    echo "<h1> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
+  }
+  else {
+      header('Location: login.php'); //if user isn't signed in send to login
+  }
 
 }
 catch (PDOException $e) {
