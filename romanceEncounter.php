@@ -54,15 +54,18 @@ echo "<h1 class='death'>You died!</h1>";
 
 if ($charisma > 0){
     echo "<p id='okay'>I'm too beautiful to be killed! Don't ya agree?</p>";
-    echo "<p id='response1'>James Jessie: Cue epic response 1</p>";
+    echo "<p class='response1'>James Jessie: True, but I don't get anything from keeping you alive.</p>";
+    echo "<p class='response1>Not exactly. We can become partners and I could help you out.</p>";
+    echo "<p class='response1>James Jessie: Alright. You got yourself a deal.</p>";
       }
 if ($charisma > 1){
     echo "<p id='good'>If you killed me now, then how would I take you out for dinner tonight?</p>";
-    echo "<p id='response2'>James Jessie: Cue epic response 2</p>";
+    echo "<p class='response2'>James Jessie: Hmm... good point. Where should we eat, though?</p>";
+    echo "<p class='response2'>Let's look around.</p>";
       }
 if ($charisma > 2){
-    echo "<p id='great'>idk what to write here</p>";
-    echo "<p id='response3'>James Jessie: Cue epic response 3</p>";
+    echo "<p id='great'>You wouldn't hurt someone as amazing as me.</p>";
+    echo "<p id='response3'>James Jessie: Fair enough.</p>";
       }
 
     echo "<p>Click<a href = 'decision_towns1.php'>here</a> to move on</p>";
