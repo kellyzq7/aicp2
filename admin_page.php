@@ -26,7 +26,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
 
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh -> prepare("SELECT * FROM player_character JOIN user ON user.id = player_character.user_id
+    $sth = $dbh -> prepare("SELECT player_character.id, player_character.character_name FROM player_character JOIN user ON user.id = player_character.user_id
     WHERE isActive = TRUE");
     $sth -> execute();
     $allCharacters = $sth -> fetchAll();

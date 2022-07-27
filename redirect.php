@@ -72,7 +72,7 @@ echo "<p>Error: {$e->getMessage()}</p>";
   
 try {
   //if user is admin, display link to admin page
-  if($login_row["isAdmin"] == 1 || $player["isAdmin"] == 1){
+  if($login_row["isAdmin"] == 1 || $player["isAdmin"] == ){
     echo "<a class='redirect' href='admin_page.php'> Admin Only Page </a><br /><br />";
   }
 
