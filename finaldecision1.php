@@ -23,19 +23,21 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <head>
     <title>Decision: FINAL PATH</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="cssandjs/finaldecision1.css">
+    <link rel="stylesheet" href="finaldecision.css">
   </head>
   <body>
     <h1>Decision: Love Story or Boss Face Off</h1>
       <div id = "container">
         <div id = "love">
-            <img src = "img/romance.png" alt = "romance" />
-            <a href = "love.php"><input type = "button" id = "love" name = "love" value = "Send my love to my new loooover" /></a>
+            <img src = "https://www.freepnglogos.com/uploads/heart-clipart-black-and-white/heart-outlines-download-best-heart-outlines-30.png" width = 50% alt = "romance" />
+            <br>
+            <a href = "love.php"><input type = "button" class = "buttons" name = "love" value = "Love story" /></a>
         </div>
-        
+
         <div id = "boss">
-            <img src = "img/combat.png" alt = "combat" />
-            <a href = "boss.php"><input type = "button" id = "boss" name = "boss" value = "Boss face off" /></a>
+            <img src = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png" width = 80% alt = "combat" />
+            <br>
+            <a href = "boss.php"><input type = "button" class = "buttons" name = "boss" value = "Boss face off" /></a>
         </div>
       </div>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>

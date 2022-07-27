@@ -23,21 +23,24 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <head>
     <title>Decision: FINAL PATH</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="cssandjs/finaldecision2.css">
+    <link rel="stylesheet" href="finaldecision.css">
   </head>
   <body>
-    <h1>Decision: Boss Face Off or Freedom</h1>
+    <h1>Decision: Freedom or Boss Face Off</h1>
       <div id = "container">
-        <div id = "boss">
-            <img src = "img/romance.png" alt = "romance" />
-            <a href = "boss.php"><input type = "button" id = "boss" name = "boss" value = "Boss face off" /></a>
+        <div id = "love">
+            <img src = "https://i.pinimg.com/originals/f5/0c/af/f50cafbb38da918ad4129ae5e13ffd50.png" width = 56% alt = "romance" />
+            <br>
+            <a href = "love.php"><input type = "button" class = "buttons" name = "love" value = "Freedom" /></a>
         </div>
-        
-        <div id = "freedom">
-            <img src = "img/combat.png" alt = "combat" />
-            <a href = "freedom.php"><input type = "button" id = "freedom" name = "freedom" value = "FREEEDOM" /></a>
+
+        <div id = "boss">
+            <img src = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png" width = 80% alt = "combat" />
+            <br>
+            <a href = "boss.php"><input type = "button" class = "buttons" name = "boss" value = "Boss face off" /></a>
         </div>
       </div>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 <html>
+
