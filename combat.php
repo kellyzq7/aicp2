@@ -2,7 +2,7 @@
 session_start();
 require_once "sql_config.php";
 
-check that user is signed in
+//check that user is signed in
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
