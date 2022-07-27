@@ -30,7 +30,7 @@
     $login_row = $sth_password->fetch();
 
     if (password_verify(htmlspecialchars($_POST["pass_login"]), $login_row['password'])) { //verify password agaisnt hash
-        echo "<h1> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
+        echo "<h1 id='logged_in'> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
         //Fetch Character location, and echo link redirecting to that page
         $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
         $user_id = $login_row["id"]; //store the user id of the user to find its associated character(s)
