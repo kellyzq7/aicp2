@@ -21,9 +21,9 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Decision: FINAL PATH</title>
+    <title>Cul Cavboj</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="finaldecision.css">
+    <link rel="stylesheet" href="cssandjs/finaldecision.css">
   </head>
   <body>
     <h1>Decision: Love Story or Boss Face Off</h1>
@@ -35,7 +35,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
         </div>
 
         <div id = "boss">
-            <img src = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png" width = 80% alt = "combat" />
+            <img src = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png" width = 80% alt = "boss" />
             <br>
             <a href = "boss.php"><input type = "button" class = "buttons" name = "boss" value = "Boss face off" /></a>
         </div>
