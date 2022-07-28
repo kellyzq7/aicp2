@@ -312,7 +312,7 @@ $sth_stat -> execute();
 $new_stats = $sth_stat -> fetch();
 
 //echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
-echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have " . $new_celerity  . " celerity points, " . $new_combat  . " combat points, and " . $new_charisma  . " charisma points. </p>";
+echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have <b>{$new_celerity}</b> celerity points, <b>{$new_combat}</b> combat points, and <b>{$new_charisma}</b> charisma points. </p>";
 }
 catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
