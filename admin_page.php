@@ -27,19 +27,19 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
     //checking if current user is an admin
-    $sth = $dbh -> prepare("SELECT * FROM player_character WHERE id = :player_id");
-    $sth -> bindValue(":player_id", $_SESSION["player_id"]);
+    $sth = $dbh -> prepare("SELECT * FROM user WHERE email = :email");
+    $sth -> bindValue(":email", $_SESSION["email"]);
     $sth -> execute();
     $user = $sth -> fetch();
 
     //only display form if user is actually admin
     if($user["isAdmin"] == 1){
-      
+
       $sth = $dbh -> prepare("SELECT player_character.id, player_character.character_name FROM player_character JOIN user ON user.id = player_character.user_id
       WHERE isActive = TRUE");
       $sth -> execute();
       $activeCharacters = $sth -> fetchAll();
-      
+
         //choose to edit character stats
       echo "<div id = 'container'>";
         echo "<div id = 'character' class = 'show'>";
@@ -102,7 +102,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
           echo "<form action = 'admin_handler_delete.php' method = 'post'>";
           echo "<select name = 'inactiveCharacters'>";
           foreach($inactiveCharacters as $inactive){
-              
+
               echo "<option name = '{$inactive['character_name']}' value = '{$inactive['id']}' required />
               {$inactive['character_name']}</option>";
           }
@@ -113,21 +113,21 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
           echo "<br /><br /><a href='logout.php'><input type = 'button' value = 'Save and Log Out' /></a>";
         echo "</div>";
       echo "</div>";
-      
-    } else {
+
+    } else { //if user isn't admin don't display admin powers
       echo "<p>You are not actually admin are you?</p>";
       echo "<br /><br /><a href = 'redirect.php'>Back</a>";
     }
-    
-    
+
+
 
   }catch (PDOException $e) {
       echo "<p>Error: {$e->getMessage()}</p>";
   }
 
-  
+
   ?>
-  
+
 
 </body>
 </html>
