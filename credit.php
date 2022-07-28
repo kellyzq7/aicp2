@@ -66,7 +66,7 @@ p {
 <a href="https://www.scarletmask.com/about">Vaquero Valley Background</a>
 <a href="https://wallpaperaccess.com/wild-west">Bronco Basin Background</a>
 <a href="http://clipart-library.com/cowboy-shooting-cliparts.html">Boss Fight Decision</a>
-<a href="pinterest.com/pin/484137028666789188/">Freedom decision</a>
+<a href="pinterest.com/pin/484137028666789188">Freedom decision</a>
 <a href="https://www.freepnglogos.com/images/heart-clipart-black-and-white-27655.html">Romance decision</a>
 <a href="https://www.123rf.com/clipart-vector/western_scene.html?sti=nt5impkpl996idnje2|">Decision Background</a>
 <a href="https://myloview.com.br/poster-western-landscape-at-orange-sunset-with-a-silhouette-of-a-cowboy-no-CF0FF1E">Romance Encounter Background</a>
@@ -76,7 +76,7 @@ p {
 <a href = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png">Boss' Gun</a>
 <a href = "https://www.freepnglogos.com/uploads/heart-clipart-black-and-white/heart-outlines-download-best-heart-outlines-30.png">Heart</a>
 <a href = "https://i.pinimg.com/originals/f5/0c/af/f50cafbb38da918ad4129ae5e13ffd50.png">Freedom Horse</a>
-<a href = "https://us.123rf.com/450wm/paseven/paseven2007/paseven200700103/152540662-western-landscape-at-orange-sunset-with-a-silhouette-of-a-cowboy-on-horseback-and-indian-wigwams-at-.jpg?ver=6">Romance Encounter Background</a>
+<a href = "https://media.istockphoto.com/vectors/desert-sand-landscape-with-mountains-and-cactus-silhouette-on-the-vector-id1347454156?k=20&m=1347454156&s=612x612&w=0&h=hIoYzCEIAvMzZPYD9CGJodP0JeKWxVWav1Qn9vL_f7U=">Romance v Combat Background</a>
 
 <h2 class="subheading"> Audio & Font Credit </h2>
 <a href="https://www.youtube.com/watch?v=AFa1-kciCb4&ab_channel=jordanharding"> Music/Main Theme</a>
