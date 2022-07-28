@@ -74,6 +74,7 @@ p {
 <a href = "https://storage.googleapis.com/production-hostgator-v1-0-8/148/412148/0mPbwXcy/18cdb98a2a044f2da36bba895d071701">Vaquero Valley</a>
 <a href = "https://wallpaperaccess.com/full/313409.jpg">Bronco Basin</a>
 <a href = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png">Boss' Gun</a>
+<a href = "https://www.freepnglogos.com/uploads/heart-clipart-black-and-white/heart-outlines-download-best-heart-outlines-30.png">Heart</a>
 
 <h2 class="subheading"> Audio & Font Credit </h2>
 <a href="https://www.youtube.com/watch?v=AFa1-kciCb4&ab_channel=jordanharding"> Music/Main Theme</a>
