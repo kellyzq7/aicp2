@@ -113,6 +113,6 @@ div.archive li p {
   text-transform:capitalize;
 }
 
-#charName{
+#charName, #logged_in{
   font-family: brotherland;
 }
