@@ -22,7 +22,7 @@
   $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
   try {
-    
+
   if (isset($_POST["user_login"]) && isset($_POST["pass_login"])) {//checks that user came from login
     $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
     $sth_password->bindValue(':login_email', htmlspecialchars($_POST["user_login"]));
@@ -52,7 +52,7 @@
       header('Location: login.php');
     }
   }
-  //else if came from admin and all session vars already set 
+  //else if came from admin and all session vars already set
   elseif($_SESSION["is_admin"] == "true"){
     echo "<h1> Succesfully Logged in as " . $_SESSION["email"] . "</h2>";
     //then get charcter where user_id = user id, and isActive = true
@@ -72,7 +72,7 @@ catch (PDOException $e) {
 echo "<p>Error: {$e->getMessage()}</p>";
 }
 
-  
+
 try {
   //if user is admin, display link to admin page
   if($login_row["isAdmin"] == 1 || $player["isAdmin"] == 1){
@@ -170,16 +170,21 @@ try {
   $sth_archive->bindValue(':log_user_id', $user_id);
   $sth_archive->execute();
   $archived_characters = $sth_archive->fetchall(); //create array of arrays with all inactive characters belonging to user
+?>
 
+<div id="previous">
+<h3>Previous Characters: </h3>
+
+<div id="inactive">
+<?php
   foreach ($archived_characters as $character) { //loop through array of arrays and display stats of each archived character
     echo '<div class="archive">
-    <h4>Previous Character:</h4>
+    <h4>' . $character["character_name"] . '</h4>
     <ul>
-    <li>Name:' . $character["character_name"] .'</li>
-    <li>Class:' . $character["class"] .'</li>
-    <li>Celerity Points:' . $character["celerity"] .'</li>
-    <li>Charisma Points:' . $character["charisma"] .'</li>
-    <li>Combat Points:' . $character["combat"] .'</li>
+    <li>Class: <p>' . $character["class"] .'</p></li>
+    <li>Celerity Points: <b>' . $character["celerity"] .'</b></li>
+    <li>Charisma Points: <b>' . $character["charisma"] .'</b></li>
+    <li>Combat Points: <b>' . $character["combat"] .'</b></li>
     </ul>
     </div>';
   }
@@ -189,6 +194,9 @@ try {
   echo "<p>Error: {$e->getMessage()}</p>";
 }
   ?>
+</div>
+</div>
+
   <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
 </body>
 </html>
