@@ -37,10 +37,10 @@ $("#bandit25").click((event) => {
 let timerLength = "undefined"; //set timer length to be redifned based on encounter difficulty
 
 //set timer to different link based on diffiuclty of encounter
-if ($("#encounter_check").hasClass("easy")) {
+if ($(".encounter_check").hasClass("easy")) {
     timerLength = 26;
-}
-else if ($("#encounter_check").hasClass("medium")) {
+  }
+else if ($(".encounter_check").hasClass("medium")) {
     timerLength = 24;
 }
 else {
