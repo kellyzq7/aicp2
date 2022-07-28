@@ -18,7 +18,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
 <meta name="viewport" content="width=device-width">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script></script>
-<style></style>
+<link rel="stylesheet" href="cssandjs/admin_handlers.css">
 </head>
 <body>
   <?php
