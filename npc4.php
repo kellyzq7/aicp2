@@ -48,7 +48,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <p>Yeah, I am. There's a gang of cowboys chasing me as we speak.</p>
     <p>NPC: Well, why don't you allow me to help? I can promise you there'll be no more hunters. Just freedom.</p>
   </div>
-    <h2>A hard decision awaits you <a href = "finaldecision1.php">here.</a></h2>
+    <h2>A hard decision awaits you <a href = "finaldecision2.php">here.</a></h2>
 
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>

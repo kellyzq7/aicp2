@@ -46,7 +46,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <p>Kitty Wilkes: Gosh, what am I saying? That's wishful thinking.</p>
     <p>Kitty Wilkes: Anyway, there ya have it. Welcome to Vaquero Valley!</p>
   </div>
-    <h2>Walk to next person: <a href = "Kitty Wilkes2.php">walk</a></h2>
+    <h2>Walk to next person: <a href = "npc2.php">walk</a></h2>
 
   <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
