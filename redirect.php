@@ -93,7 +93,7 @@ try {
     echo "<a class='redirect' href='decision_romancevcombat.php'> Return to Game catch </a><br /><br />";
   }
   else if($player["position"] == 4) {
-    echo "<a class='redirect' href='romanceEncounter.php.'> Return to Game </a><br /><br />";
+    echo "<a class='redirect' href='romanceEncounter.php'> Return to Game </a><br /><br />";
   }
   else if($player["position"] == 5) {
     echo "<a class='redirect' href='combat1.php'> Return to Game </a><br /><br />";
