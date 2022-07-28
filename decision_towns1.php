@@ -29,7 +29,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <h1>Decision: Go to Vaquero Valley or Bronco Basin</h1>
       <div id = "container">
         <div id = "town1">
-            <img src = "https://storage.googleapis.com/production-hostgator-v1-0-8/148/412148/0mPbwXcy/18cdb98a2a044f2da36bba895d071701" width = 103% alt = "romance" />
+            <img src = "img/vaquerovalley.png" width = 103% alt = "romance" />
             <a href = "yay.php"><input type = "button" id = "button1" name = "ready" value = "Vaquero Valley" /></a>
         </div>
 

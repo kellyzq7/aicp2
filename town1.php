@@ -52,7 +52,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <body>
       <h1>Welcome to Vaquero Valley, click anywhere on image to walk</h1>
       <a href = 'npc1.php'>
-      <img src = "https://storage.googleapis.com/production-hostgator-v1-0-8/148/412148/0mPbwXcy/18cdb98a2a044f2da36bba895d071701" height = 100% width = 100% alt = "Vaquero Valley" />
+      <img src = "img/vaquerovalley.png" height = 100% width = 100% alt = "Vaquero Valley" />
       </a>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
