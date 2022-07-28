@@ -33,9 +33,6 @@ else {
     <style>
 
     body {
-      overflow:hidden;
-      height:100vh;
-      width:100vw;
       margin:0;
       background-color:#F38A46;
       cursor: url('../img/scope_cursor.png'), auto;
@@ -75,15 +72,11 @@ else {
     else { //else echo hardest encounter
           echo "<div class='hidden encounter_check hard'></div>"; //echo a div that the JS can check for what difficulty of encounter make
     }
-    }
-    catch (PDOException $e) {
+  }catch (PDOException $e) {
         echo "<p>Error: {$e->getMessage()}</p>";
     }
     ?>
-
-  <div id="grid">
-
-    <div class="misc">
+    
       <h1 id="warning_text">This is it. The final boss encounter. Keep shooting at the boss to win. Good luck partner.</h1>
       <h1 id="timer" class="hidden"></h1>
 
@@ -113,10 +106,8 @@ else {
       }
 
       ?>
-      </div>
 
-  <img class="boss" src="img/bandit.png" id="boss" alt="The Boss" />
+  <img src="img/bandit.png" class = "hidden" id="boss" alt="The Boss" />
 
-  </div>
   </body>
 </html>
