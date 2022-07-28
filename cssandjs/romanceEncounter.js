@@ -1,18 +1,35 @@
 $(document).ready(() => {
 
-    $("#fail").click(() => {
-      $(".death").toggleClass();
+//when an option is selected reveal the proceeding dialouge
+    $("#first_option").click((event) => {
+      $(".option").addClass("hidden"); //hide options
+      $(event.target).removeClass("hidden"); //unhide selected option
+      $(".response").removeClass("hidden");
+      let deathPeriod = setTimeout(death, 4000);  //send player to death page after given time to read
     })
 
-    $("#okay").click(() => {
-      $(".response1").toggleClass();
+    $("#second_option").click((event) => {
+      $(".option").addClass("hidden"); //hide options
+      $(event.target).removeClass("hidden"); //unhide selected option
+      $(".response1").removeClass("hidden");
+      let deathPeriod = setTimeout(death, 4000); //send player to death page after given time to read
     })
 
-    $("#good").click(() => {
-      $(".response2").toggleClass();
+    $("#third_option").click((event) => {
+      $(".option").addClass("hidden"); //hide options
+      $(event.target).removeClass("hidden"); //unhide selected option
+      $(".response2").removeClass("hidden");
+      $(".stats").removeClass("hidden"); //display stats gained from encounter
     })
 
-    $("#great").click(() => {
-      $("#response3").toggle();
+    $("#fourth_option").click((event) => {
+      $(".option").addClass("hidden"); //hide options
+      $(event.target).removeClass("hidden"); //unhide selected option
+      $(".response3").removeClass("hidden");
+      $(".stats").removeClass("hidden"); //display stats gained from encounter
     })
+
+    function death() {
+      location.replace("failed_encounter.php");
+    }
 });
