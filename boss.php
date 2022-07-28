@@ -56,7 +56,7 @@ else {
     try {
         //query for the player's combat stats
         $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-        $sth2 = $dbh -> prepare("SELECT * FROM player_characterWHERE id = :player_id");
+        $sth2 = $dbh -> prepare("SELECT * FROM player_character WHERE id = :player_id");
         $sth2 -> bindvalue(":player_id", $_SESSION["player_id"]);
         $sth2 -> execute();
         $player = $sth2 -> fetch();
