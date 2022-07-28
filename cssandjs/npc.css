@@ -9,8 +9,10 @@
 }
 
 body{
-  background-image: url("https://media.istockphoto.com/illustrations/old-west-town-illustration-id98345036?k=20&m=98345036&s=612x612&w=0&h=MYTbl9v-zl6AEHIqHxUoHBtw58U9z4xAilXRY855ywc=");
+  background-image: url("../img/npc_bg.jpeg");
   background-size: cover;
+  background-repeat:no-repeat;
+  background-color:brown;
 }
 
 h1{
