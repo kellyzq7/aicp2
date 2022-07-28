@@ -38,8 +38,8 @@ else {
       width:100vw;
       margin:0;
       background-color:#F38A46;
-      cursor: url('../img/scope_cursor.png'), auto;
-      background-image: url('img/combat_bg2.png');
+      cursor: url('img/scope_cursor.png'), auto;
+      background-image: url('img/combat_bg_2.png');
       background-repeat:no-repeat;
       background-position:center center;
     }
@@ -47,7 +47,7 @@ else {
     </style>
   </head>
   <body>
-    
+
     <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
 
     <audio autoplay>
