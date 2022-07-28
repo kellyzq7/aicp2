@@ -29,7 +29,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <h1>Decision: Freedom or Boss Face Off</h1>
       <div id = "container">
         <div id = "boss">
-            <img src = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png" width = 80% alt = "boss" />
+            <img src = "img/gun.png" width = 80% alt = "boss" />
             <br>
             <a href = "boss.php"><input type = "button" class = "buttons" name = "boss" value = "Boss face off" /></a>
         </div>
