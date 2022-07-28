@@ -2,7 +2,7 @@
 session_start();
 require_once "sql_config.php";
 
-//check that user is signed in
+// check that user is signed in
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -23,56 +23,56 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Romance Encounter</title>
+    <title>Cul Cavboj</title>
     <link rel="stylesheet" href="cssandjs/romanceEncounter.css">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="cssandjs/romanceEncounter.js"></script>
 </head>
 <body>
+  <p id="first">James Jessie: Well, lookie here. Tell me, traveller, why I shouldn't end yer life right here, right now.</p>
+  <br>
+
+  <h2 id="options"> Select a dialouge option: </h2>
+
+  <p class="option" id='first_option'>I'm too young to die! Please spare me!</p>
+
+
+
+  <p class='response hidden'>James Jessie: Nice try. That's not gonna convince me.</p>
+  <h1 class='response died hidden'>You died!</h1>
 <?php
 
 try{
   $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
-  $sth2 = $dbh->prepare("SELECT charisma FROM player_character WHERE id =:player_id");
+  $sth2 = $dbh->prepare("SELECT * FROM player_character WHERE id =:player_id");
   $sth2->bindValue(':player_id', $_SESSION["player_id"]);
   $sth2->execute();
-  $charisma = $sth2->fetch();
+  $player = $sth2->fetch();
 
-      echo "<p>James Jessie: Well, lookie here. Tell me, traveller, why I shouldn't end yer life right here, right now.</p>";
-      echo "<br>";
-//add js classes to hide responses then show later
-// add js to click on options
+if ($player["charisma"] >= 2){      //if charisma meets a threshold, echo another dialogue option.
+    echo "<p class='option' id='second_option'>I'm too beautiful to be killed! Don't ya agree?</p>";
+    echo "<p class='response1 hidden'>James Jessie: True, but I don't get anything from keeping you alive.</p>";
+    echo "<p class='response1 hidden'>You: Not exactly. We can become partners and I could help you out.</p>";
+    echo "<p class='hidden response1'>James Jessie: No deal Bronco!.</p>";
+    echo "<h1 class='response1 died hidden'>You died!</h1>";
+          }
 
-//example
-
-// question
-echo "<p id='fail'>I'm too young to die! Please spare me!</p>";
-// response
-echo "<p class='death'>James Jessie: Nice try. That's not gonna stop me.</p>";
-echo "<h1 class='death'>You died!</h1>";
-
-if ($charisma > 0){
-    echo "<p id='okay'>I'm too beautiful to be killed! Don't ya agree?</p>";
-    echo "<p class='response1'>James Jessie: True, but I don't get anything from keeping you alive.</p>";
-    echo "<p class='response1>Not exactly. We can become partners and I could help you out.</p>";
-    echo "<p class='response1>James Jessie: Alright. You got yourself a deal.</p>";
+if ($player["charisma"] >= 4 || $player["class"]=="charmer") {      //if charisma meets a threshold or class is charmer, echo another dialogue option.
+    echo "<p class='option' id='third_option'>If you killed me now, then how would I take you out for dinner tonight?</p>";
+    echo "<p class='response2 hidden'>James Jessie: Hmm... good point. Where should we eat, though?</p>";
+    echo "<p class='response2 hidden'>You: Let's look around.</p>";
+    echo "<p class='response2 hidden'><a href = 'decision_towns1.php'> Move on </a></p>";
       }
-if ($charisma > 1){
-    echo "<p id='good'>If you killed me now, then how would I take you out for dinner tonight?</p>";
-    echo "<p class='response2'>James Jessie: Hmm... good point. Where should we eat, though?</p>";
-    echo "<p class='response2'>Let's look around.</p>";
-      }
-if ($charisma > 2){
-    echo "<p id='great'>You wouldn't hurt someone as amazing as me.</p>";
-    echo "<p id='response3'>James Jessie: Fair enough.</p>";
+if ($player["charisma"] >= 6 || $player["class"]=="charmer") {      //if charisma meets a threshold or class is charmer, echo another dialogue option.
+    echo "<p class='option' id='fourth_option'>Ain't no rodeo clown that can keep us from getting together bronco.</p>";
+    echo "<p class='response3 hidden'>James Jessie: Fair enough.</p>";
+    echo "<p class='response3 hidden'><a href = 'decision_towns1.php'> Move on </a></p>";
       }
 
-    echo "<p>Click<a href = 'decision_towns1.php'>here</a> to move on</p>";
-
-$new_celerity = $player_row["celerity"] + rand(0,2);
-$new_combat = $player_row["combat"] + rand(0,2);
-$new_charisma = $player_row["charisma"] + rand(0,2);
+$new_celerity = $player["celerity"] + rand(0,2);
+$new_combat = $player["combat"] + rand(0,2);
+$new_charisma = $player["charisma"] + rand(0,2);
 
 //update the data base with the stat increase
 $sth_stat = $dbh -> prepare("UPDATE player_character SET celerity = :new_celerity, combat = :new_combat, charisma = :new_charisma WHERE id=:player_id");
@@ -85,13 +85,12 @@ $new_stats = $sth_stat -> fetch();
 
 //echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
 echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have " . $new_celerity  . " celerity points, " . $new_combat  . " combat points, and " . $new_charisma  . " charisma points. </p>";
-
-} catch (PDOException $error){
+}
+catch (PDOException $error){
   echo "<p>Can't connect to database</p>";
   echo "<p>" . $error->getMessage() . "</p>";
 }
 
  ?>
- <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
 </body>
 </html>
