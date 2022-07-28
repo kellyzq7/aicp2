@@ -70,6 +70,7 @@ p {
 <a href="https://www.freepnglogos.com/images/heart-clipart-black-and-white-27655.html">Romance decision</a>
 <a href="https://www.123rf.com/clipart-vector/western_scene.html?sti=nt5impkpl996idnje2|">Decision Background</a>
 <a href="https://myloview.com.br/poster-western-landscape-at-orange-sunset-with-a-silhouette-of-a-cowboy-no-CF0FF1E">Romance Encounter Background</a>
+<a href = "https://consciouslab.files.wordpress.com/2016/05/forking-paths.jpg">Decision Towns Background</a>
 
 <h2 class="subheading"> Audio & Font Credit </h2>
 <a href="https://www.youtube.com/watch?v=AFa1-kciCb4&ab_channel=jordanharding"> Music/Main Theme</a>
