@@ -6,7 +6,7 @@ require_once "sql_config.php";
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
-    $sth = $dbh->prepare("UPDATE player_character SET `position`= 12
+    $sth = $dbh->prepare("UPDATE player_character SET `position`= 12 
       WHERE id =:player_id");
     $sth->bindValue(':player_id', $_SESSION["player_id"]);
     $sth->execute();
@@ -21,25 +21,41 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
 <!DOCTYPE html>
 <html lang="en-US">
   <head>
-    <title>Decision: Town 1 or Town 2</title>
+    <title>Cul Cavboj</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" href="cssandjs/towns.css">
+    <style>
+      @font-face {
+        font-family: Brotherland;
+        src: url(brotherland.ttf);
+      }
+      
+      @font-face {
+        font-family: Gin;
+        src: url(carnival.otf);
+      }
+      
+      body{
+        background-image: url("https://consciouslab.files.wordpress.com/2016/05/forking-paths.jpg");
+        background-size: cover;
+      }
+      
+      h1{
+        font-family: "Brotherland";
+        font-size: 50px;
+        text-align: center;
+        background-color: #d49c68;
+        padding: 2%;
+        border: 6px solid black;
+      }
+    </style>
   </head>
   <body>
-    <h1>Decision: Go to Vaquero Valley or Bronco Basin</h1>
-      <div id = "container">
-        <div id = "town1">
-            <img src = "https://storage.googleapis.com/production-hostgator-v1-0-8/148/412148/0mPbwXcy/18cdb98a2a044f2da36bba895d071701" width = 80% alt = "romance" />
-            <a href = "dodge.php"><input type = "button" id = "button1" name = "ready" value = "Vaquero Valley" /></a>
-            <p id='valley'>A once lovely town now living in fear of a cowboy and his gang, where a potential partner also resides.</p>
-        </div>
-
-        <div id = "town2">
-            <img src = "https://wallpaperaccess.com/full/313409.jpg" width = 60% alt = "combat" />
-            <a href = "dodge1.php"><input type = "button" id = "button2" name = "ready" value = "Bronco Basin" /></a>
-            <p id='basin'>A town under a looming threat prepares to hide, while a traveller searches for people to help.</p>
-        </div>
-      </div>
+      <h1>Welcome to Bronco Basin, click anywhere on image to walk</h1>
+      <a href = 'npc3.php'>
+      <img src = "https://wallpaperaccess.com/full/313409.jpg" height = 100% width = 100% alt = "Bronco Basin" />
+      </a>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
+  
+  
