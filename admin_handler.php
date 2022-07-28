@@ -111,8 +111,8 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
       echo "<p>Updated new position successfully</p>";
       
       $_SESSION["is_admin"] = "true";
-      echo "<br />You're good to go <a href = 'redirect.php'>back to the game!</a>";
-      echo "<br /><a href = 'admin_page.php'>Back to admin page</a>";
+      echo "<br /><p>You're good to go <a href = 'redirect.php'>back to the game</a> or 
+      <a href = 'admin_page.php'>back to admin page!</a></p>";
       
     }else{
       echo "<p>Error: you filled out the form incorrectly! Go <a href = 'admin_page.php'>back</a> and redo</p>";
