@@ -36,3 +36,11 @@ input, label, select {
   background-color: #fcf5b6;
 }
 
+.hide{
+  display: none;
+}
+
+.show{
+  display: block;
+}
+
