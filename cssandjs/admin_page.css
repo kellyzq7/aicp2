@@ -1,0 +1,34 @@
+@font-face {
+  font-family: brotherland;
+  src: url("../fonts/Brotherlands.ttf");
+}
+
+@font-face {
+  font-family: Gin;
+  src: url("../fonts/gin.otf");
+}
+
+body {
+  font-family:brotherland;
+  background-color: #d9a068;
+  color: #422a11;
+  font-size: 30px;
+}
+
+#container{
+  width: 800px;
+  margin: auto;
+}
+
+#character, #stats, #delete{
+  text-align: center;
+}
+
+input, label, select {
+  font-family:brotherland;
+  padding:6px;
+  font-size: 15px;
+  color: #422a11;
+  text-align: center;
+}
+
