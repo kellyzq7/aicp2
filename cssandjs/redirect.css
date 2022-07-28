@@ -112,3 +112,7 @@ div.archive li p {
   margin:0;
   text-transform:capitalize;
 }
+
+#charName{
+  font-family: brotherland;
+}

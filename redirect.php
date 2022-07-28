@@ -179,7 +179,7 @@ try {
 <?php
   foreach ($archived_characters as $character) { //loop through array of arrays and display stats of each archived character
     echo '<div class="archive">
-    <h4>' . $character["character_name"] . '</h4>
+    <h4><b id = "charName">' . $character["character_name"] . '</b></h4>
     <ul>
     <li>Class: <p>' . $character["class"] .'</p></li>
     <li>Celerity Points: <b>' . $character["celerity"] .'</b></li>
