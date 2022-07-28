@@ -35,7 +35,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
       }
       
       body{
-        background-image: url("https://consciouslab.files.wordpress.com/2016/05/forking-paths.jpg");
+        background-image: url("img/forking-paths.png");
         background-size: cover;
       }
       
