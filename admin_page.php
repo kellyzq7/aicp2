@@ -78,9 +78,6 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
         <option value='16' required>16: NPC 4</option>
         <option value='17' required>17: Final Decision (post NPC 2)</option>
         <option value='18' required>18: Final Decision (post NPC 4)</option>
-        <option value='19' required>19: Romance Ending</option>
-        <option value='20' required>20: Combat Ending</option>
-        <option value='21' required>21: Speed Ending</option>
         </select>";
         echo "<br /><br /><input class = 'important' type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
       echo "</div>";

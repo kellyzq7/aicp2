@@ -46,7 +46,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
     //backend validating inputs
     if(isset($newName) && strlen($newName) >= 1 && strlen($newName) <= 16
     && isset($newClass) && in_array($newClass, $classList)
-    && isset($newPosition) && $newPosition >= 1 && $newPosition <= 21
+    && isset($newPosition) && $newPosition >= 1 && $newPosition <= 18
     && isset($alterCelerity) && $alterCelerity > -4 && $alterCelerity < 4
     && isset($alterCharisma) && $alterCharisma > -4 && $alterCharisma < 4
     && isset($alterCombat) && $alterCombat > -4 && $alterCombat < 4){
