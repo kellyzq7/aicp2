@@ -34,7 +34,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
         </div>
 
         <div id = "town2">
-            <img src = "https://wallpaperaccess.com/full/313409.jpg" width = 76% alt = "combat" />
+            <img src = "img/broncobasin.png" width = 76% alt = "combat" />
             <a href = "combat.php"><input type = "button" id = "button2" name = "ready" value = "Bronco Basin" /></a>
         </div>
       </div>

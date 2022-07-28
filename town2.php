@@ -52,7 +52,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <body>
       <h1>Welcome to Bronco Basin, click anywhere on image to walk</h1>
       <a href = 'npc3.php'>
-      <img src = "https://wallpaperaccess.com/full/313409.jpg" height = 100% width = 100% alt = "Bronco Basin" />
+      <img src = "img/broncobasin.png" height = 100% width = 100% alt = "Bronco Basin" />
       </a>
     <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
