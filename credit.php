@@ -77,7 +77,7 @@ p {
 <a href = "https://www.freepnglogos.com/uploads/heart-clipart-black-and-white/heart-outlines-download-best-heart-outlines-30.png">Heart</a>
 <a href = "https://i.pinimg.com/originals/f5/0c/af/f50cafbb38da918ad4129ae5e13ffd50.png">Freedom Horse</a>
 <a href = "https://media.istockphoto.com/vectors/desert-sand-landscape-with-mountains-and-cactus-silhouette-on-the-vector-id1347454156?k=20&m=1347454156&s=612x612&w=0&h=hIoYzCEIAvMzZPYD9CGJodP0JeKWxVWav1Qn9vL_f7U=">Romance v Combat Background</a>
-
+<a href = "https://media.istockphoto.com/illustrations/old-west-town-illustration-id98345036?k=20&m=98345036&s=612x612&w=0&h=MYTbl9v-zl6AEHIqHxUoHBtw58U9z4xAilXRY855ywc=">Freedom Horse</a>
 <h2 class="subheading"> Audio & Font Credit </h2>
 <a href="https://www.youtube.com/watch?v=AFa1-kciCb4&ab_channel=jordanharding"> Music/Main Theme</a>
 <a href="https://www.dafont.com/brotherland.font?text=Cul+Cawboj&psize=l"> Brotherland Font </a>
