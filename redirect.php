@@ -19,9 +19,11 @@
   <?php
   session_start();
   require_once "sql_config.php";
-  $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
   try {
+    
+    $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
+
 
   if (isset($_POST["user_login"]) && isset($_POST["pass_login"])) {//checks that user came from login
     $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
