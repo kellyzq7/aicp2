@@ -74,6 +74,7 @@ input {
 div.archive {
   margin-left:1.5vmax;
   margin-right:1.5vmax;
+  margin-bottom:1.5vmax;
   padding:0.5vmax;
   border: 0.3vmax solid #D8513D;
   border-radius:0.4vmax;
