@@ -40,7 +40,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
             <a href = "freedom.php"><input type = "button" class = "buttons" name = "freedom" value = "Freedom" /></a>
         </div>
       </div>
-    <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
+    <br /><a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
   </body>
 <html>
 
