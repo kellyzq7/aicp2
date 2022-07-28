@@ -29,7 +29,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
     <h1>Decision: Love Story or Boss Face Off</h1>
       <div id = "container">
         <div id = "love">
-            <img src = "https://www.freepnglogos.com/uploads/heart-clipart-black-and-white/heart-outlines-download-best-heart-outlines-30.png" width = 50% alt = "romance" />
+            <img src = "img/heart.png" width = 50% alt = "romance" />
             <br>
             <a href = "love.php"><input type = "button" class = "buttons" name = "love" value = "Love story" /></a>
         </div>
