@@ -1,2 +1,2 @@
-# aicp2
-p2 western rpg 
+# Cul Cavboj
+Western Role-Playing Game developed by Kelly Jia, Bodie Feinberg, and Aria Thakur for AIC P2
