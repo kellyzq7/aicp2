@@ -75,6 +75,7 @@ p {
 <a href = "https://wallpaperaccess.com/full/313409.jpg">Bronco Basin</a>
 <a href = "https://cdn.pixabay.com/photo/2013/07/13/11/47/revolver-158673_640.png">Boss' Gun</a>
 <a href = "https://www.freepnglogos.com/uploads/heart-clipart-black-and-white/heart-outlines-download-best-heart-outlines-30.png">Heart</a>
+<a href = "https://i.pinimg.com/originals/f5/0c/af/f50cafbb38da918ad4129ae5e13ffd50.png">Freedom Horse</a>
 
 <h2 class="subheading"> Audio & Font Credit </h2>
 <a href="https://www.youtube.com/watch?v=AFa1-kciCb4&ab_channel=jordanharding"> Music/Main Theme</a>
