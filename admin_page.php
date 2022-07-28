@@ -42,7 +42,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
             {$character['character_name']}</option>";
         }
         echo "</select>";
-        echo "<br /><br /><input id = 'chooseCharacter' type = 'button' value = 'Choose Character' /><br />";
+        echo "<br /><br /><input class = 'important' id = 'chooseCharacter' type = 'button' value = 'Choose Character' /><br />";
       echo "</div>";
       echo "<div id = 'stats' class = 'hide'>";
         echo "<p>EDIT STATS</p>";
@@ -82,7 +82,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
         <option value='20' required>20: Combat Ending</option>
         <option value='21' required>21: Speed Ending</option>
         </select>";
-        echo "<br /><br /><input type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
+        echo "<br /><br /><input class = 'important' type = 'submit' name = 'submitEdits' value = 'Submit Changes' required />";
       echo "</div>";
       echo "</form>";
       echo "<br /><hr /><br />";
@@ -101,7 +101,7 @@ if (!isset($_SESSION["email"]) && !isset($_SESSION["player_id"])){//check if use
             {$inactive['character_name']}</option>";
         }
         echo "</select>";
-        echo "<br /><br /><input type = 'submit' value = 'Permanately Delete'>";
+        echo "<br /><br /><input class = 'important' type = 'submit' value = 'Permanately Delete'>";
         echo "</form>";
         echo "<br /><br /><a href = 'redirect.php'>Back</a>";
         echo "<br /><br /><a href='logout.php'><input type = 'button' value = 'Save and Log Out' /></a>";

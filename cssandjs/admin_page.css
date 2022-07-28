@@ -32,3 +32,7 @@ input, label, select {
   text-align: center;
 }
 
+.important{
+  background-color: #fcf5b6;
+}
+
