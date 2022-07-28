@@ -1,0 +1,17 @@
+@font-face {
+  font-family: brotherland;
+  src: url("../fonts/Brotherlands.ttf");
+}
+
+@font-face {
+  font-family: Gin;
+  src: url("../fonts/gin.otf");
+}
+
+body {
+  font-family: Gin;
+  background-color: #d9a068;
+  color: #422a11;
+  font-size: 30px;
+  text-align: center;
+}
