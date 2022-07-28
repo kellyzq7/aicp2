@@ -22,14 +22,15 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
 <html lang="en-US">
   <head>
     <title>Cul Cavboj</title>
+    <link rel="stylesheet" href="cssandjs/love.css">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
   </head>
 
   <body>
-    <h1>And this is where you find trueee love</h1>
-    <p>something with charisma points</p>
+    <h1>A beautiful love story</h1>
+    <p>You and Texas Jack decide to partner up. What starts off as days of travelling and adventures together turn into years. Over time, you two begin to realize your feelings for one another. The rest of your time is lived out with Texas Jack as you both grow old, always at each others' side.</p>
 
-  <a href="end.php"><input type = 'button' value = 'Create A New Character' /></a>
-  <a href="logout.php"><input type = 'button' value = 'Save and Log Out' /></a>
+  <a href="end.php"><input id='save' type = 'button' value = 'Create A New Character' /></a>
+  <a href="logout.php"><input id='logOut' type = 'button' value = 'Save and Log Out' /></a>
   </body>
 </html>
