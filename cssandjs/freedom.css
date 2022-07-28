@@ -1,0 +1,73 @@
+@font-face {
+  font-family: brotherland;
+  src: url("../fonts/Brotherlands.ttf");
+}
+@font-face {
+  font-family: gin;
+  src: url("../fonts/gin.otf");
+}
+
+body {
+  overflow:hidden;
+  margin:0;
+  width:100vw;
+  height:100vh;
+  background-color:#C5964D;
+  cursor:none, auto;
+  background-image: url('../img/desert_bg.png');
+  background-repeat:no-repeat;
+  background-position:center center;
+}
+
+.hidden {
+  display:none;
+}
+
+#cowboy {
+  width:5vmax;
+  margin:3vmax;
+  margin-top:20vmax;
+  position:relative;
+  animation: left_to_right 9s 1;
+  animation-delay: 2s;
+}
+
+@keyframes left_to_right {
+  0% {
+      transform: translate(0);
+    }
+    100% {
+      transform: translate(92vw);
+    }
+}
+
+#final {
+  font-family: Gin;
+  color:#430804;
+  font-size:2vmax;
+  text-align:center;
+}
+
+.create {
+  margin:0.5vmax;
+  font-size:3vmax;
+  text-align:center;
+  color:#430804;
+  font-family:Brotherland;
+  border:0.3vmax solid #430804;
+  border-radius:0.8vmax;
+  padding:0.6vmax
+}
+
+.create:hover {
+  color:#86160D;
+  border:0.3vmax solid #86160D;
+  border-radius:2vmax;
+}
+
+#flex {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+}
