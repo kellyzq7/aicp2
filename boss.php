@@ -24,12 +24,12 @@ else {
   <head>
     <title>Cul Cavboj</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link href="cssandjs/combat.css" rel="stylesheet" type="text/css" />
+    <link href="cssandjs/boss.css" rel="stylesheet" type="text/css" />
     <script
       src="https://code.jquery.com/jquery-3.3.1.js"
       integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
       crossorigin="anonymous"></script>
-    <script src = "cssandjs/combat.js"></script>
+    <script src = "cssandjs/boss.js"></script>
     <style>
 
     body {
@@ -84,7 +84,7 @@ else {
   <div id="grid">
 
     <div class="misc">
-      <h1 id="warning_text">On your way you encounter some bandits, click to shoot them, some may require multiple shots. Remember speed is key! </h1>
+      <h1 id="warning_text">This is it. The final boss encounter. Keep shooting at the boss to win. Good luck partner.</h1>
       <h1 id="timer" class="hidden"></h1>
 
       <?php
@@ -113,34 +113,9 @@ else {
       }
 
       ?>
-      <a href="town2.php" class="hidden onward"> Move on to Bronco Basin </a>
       </div>
 
-  <img class="bandit hidden" src="img/bandit.png" id="bandit1" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit2" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit3" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit4" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit5" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit6" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit7" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit8" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit9" alt="A Bandit Enemey" />
-  <img class="bandit hidden 3click" src="img/bandit_3click.png" id="bandit10" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit11" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit12" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit13" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit14" alt="A Bandit Enemey" />
-  <img class="bandit hidden 3click" src="img/bandit_3click.png" id="bandit15" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit16" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit17" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit18" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit19" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit20" alt="A Bandit Enemey" />
-  <img class="bandit hidden 3click" src="img/bandit_3click.png" id="bandit21" alt="A Bandit Enemey" />
-  <img class="bandit hidden 3click" src="img/bandit_3click.png" id="bandit22" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit23" alt="A Bandit Enemey" />
-  <img class="bandit hidden hard" src="img/bandit_hard.png" id="bandit24" alt="A Bandit Enemey" />
-  <img class="bandit hidden" src="img/bandit.png" id="bandit25" alt="A Bandit Enemey" />
+  <img class="boss" src="img/bandit.png" id="boss" alt="The Boss" />
 
   </div>
   </body>
