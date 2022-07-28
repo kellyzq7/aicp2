@@ -45,7 +45,7 @@ else {
     </style>
   </head>
   <body>
-    
+
     <iframe src="audio/silence.mp3" allow="autoplay" id="audio"></iframe>
 
     <audio autoplay>
@@ -77,7 +77,7 @@ else {
         echo "<p>Error: {$e->getMessage()}</p>";
     }
     ?>
-    
+
       <h1 id="warning_text">You're final showdown will begin shortly.
         This is it. The final boss encounter. Keep shooting at the boss to win. Good luck partner.</h1>
       <h1 id="timer" class="hidden"></h1>
@@ -101,7 +101,7 @@ else {
 
           //echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
           echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have <b>{$new_celerity}</b> celerity points, <b>{$new_combat}</b> combat points, and <b>{$new_charisma}</b> charisma points. </p>";
-          echo "<p class='hidden onward'> You proudly stride across the Wild West, respected by all, living the dream life! <a href='end.php'>Begin a New Cowboy</a></p>";
+          echo "<p class='hidden onward'> You proudly stride across the Wild West, respected by all, living the dream life! <a id='new' href='end.php'>Begin a New Cowboy</a></p>";
         }
 
      catch (PDOException $e) {
