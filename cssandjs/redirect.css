@@ -42,6 +42,7 @@ a.redirect:hover {
 }
 
 input {
+  background-color:#F5D3B8;
   font-family:Gin;
   font-size:1vmax;
   color:#D8513D;
@@ -103,4 +104,10 @@ div.archive b {
   font-size:1vmax;
   color:#D8513D;
   font-family:sans-serif;
+}
+
+div.archive li p {
+  display:inline;
+  margin:0;
+  text-transform:capitalize;
 }
