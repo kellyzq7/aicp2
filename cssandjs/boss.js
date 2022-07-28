@@ -13,7 +13,7 @@ let timerUpdate;
 let numClicks = 0;
 $("#boss").click((event) => {
   numClicks++;
-  if (numClicks == 27) {
+  if (numClicks == 60) {
       $("#boss").addClass("hidden");
       $(".stats").removeClass("hidden");
       $(".onward").removeClass("hidden");
@@ -27,13 +27,13 @@ let timerLength = "undefined"; //set timer length to be redifned based on encoun
 
 //set timer to different link based on diffiuclty of encounter
 if ($("#encounter_check").hasClass("easy")) {
-    timerLength = 25;
+    timerLength = 30;
 }
 else if ($("#encounter_check").hasClass("medium")) {
-    timerLength = 23;
+    timerLength = 20;
 }
 else {
-    timerLength = 20;
+    timerLength = 10;
 }
 
 

@@ -36,8 +36,9 @@ else {
       margin:0;
       background-color:#F38A46;
       cursor: url('img/scope_cursor.png'), auto;
-      background-image: url('img/combat_bg2.png');
+      background-image: url('img/desert_bg.png');
       background-repeat:no-repeat;
+      background-size: cover;
       background-position:center center;
     }
 
