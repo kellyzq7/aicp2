@@ -35,7 +35,7 @@ else {
     body {
       margin:0;
       background-color:#F38A46;
-      cursor: url('../img/scope_cursor.png'), auto;
+      cursor: url('img/scope_cursor.png'), auto;
       background-image: url('img/combat_bg2.png');
       background-repeat:no-repeat;
       background-position:center center;
@@ -77,7 +77,8 @@ else {
     }
     ?>
     
-      <h1 id="warning_text">This is it. The final boss encounter. Keep shooting at the boss to win. Good luck partner.</h1>
+      <h1 id="warning_text">You're final showdown will begin shortly.
+        This is it. The final boss encounter. Keep shooting at the boss to win. Good luck partner.</h1>
       <h1 id="timer" class="hidden"></h1>
 
       <?php
@@ -99,6 +100,7 @@ else {
 
           //echo new stats to player, which will be shown after encounter is complete, if encounter is failed the character will be killed/set to inactive.
           echo "<p class='hidden stats'> After completing that encounter you have improved your skills, you now have <b>{$new_celerity}</b> celerity points, <b>{$new_combat}</b> combat points, and <b>{$new_charisma}</b> charisma points. </p>";
+          echo "<p class='hidden onward'> You proudly stride across the Wild West, respected by all, living the dream life! <a href='end.php'>Begin a New Cowboy</a></p>";
         }
 
      catch (PDOException $e) {
@@ -107,7 +109,7 @@ else {
 
       ?>
 
-  <img src="img/bandit.png" class = "hidden" id="boss" alt="The Boss" />
+  <img src="img/boss.png" class = "hidden" id="boss" alt="The Boss" />
 
   </body>
 </html>
