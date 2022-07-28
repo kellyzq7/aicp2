@@ -12,7 +12,7 @@ body{
   cursor:pointer;
   font-family: "Gin";
   color:black;
-  background-image: url("img/romanceEncounterBackground.png");
+  background-image: url("../img/romanceEncounterBackground.png");
   background-repeat: no-repeat;
   background-size: cover;
   color: black;
