@@ -67,7 +67,7 @@ a.onward {
   grid-column:1/2;
 }
 #left img{
-  width:60%;
+  width:55%;
   display:block;
 }
 
@@ -79,7 +79,7 @@ a.onward {
   grid-column:1/4;
 }
 #top img{
-  height:95%;
+  height:90%;
   display:inline;
 }
 
@@ -92,7 +92,7 @@ a.onward {
   grid-column:3/4;
 }
 #right img{
-  width: 60%;
+  width: 55%;
   display:block;
 }
 
@@ -104,7 +104,7 @@ a.onward {
   grid-column:1/4;
 }
 #bottom img{
-  height:95%;
+  height:90%;
   display:inline;
 }
 
@@ -271,3 +271,4 @@ a.onward {
       transform: translate(0,-90vh);
     }
 }
+  
