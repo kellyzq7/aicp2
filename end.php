@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "sql_config.php";
-$_SESSION["characer_status"] = "inactive";//set a variable that can be checked in class_select.php to see if a new character needs to be created
+$_SESSION["character_status"] = "inactive";//set a variable that can be checked in class_select.php to see if a new character needs to be created
 //check that user is signed in
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {

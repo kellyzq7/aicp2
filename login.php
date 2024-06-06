@@ -26,7 +26,7 @@ if (isset($_POST["email"]) && isset($_POST["password"]) == true) { //if coming f
   }
   catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";
-            }
+}
 }
 }
 ?>
@@ -105,7 +105,7 @@ if ($new_account == true) {
 <form action="redirect.php" method="POST">
 <div>
 <label for="user_login"> Email: </label>
-<input type="email" name="user_login" id="user_login">
+<input type="email" name="user_login" id="user_login"> 
 </div>
 <br><br>
 <div>

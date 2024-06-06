@@ -24,6 +24,7 @@
     
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
 
+    error_log('======= I am Your message here');
 
   if (isset($_POST["user_login"]) && isset($_POST["pass_login"])) {//checks that user came from login
     $sth_password = $dbh->prepare("SELECT * FROM user WHERE email=:login_email");//find pass_hash where id matches login id
@@ -31,11 +32,19 @@
     $sth_password->execute();
     $login_row = $sth_password->fetch();
 
+    // $inputtedPW = $_POST["pass_login"];
+    // $realPW = $login_row['password'];
+    // error_log($inputtedPW);
+    // error_log(password_hash($inputtedPW, PASSWORD_DEFAULT));
+    // error_log($realPW);
+
     if (password_verify(htmlspecialchars($_POST["pass_login"]), $login_row['password'])) { //verify password agaisnt hash
         echo "<h1 id='logged_in'> Succesfully Logged in as " . htmlspecialchars($_POST["user_login"]) . "</h2>";
         //Fetch Character location, and echo link redirecting to that page
         $_SESSION["email"] = htmlspecialchars($_POST["user_login"]); //store email in session to allow for login checks later on
         $user_id = $login_row["id"]; //store the user id of the user to find its associated character(s)
+        error_log("user id from table = $user_id");
+
         //then get charcter where user_id = user id, and isActive = true
         $sth_location = $dbh->prepare("SELECT *, player_character.id AS player_id  FROM player_character
         JOIN user
@@ -49,7 +58,20 @@
         $player = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
         $_SESSION["player_id"] = $player["player_id"];//store the player charcter id in session for easy access to update its position on later pages.
         $_SESSION["user_id"] = $user_id; //store user id in session
+
+        // $sth_character = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
+        // $sth_character->bindValue(':player_id', $_SESSION["player_id"]);
+        // $sth_character -> execute();
+        // $player_character = $sth_character -> fetch();
+        // $_SESSION["character_position"] = $player_character["position"];
+
+        // $character_pos = $_SESSION["character_position"];
+
+        // error_log("the charcater position is $character_pos");
+
+
      }
+
     else { //if password doesn't match send to sign in
       header('Location: login.php');
     }
@@ -76,82 +98,85 @@ echo "<p>Error: {$e->getMessage()}</p>";
 
 
 try {
+
+  error_log($player["position"]);
+
   //if user is admin, display link to admin page
-  if($login_row["isAdmin"] == 1 || $player["isAdmin"] == 1){
+  if(isset($login_row["isAdmin"]) && ($login_row["isAdmin"] == 1 || $player["isAdmin"] == 1)){
     echo "<a class='redirect' href='admin_page.php'> Admin Only Page </a><br /><br />";
   }
 
   //based on the player's position echo a link to take them back to where they left off
-  if($player["position"] == 0) {
+  if(isset($player["position"]) && $player["position"] == 0) {
     echo "<a class='redirect' href='class_select.php'> Create New Character </a><br /><br />";
   }
-  else if($player["position"] == 1) {
+  else if(isset($player["position"]) && $player["position"] == 1) {
     echo "<a class='redirect' href='intro.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 2) {
+  else if(isset($player["position"]) && $player["position"] == 2) {
     echo "<a class='redirect' href='dodge.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 3) {
-    echo "<a class='redirect' href='decision_romancevcombat.php'> Return to Game catch </a><br /><br />";
+  else if(isset($player["position"]) && $player["position"] == 3) {
+    echo "<a class='redirect' href='decision_romancevcombat.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 4) {
+  else if(isset($player["position"]) && $player["position"] == 4) {
     echo "<a class='redirect' href='romanceEncounter.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 5) {
+  else if(isset($player["position"]) && $player["position"] == 5) {
     echo "<a class='redirect' href='combat1.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 6) {
+  else if(isset($player["position"]) && $player["position"] == 6) {
     echo "<a class='redirect' href='decision_towns1.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 7) {
+  else if(isset($player["position"]) && $player["position"] == 7) {
     echo "<a class='redirect' href='decision_towns.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 8) {
+  else if(isset($player["position"]) && $player["position"] == 8) {
     echo "<a class='redirect' href='yay.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 9) {
+  else if(isset($player["position"]) && $player["position"] == 9) {
     echo "<a class='redirect' href='combat.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 10) {
+  else if(isset($player["position"]) && $player["position"] == 10) {
     echo "<a class='redirect' href='dodge1.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 11) {
+  else if(isset($player["position"]) && $player["position"] == 11) {
     echo "<a class='redirect' href='town1.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 12) {
+  else if(isset($player["position"]) && $player["position"] == 12) {
     echo "<a class='redirect' href='town2.php'> Return to Game </a><br /><br />";
 }
-  else if($player["position"] == 13) {
+  else if(isset($player["position"]) && $player["position"] == 13) {
     echo "<a class='redirect' href='npc1.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 14) {
+  else if(isset($player["position"]) && $player["position"] == 14) {
     echo "<a class='redirect' href=npc3.php'> Return to Game </a><br /><br />";
 }
-  else if($player["position"] == 15) {
+  else if(isset($player["position"]) && $player["position"] == 15) {
     echo "<a class='redirect' href='npc2.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 16) {
+  else if(isset($player["position"]) && $player["position"] == 16) {
     echo "<a class='redirect' href='npc4.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 17) {
+  else if(isset($player["position"]) && $player["position"] == 17) {
     echo "<a class='redirect' href='finaldecision1.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 18) {
+  else if(isset($player["position"]) && $player["position"] == 18) {
     echo "<a class='redirect' href='finaldecision2.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 19) {
+  else if(isset($player["position"]) && $player["position"] == 19) {
     echo "<a class='redirect' href='love.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 20) {
+  else if(isset($player["position"]) && $player["position"] == 20) {
     echo "<a class='redirect' href='boss.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 21) {
+  else if(isset($player["position"]) && $player["position"] == 21) {
     echo "<a class='redirect' href='freedom.php'> Return to Game </a><br /><br />";
   }
-  else if($player["position"] == 22) {
+  else if(isset($player["position"]) && $player["position"] == 22) {
     echo "<a class='redirect' href='failed_encounter.php'>You died, return to game</a><br /><br />";
   }
-  else if($player["position"] == 23) {
+  else if(isset($player["position"]) && $player["position"] == 23) {
     echo "<a class='redirect' href='end.php'>You completed the game, return to the end</a><br /><br />";
   }
   else { //if invalid location reset location and send to login
@@ -169,7 +194,7 @@ try {
   user.id =:log_user_id
   AND
   player_character.isActive = FALSE;");
-  $sth_archive->bindValue(':log_user_id', $user_id);
+  $sth_archive->bindValue(':log_user_id', $_SESSION["user_id"]);
   $sth_archive->execute();
   $archived_characters = $sth_archive->fetchall(); //create array of arrays with all inactive characters belonging to user
 ?>

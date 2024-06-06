@@ -44,3 +44,8 @@ input, label, select {
   display: block;
 }
 
+select{
+  height: 60px;
+}
+
+

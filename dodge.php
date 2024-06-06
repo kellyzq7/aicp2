@@ -60,6 +60,10 @@ $sth2 = $dbh -> prepare("SELECT * FROM player_character WHERE id=:player_id");
 $sth2->bindValue(':player_id', $_SESSION["player_id"]);
 $sth2 -> execute();
 $player_row = $sth2 -> fetch();
+
+$playerposition = $player_row["position"];
+error_log("the player position is at $playerposition");
+
 }
 catch (PDOException $e) {
   echo "<p>Error: {$e->getMessage()}</p>";

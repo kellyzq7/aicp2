@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once "sql_config.php";
-$_SESSION["characer_status"] = "inactive";//set a variable that can be checked in class_select.php to see if a new character needs to be created
+$_SESSION["character_status"] = "inactive";//set a variable that can be checked in class_select.php to see if a new character needs to be created
 //check that user is signed in
 if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   try {
@@ -28,7 +28,8 @@ if (isset($_SESSION["email"]) && isset($_SESSION["player_id"])) {
   <body>
 
 <div id="container">
-  <h3>  Dang Cowboy, You Died! </h3> <h4> But that's ok you can always... </h4> <a href = 'class_select.php'><input type = 'button' value = 'Create a New Cowboy' /></a></h4>
+  <h3>  Dang Cowboy, You Died! </h3> <h4> But that's ok you can always...</h4><a href = 'class_select.php'><input type = 'button' value = 'Create a New Cowboy' /></a>
+  <br />
 </div>
 
 

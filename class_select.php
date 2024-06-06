@@ -3,7 +3,7 @@ session_start();
 require_once "sql_config.php";
 
 if (isset($_SESSION["email"]) && isset($_SESSION["user_id"])) { // checks player is logged in
-  if ($_SESSION["characer_status"] == "inactive") { //if player came from failed encounter and needs a new character, create new character
+  if (isset($_SESSION["character_status"]) && $_SESSION["character_status"] == "inactive") { //if player came from failed encounter and needs a new character, create new character
 
     //create character associated with user id
     $dbh = new PDO(DB_DSN, DB_USER, DB_PASSWORD);
@@ -24,7 +24,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["user_id"])) { // checks player
     $sth_location->execute();
     $new_character = $sth_location->fetch(); //player now has the row of the charcter associated with the logged in account, which is currently the user's active character
     $_SESSION["player_id"] = $new_character["player_id"];//store the new player charcter id in session for easy access to update its position on later pages.
-    unset($_SESSION["characer_status"]); //unset this from session, as an active character has now been created
+    unset($_SESSION["character_status"]); //unset this from session, as an active character has now been created
   }
 }
 else {
